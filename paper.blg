@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: paper.aux
+The style file: apsrev.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: paper.bib
+You're missing a field name---line 555 of file paper.bib
+ : 
+ : %    title    = {Gravitational Radiation from Post-Newtonian Sources and Inspiralling Compact Binaries},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 59 entries,
+            3411 wiz_defined-function locations,
+            1558 strings with 22334 characters,
+and the built_in function-call counts, 42458 in all, are:
+= -- 2283
+> -- 1629
+< -- 218
++ -- 1370
+- -- 400
+* -- 6039
+:= -- 4528
+add.period$ -- 59
+call.type$ -- 59
+change.case$ -- 238
+chr.to.int$ -- 59
+cite$ -- 61
+duplicate$ -- 3890
+empty$ -- 3518
+format.name$ -- 970
+if$ -- 7859
+int.to.chr$ -- 1
+int.to.str$ -- 60
+missing$ -- 596
+newline$ -- 192
+num.names$ -- 174
+pop$ -- 943
+preamble$ -- 1
+purify$ -- 236
+quote$ -- 0
+skip$ -- 1582
+stack$ -- 0
+substring$ -- 994
+swap$ -- 3163
+text.length$ -- 194
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 352
+warning$ -- 0
+while$ -- 141
+width$ -- 0
+write$ -- 649
+(There was 1 error message)
