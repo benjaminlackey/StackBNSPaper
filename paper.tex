@@ -22,7 +22,7 @@ $^2$Department of Physics, University of Wisconsin--Milwaukee, P.O. Box 413, Mil
 }
 
 \begin{abstract}
-Gravitational-wave observations of inspiralling binary neutron star systems can be used to measure the neutron-star equation of state (EOS) through the tidally induced shift in the waveform phase that depends on the tidal deformability parameter $\lambda$. Previous work has shown that $\lambda$, a function of the neutron-star EOS and mass, is marginally measurable by Advanced LIGO for a single event when including tidal information up to the merger frequency. In this work, we describe a method for stacking measurements of $\lambda$ from multiple inspiral events to measure the EOS. We use Markov chain Monte Carlo simulations to estimate the parameters of a 4-parameter piecewise polytrope EOS that matches theoretical EOS models to a few percent. We find that for ``realistic'' event rates ($\sim 40$ events per year with signal-to-noise ratio $> 8$ in a single Advanced LIGO detector), when a year of data is combined with the constraints from causality and recent high mass neutron-star measurements, the EOS above nuclear density can be measured to better than a factor of two in most cases. We also find that for masses $>1M_\odot$, the neutron-star radius can be measured to $\pm 1$~km and the tidal deformability can be measured to $\pm 1 \times 10^{36}$~g~cm$^2$~s$^2$. The overwhelming majority of this information comes from the loudest $\sim 5$ events. Current uncertainties in the post-Newtonian waveform model, however, lead to systematic errors in the EOS measurement that are as large as the statistical errors, and more accurate waveform models are needed to remove this error.
+Gravitational-wave observations of inspiralling binary neutron star systems can be used to measure the neutron-star equation of state (EOS) through the tidally induced shift in the waveform phase that depends on the tidal deformability parameter $\lambda$. Previous work has shown that $\lambda$, a function of the neutron-star EOS and mass, is marginally measurable by Advanced LIGO for a single event when including tidal information up to the merger frequency. In this work, we describe a method for stacking measurements of $\lambda$ from multiple inspiral events to measure the EOS. We use Markov chain Monte Carlo simulations to estimate the parameters of a 4-parameter piecewise polytrope EOS that matches theoretical EOS models to a few percent. We find that, for ``realistic'' event rates ($\sim 40$ binary neutron star inspiral events per year with signal-to-noise ratio $> 8$ in a single Advanced LIGO detector), combining a year of gravitational-wave data with the constraints from causality and recent high mass neutron-star measurements, the EOS above nuclear density can be measured to better than a factor of two in most cases. We also find that in the mass range $1M_\odot$--$2M_\odot$, the neutron-star radius can be measured to $\pm 1$~km and the tidal deformability can be measured to $\pm 1 \times 10^{36}$~g~cm$^2$~s$^2$. The overwhelming majority of this information comes from the loudest $\sim 5$ events. Current uncertainties in the post-Newtonian waveform model, however, lead to systematic errors in the EOS measurement that are as large as the statistical errors, and more accurate waveform models are needed to remove this error.
 \end{abstract}
 
 \pacs{
@@ -33,13 +33,19 @@ Gravitational-wave observations of inspiralling binary neutron star systems can 
 
 \maketitle
 
+[[Update the PACS numbers.]]
+
+[[Should you describe briefly where each theoretical EOS came from or is it just not relevant? Maybe people would want to know why the ALF2 EOS is not fit very well but the others are.]]
+
 [[Finish adding discussion of priors into the plots where you added just the constraints from the priors.]]
 
 [[State somewhere what the cutoff frequency is. Did you do this in Section II?]]
 
-[[You don't define SNR or network SNR anywhere.]]
-
 [[Replace instances of ``confidence interval'', ``uncertainty'', ``error'', etc. with ``credible interval'' / ``credible region'' where appropriate.]]
+
+[[How do I remove the little space before the underscore in \texttt{lalinference\_mcmc}?]]
+
+[[State the value of $\rho_{\rm nuc}$]]
 
 \section{Introduction}
 
@@ -222,7 +228,7 @@ ALF2&34.616&4.070&2.411&1.890&0.043& 0.642&1.50& 2.086&-5.26& 13.188&-3.66\\
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics[width=3.2in]{Radiuslambda.pdf}
-\caption{Radius and tidal deformability of tabulated EOS models (solid) and the least-squares piecewise-polytrope fits to those tabulated models (dashed). The 20 vertical lines represent the most likely NS masses of the 10 known BNS systems~\cite{Lattimer2012}. Some of these masses, however, have significant uncertainties. The overlapping vertical bands represent the $1\sigma$ uncertainty in the masses of the pulsars J1614-2230~\cite{DemorestPennucciRansom2010} and J0348+0432~\cite{AntoniadisFreireWex2013}, both in neutron star-white dwarf binaries.}
+\caption{Radius and tidal deformability of tabulated EOS models (solid) and the least-squares piecewise-polytrope fits to those tabulated models (dashed). The 20 vertical lines represent the most likely NS masses of the 10 known BNS systems~\cite{Lattimer2012}. Some of these masses, however, have significant uncertainties. The overlapping vertical bands represent the $1\sigma$ uncertainty in the masses of the pulsars J1614-2230 ($1.97\pm0.04M_\odot$)~\cite{DemorestPennucciRansom2010} and J0348+0432 ($2.01\pm0.04M_\odot$)~\cite{AntoniadisFreireWex2013}, both in neutron star-white dwarf binaries.}
 \label{fig:rlofm}
 \end{center}
 \end{figure}
@@ -233,7 +239,9 @@ ALF2&34.616&4.070&2.411&1.890&0.043& 0.642&1.50& 2.086&-5.26& 13.188&-3.66\\
 
 \subsection{Derivation}
 
-Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating its parameters from a set of GW observations. We use Bayes' theorem to write the posterior density function (PDF) for the universal EOS parameters $\vec E = (\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3)$ common to all NSs and the waveform parameters $\vec\theta = (D_L, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda)$ \red{[[What happened to $\delta\tilde\Lambda$? Although $\delta\tilde\Lambda$ in principle provides additional EOS information, it's effect on the waveform is small compared to $\tilde\Lambda$, so we treat it as a nuisance parameter and group it with the extrinsic parameters when we marginalize over them.]]} that are unique to each of the $n$ BNS systems as
+\red{[[Make sure all the waveform parameters are explicitly defined in Section II, or else you'll have to define them here.]]}
+
+Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We use Bayes' theorem to write the posterior density function (PDF) for the universal EOS parameters $\vec E = (\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3)$ that are common to all NSs and the waveform parameters $\vec\theta = (D_L, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda)$ that are unique to each of the $n$ BNS systems as
 \begin{equation}
 \begin{split}
 p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})
@@ -241,13 +249,12 @@ p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})
 & \times\frac{ p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I}) }{ p(D | \mathcal{H},\mathcal{I}) }.
 \end{split}
 \end{equation}
-The data $D = \vec d_1,\dots, \vec d_n$ is composed of the data streams $\vec d_i(t)$ from the GW detector network for each of the $n$ inspiral events. $\mathcal{H}$ represents the EOS and waveform models, and $\mathcal{I}$ represents the background information for the parameters. The quantity $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I})$ is the prior probability density for the EOS and waveform parameters, $p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I})$ is the likelihood, and the normalization constant $p(D | \mathcal{H},\mathcal{I})$ is the evidence. The marginalized PDF for the EOS parameters is then
+The data $D = \vec d_1,\dots, \vec d_n$ is composed of the data streams $\vec d_i(t)$ from the GW detector network for each of the $n$ inspiral events. $\mathcal{H}$ represents the EOS and waveform models, and $\mathcal{I}$ represents the background information for the parameters. The quantity $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I})$ is the prior probability density for the EOS and waveform parameters, $p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I})$ is the likelihood, and the normalization constant $p(D | \mathcal{H},\mathcal{I})$, which we will not need to calculate here, is the evidence. The marginalized PDF for the EOS parameters is then
 \begin{equation}
 \label{eq:margEOS}
 p(\vec E | D,\mathcal{H},\mathcal{I}) = \int d\vec\theta_1 \dots d\vec\theta_n p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I}).
 \end{equation}
-This $10n$-dimensional integral is not easily computed, so we will now rewrite it. First we decompose the waveform parameters into extrinsic parameters $\vec\theta_{\rm ex} = (D_L, \alpha, \delta, \psi, \iota, t_c, \phi_c)$ that depend on the observer and intrinsic parameters $\vec\theta_{\rm in} = (m_1, m_2, \tilde\Lambda)$ that are relevant for measuring the EOS such that $\vec\theta = (\vec\theta_{\rm ex}, \vec\theta_{\rm in})$. 
-%Although at this stage we treat the EOS parameters separately from the waveform parameters, we will later use the fact that the tidal parameter $\tilde\Lambda_i$ for system $i$ is a function $\tilde\Lambda_i = \tilde\Lambda(m_{1i}, m_{2i}, \vec E)$ of the masses of system $i$ and the EOS parameters to determine the EOS parameters. 
+This $11n$-dimensional integral is not easily computed, so we will decompose it into blocks that can be individually computed. First, we decompose the waveform parameters into extrinsic parameters $\vec\theta_{\rm ex} = (D_L, \alpha, \delta, \psi, \iota, t_c, \phi_c, \delta\tilde\Lambda)$\footnote{$\delta\tilde\Lambda$ is an intrinsic parameter that in principle provides additional EOS information. However, it is unmeasurable with aLIGO~\cite{WadeCreightonOchsner2014}, so we treat it as a nuisance parameter and group it with the extrinsic parameters when we marginalize over them.} that depend on the observer and intrinsic parameters $\vec\theta_{\rm in} = (m_1, m_2, \tilde\Lambda)$ that are relevant for measuring the EOS such that $\vec\theta = (\vec\theta_{\rm ex}, \vec\theta_{\rm in})$.
 
 The prior can be decomposed into EOS-parameter and waveform-parameter parts using the product rule $p(\vec x, \vec y) = p(\vec x) p(\vec y | \vec x) $ as well as the fact that the $n$ sets of waveform parameters $\vec\theta_i$ are independent
 \begin{equation}
@@ -284,7 +291,7 @@ Because $\tilde\Lambda_i$ is a deterministic function of $m_{1i}$, $m_{2i}$ and 
 \begin{equation}
 p(\tilde\Lambda_i | m_{1i}, m_{2i}, \vec E, \mathcal{H},\mathcal{I}) = \delta(\tilde\Lambda_i - \tilde\Lambda(m_{1i}, m_{2i}, \vec E)).
 \end{equation}
-The marginalized PDF then finally becomes
+The marginalized PDF finally becomes
 \begin{equation}
 \label{eq:margEOS2}
 \begin{split}
@@ -293,12 +300,11 @@ p(\vec E | D,\mathcal{H},\mathcal{I}) =& \frac{1}{p(D | \mathcal{H},\mathcal{I})
 & \left. \times L(\vec d_i; \vec\theta_{\rm in, i}, \mathcal{H}, \mathcal{I})|_{\tilde\Lambda_i = \tilde\Lambda(m_{1i}, m_{2i}, \vec E)} \right].
 \end{split}
 \end{equation}
+The problem has now been reduced to computing the quasilikelihood (Eq.~\eqref{eq:quasilike}) for each GW event, then computing Eq.~\eqref{eq:margEOS2}.
 
-\red{[[You need to explain exactly what your choice of $p(\vec E | \mathcal{H},\mathcal{I})$ and $ p(m_{1i}, m_{2i} | \vec E, \mathcal{H},\mathcal{I})$ are.]]}
+\subsection{Likelihood and signal to noise ratio}
 
-\subsection{Likelihood}
-
-The final ingredient we need to evaluate the marginalized PDF is an expression for the likelihood $p(\vec d_i | \vec\theta_i,\mathcal{H},\mathcal{I})$ for each GW event. In this paper we assume that each detector in the network has stationary, Gaussian noise and that the noise between detectors is uncorrelated. This means that the power spectral density (PSD) $S_n(f)^a$ of the noise $n^a(t)$ in detector $a$ is 
+The final ingredient we need to evaluate the marginalized PDF is an expression for the likelihood $p(\vec d_i | \vec\theta_i,\mathcal{H},\mathcal{I})$ for each GW event\footnote{In this subsection, which discusses the likelihood for individual GW events, we omit the event index $i$ for clarity.}. In this paper we assume that each detector in the network has stationary, Gaussian noise and that the noise between detectors is uncorrelated. This means that the power spectral density (PSD) $S_n(f)^a$ of the noise $n^a(t)$ in detector $a$ is \red{[[cite]]}
 \begin{equation}
 \langle \tilde n^a(f) \tilde n^{b*}(f') \rangle = \frac{1}{2} \delta^{ab} \delta (f-f') S_n(f)^a,
 \end{equation}
@@ -315,20 +321,31 @@ where $(a, b)$ is the usual inner product between two time series $a(t)$ and $b(
 \begin{equation}
 (a, b)=4{\rm Re} \int_0^\infty \frac{\tilde a(f) \tilde b^*(f)}{S_n(f)}\,df.
 \end{equation}
-If we have a GW model $m(t;\vec\theta)$ that approximates the true signal $h(t;\vec\theta)$, then the likelihood of obtaining the data $d^a(t)$ given that GW model is
-\begin{equation}
-p(d^a | \vec\theta, \mathcal{H}, \mathcal{I}) = p_n[d^a(t)-m(t; \vec\theta)] \propto e^{-(d^a - m(\vec\theta), d^a - m(\vec\theta))/2}.
-\end{equation}
+If we have a GW model $m(t;\vec\theta)$ that approximates the true signal $h(t;\vec\theta)$, then the likelihood of obtaining the data $d^a(t)$ given the GW model is
+\begin{align}
+p(d^a | \vec\theta, \mathcal{H}, \mathcal{I}) &= p_n[d^a(t)-m(t; \vec\theta)] \nonumber\\
+& \propto e^{-(d^a - m(\vec\theta), d^a - m(\vec\theta))/2}.
+\end{align}
 If the model $m$ differs from the true signal $h$, a systematic error will be introduced in the recovered waveform parameters. For a network of independent detectors described by the set of time series $\vec d(t)$, the likelihood is then
 \begin{equation}
 p(\vec d | \vec\theta, \mathcal{H}, \mathcal{I}) = \prod_a p(d^a | \vec\theta, \mathcal{H}, \mathcal{I}).
 \end{equation}
 
+The observed signal to noise ratio (SNR) for the data $d^a$ from detector $a$ is Gaussian random variable given by
+\begin{equation}
+\rho^a = \frac{(d^a, m)}{\sqrt{(m, m)}},
+\end{equation}
+and has the expectation value (or characteristic SNR) $\langle \rho^a \rangle = \sqrt{(m, m)}$. The SNR for a network of detectors is then $\rho_{\rm net} = \sqrt{\sum_a(\rho^a)^2}$, which has expectation value $\langle \rho_{\rm net} \rangle = \sqrt{\sum_a\langle \rho^a \rangle^2}$.
+
 \subsection{Implementation}
 
-We evaluate Eq.~\eqref{eq:margEOS2} for the marginalized PDF in a two-step procedure similar to that described by Steiner {\it et al.}~\cite{SteinerLattimerBrown2010}, where we first evaluate the quasilikelihood (Eq.~\eqref{eq:quasilike}) for each of the $n$ BNS systems, then evaluate Eq.~\eqref{eq:margEOS2}. In the first step where we evaluate the quasilikelihood $L(\vec d_i; \vec\theta_{\rm in, i}, \mathcal{H}, \mathcal{I})$, we use the MCMC sampler \texttt{lalinference\_mcmc} included in the LSC Algorithm Library~\cite{lal}, which is specifically designed to efficiently sample the BNS parameter space\red{[[cite overview papers]]}. The priors on the extrinsic parameter are~\red{[[what are they?]]}. The priors for the intrinsic parameters $(m_{1i}, m_{2i}, \tilde\Lambda_i)$ are not contained in the quasilikelihood (Eq.~\eqref{eq:quasilike}), so we use a flat prior for the intrinsic parameters. For each binary event $i$ we perform 10 independent runs and test for convergence using the Gelman-Rubin diagnostic~\cite{GelmanRubin1992}, then join the samples. Marginalization over the extrinsic parameters is performed by generating a distribution from the samples of the three intrinsic parameters with a Gaussian kernel density estimator. In the second step, we sample the $4+2n$ parameter integrand of Eq.~\eqref{eq:margEOS2} using the affine-invarient ensemble sampler \texttt{emcee}~\cite{ForemanMackeyHogg2013}. We use the EOS priors stated in Section~\ref{sec:eos}, and uniform priors for the masses with $0.5M_\odot \le m_2 \le m_1 \le 3.0M_\odot$. We again perform 10 runs and test for convergence with the Gelman-Rubin diagnostic before joining the samples. The marginalized distribution $p(\vec E|D, \mathcal{H}, \mathcal{I})$ is then given by a histogram of the samples for $\vec E$.
+\red{[[You need to explain exactly what your choice of $p(\vec E | \mathcal{H},\mathcal{I})$ and $ p(m_{1i}, m_{2i} | \vec E, \mathcal{H},\mathcal{I})$ are.]]}
 
-The evaluation of the quasilikelihood (Eq.~\eqref{eq:quasilike}) for all $n$ events in a population is very computationally expensive. When we examine many different populations in Section V we will sometimes use the Fisher matrix approximation instead. In the large SNR limit, the difference $\Delta\vec\theta = \vec\theta - \hat\theta$ between the estimated parameters $\vec\theta$ and the true parameters $\hat\theta$ of the binary system obeys a Gaussian distribution~\cite{FinnChernoff1993}. Specifically, for $N$ parameters, the likelihood is
+We evaluate Eq.~\eqref{eq:margEOS2} for the marginalized PDF in a two-step procedure, similar to that described by Steiner {\it et al.}~\cite{SteinerLattimerBrown2010}, where we first evaluate the quasilikelihood (Eq.~\eqref{eq:quasilike}) for each of the $n$ BNS systems, then evaluate Eq.~\eqref{eq:margEOS2}. In the first step where we evaluate the quasilikelihood $L(\vec d; \vec\theta_{\rm in}, \mathcal{H}, \mathcal{I})$, we use the MCMC sampler \texttt{lalinference\_mcmc} included in the LSC Algorithm Library~\cite{lal} as was implemented in Ref.~\cite{WadeCreightonOchsner2014} and is described in more detail in Ref.~\cite{VanDerSluysRaymondMandel2008}. We use a uniform prior distribution for $\log(D_L)$, $\alpha$, $\sin(\delta)$, $\psi$, $\sin(\iota)$, $t_c$, and $\phi_c$ for the extrinsic parameters. \red{[[The specific range is blah....]]} The priors for the intrinsic parameters of interest $(m_{1}, m_{2}, \tilde\Lambda)$ are not contained in the quasilikelihood (Eq.~\eqref{eq:quasilike}), so we are required to use flat priors. In most cases we used $1M_\odot \le m_2 \le m_1 \le 30M_\odot$ and $0 \le \tilde\Lambda \le 3000$. However, when we injected BNS systems with component masses of $1M_\odot$ in Section~\ref{sec:varymass}, we used $0.5M_\odot \le m_2 \le m_1 \le 30M_\odot$ and $0 \le \tilde\Lambda \le 5000$ so that the posterior was minimally affected by the prior. For $\delta\tilde\Lambda$, we used the range $-500 \le \delta\tilde\Lambda \le 500$\red{[[Is this true?]]}. For each binary event we perform 10 independent runs and test for convergence using the Gelman-Rubin diagnostic~\cite{GelmanRubin1992}, then join the samples. Marginalization over the extrinsic parameters is performed by generating a distribution from the samples of the three intrinsic parameters with a Gaussian kernel density estimator. 
+
+In the second step, we sample the $4+2n$ parameter integrand of Eq.~\eqref{eq:margEOS2} using the affine-invarient ensemble sampler \texttt{emcee}~\cite{ForemanMackeyHogg2013}. We use uniform priors for the EOS parameters with boundaries as described in Section~\ref{sec:eosparam} and additional boundaries from the $1.93M_\odot$ observation and causality constraints as described in Sections~\ref{sec:eosconstraints} and~\ref{sec:eosparam}, and uniform priors for the masses with $1M_\odot \le m_2 \le m_1 \le 3.0M_\odot$ or, when we examine $1M_\odot$ systems, $0.5M_\odot \le m_2 \le m_1 \le 3.0M_\odot$. We again perform 10 runs and test for convergence with the Gelman-Rubin diagnostic before joining the samples. The marginalized distribution $p(\vec E|D, \mathcal{H}, \mathcal{I})$ is then given by a histogram of the samples for $\vec E$.
+
+The evaluation of the quasilikelihood (Eq.~\eqref{eq:quasilike}) for all $n$ events in a population is very computationally expensive, so in some cases we will use the Fisher matrix approximation instead. In the large SNR limit, the difference $\Delta\vec\theta = \vec\theta - \hat\theta$ between the estimated parameters $\vec\theta$ and the true parameters $\hat\theta$ of the binary system obeys a Gaussian distribution~\cite{FinnChernoff1993}. Specifically, for $N$ parameters, the likelihood is
 \begin{equation}
 \label{eq:gaussianlike}
 p(d^a | \vec\theta,\mathcal{H},\mathcal{I}) = \frac{1}{\sqrt{(2\pi)^N \mathrm{det}(\Sigma_{ij})}} e^{-\frac{1}{2} \Sigma^{-1}_{ij} \Delta\theta_i \Delta\theta_j},
@@ -337,11 +354,11 @@ where $\Sigma_{ij}$ is the covariance matrix, and it is given in terms of the Fi
 \begin{equation}
 \Gamma_{ij} = (\partial_i h(\hat\theta), \partial_j h(\hat\theta))
 \end{equation}
-by the relation $\Sigma_{ij}  = \Gamma^{-1}_{ij}$. In the large SNR limit, $\hat\theta$ will be approximately given by the maximum likelihood. When we use the Fisher matrix approximation we will use the mass variables $\ln(\mathcal{M})$ and $\ln(\eta)$ instead of $m_1$ and $m_2$ and flat priors for $\ln(\mathcal{M})$ and $\ln(\eta)$. The quasilikelihood (Eq.~\eqref{eq:quasilike}) marginalized over the extrinsic parameters is simply given by the submatrix of $\Sigma_{ij}$ containing the intrinsic parameters $(\ln(\mathcal{M}), \ln(\eta), \tilde\Lambda)$. 
+by the relation $\Sigma_{ij}  = \Gamma^{-1}_{ij}$. In the large SNR limit, $\hat\theta$ will be approximately given by the maximum likelihood. When we use the Fisher matrix approximation we will use the mass variables $\ln(\mathcal{M})$ and $\ln(\eta)$ instead of $m_1$ and $m_2$ and flat priors for $\ln(\mathcal{M})$ and $\ln(\eta)$. The quasilikelihood (Eq.~\eqref{eq:quasilike}) marginalized over the extrinsic parameters is simply given by the submatrix of $\Sigma_{ij}$ containing the intrinsic parameters $(\ln(\mathcal{M}), \ln(\eta), \tilde\Lambda)$. However, when we estimate the EOS parameters in Eq.~\eqref{eq:margEOS2}, we always sample the posterior with \texttt{emcee}.
 
 \subsection{Averaged likelihood}
 
-In order to determine the characteristic ability of GW detectors to measure EOS parameters, we will want to average our results for Eq.~\eqref{eq:margEOS2} over many realizations of the detector noise. In Ref.~\cite{NissankeHolzHughes2010} it was shown that averaging over noise realizations is equivalent to setting the noise realization $n^a(t)$ used to generate the data $d^a$ equal to zero, but still using the characteristic noise PSD in the expression for the likelihood. Explicitly, one can define the averaged likelihood as the geometric mean of a set of $M$ identical detectors measuring the same gravitational wave event
+In order to determine the characteristic ability of GW detectors to measure EOS parameters, we will want to average our results for Eq.~\eqref{eq:margEOS2} over many realizations of the detector noise. In Ref.~\cite{NissankeHolzHughes2010} it was shown that averaging over noise realizations is equivalent to setting the noise realization $n^a(t)$ used to generate the data $d^a(t)$ equal to zero, but still using the characteristic noise PSD in the expression for the likelihood. Explicitly, one can define the averaged likelihood as the geometric mean of an ensemble of $M$ identical detectors measuring the same GW event
 \begin{equation}
 p_{\rm ave}(d^a | \vec\theta, \mathcal{H}, \mathcal{I}) = \left[\prod_{k=1}^M p(d_k^a | \vec\theta, \mathcal{H}, \mathcal{I})\right]^{1/M}.
 \end{equation}
@@ -379,7 +396,7 @@ Using zero-noise data, which gives the likelihood averaged over many noise reali
 \begin{center}
 \includegraphics[width=3.2in]{LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20p.pdf}
 \includegraphics[width=3.2in]{LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20Radiuslambda.pdf}
-\caption{Uncertainty in the recovered EOS, radius, and tidal deformability for the three-detector aLIGO--aVirgo network. Results are shown for the loudest 20 events with Network SNR from 64.1 down to 13.7. The red, green, and blue regions represent the 68\% ($1\sigma$), 95\% ($2\sigma$), and 99.7\% ($3\sigma$) confidence regions respectively. In the bottom left panel, $p_{\rm true}$ is the pressure of the true ``injected'' EOS, which in this case is the fit to the MPA1 EOS. The tabulated MPA1 EOS is also shown. The range of masses from $1.2M_\odot$ to $1.6M_\odot$ used in the simulated BNS population is represented in the right panels by the black vertical dotted lines. The red vertical dotted line at $1.93M_\odot$ is the minimum mass, set by the prior, where some accepted EOS parameters do not produce a stable NS.}
+\caption{Uncertainty in the recovered EOS, radius, and tidal deformability for the three-detector aLIGO--aVirgo network. Results are shown for the loudest 20 events with Network SNR from 64.1 down to 13.7. The red, green, and blue regions represent the 68\% ($1\sigma$), 95\% ($2\sigma$), and 99.7\% ($3\sigma$) confidence regions respectively. In the bottom left panel, $p_{\rm true}$ is the pressure of the true ``injected'' EOS, which in this case is the fit to the MPA1 EOS. In the right panels, the vertical line at $1.93M_\odot$ is the minimum mass, set by the prior, where some accepted EOS parameters do not produce a stable NS.}
 \label{fig:mpa1fit}
 \end{center}
 \end{figure*}
@@ -396,7 +413,7 @@ When data from the BNS inspirals are included, the overwhelming majority of the 
 \begin{center}
 \includegraphics[width=3.2in]{LALMCMCmpa1FitTaylorF2ZeroNoiseperror.pdf}\\
 \includegraphics[width=3.2in]{LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf}
-\caption{Same BNS population as Fig.~\ref{fig:mpa1fit}. Contours represent 95\% confidence regions for the prior without BNS data as well as for also including the loudest 1, 5, and 20 inspiral events.}
+\caption{Same BNS population as Fig.~\ref{fig:mpa1fit}. Contours represent the 95\% credible regions for the loudest 1, 5, and 20 inspiral events. Including quieter events from the population does not improve the results. Also shown is the lower limit on the 95\% credible region from just the maximum mass ($M_{\rm \max} \geq 1.93M_\odot$) and causality priors.}
 \label{fig:mpa1fitofn}
 \end{center}
 \end{figure}
@@ -412,15 +429,16 @@ In Fig.~\ref{fig:varymmax} we demonstrate that the confirmation of a NS with a l
 \begin{center}
 \includegraphics[width=3.2in]{priormmaxperror.pdf}\\
 \includegraphics[width=3.2in]{priormmaxRadiuslambda.pdf}
-\caption{Dependence of EOS confidence region on the highest observed NS mass. Results use the same 20 BNS systems as in Fig.~\ref{fig:mpa1fit}. Contours represent the 95\% confidence regions. The priors on the minimum allowed maximum mass are $M_{\rm max} \geq 1.93M_\odot$ (red) and $M_{\rm max} \geq 2.4M_\odot$ (blue). Also shown are the lower limits from just using the maximum mass and causality priors with $M_{\rm max} \geq 1.93M_\odot$ (red dashed) and $M_{\rm max} \geq 2.4M_\odot$ (blue dashed).}
+\caption{Dependence of credible regions on the highest known NS mass. 95\% credible regions are shown for the same 20 BNS systems as in Fig.~\ref{fig:mpa1fit}. The maximum mass prior is set to $M_{\rm max} \geq 1.93M_\odot$ for the red shaded region and $M_{\rm max} \geq 2.4M_\odot$ for the blue shaded region. Also shown are the lower limits on the 95\% credible regions from just the maximum mass and causality priors, with $M_{\rm max} \geq 1.93M_\odot$ (red dashed) and $M_{\rm max} \geq 2.4M_\odot$ (blue dashed).}
 \label{fig:varymmax}
 \end{center}
 \end{figure}
 
 
 \subsection{Distribution of BNS masses}
+\label{sec:varymass}
 
-The density profile in a NS depends on its mass, with more massive stars consisting of denser matter. We thus expect low mass stars to better estimate the lower density EOS, and higher mass stars to better estimate the higher density EOS. We examine how the error in recovering the EOS depends on the range of masses in the BNS population. As before, we use the piecewise polytrope fit to the MPA1 EOS as the true EOS and we examine the results for the loudest 5 BNS systems. The first population is the same as above, using masses uniformly sampled in the range $1.2M_\odot$--$1.6M_\odot$. We also examine three additional sets of masses where the NSs in the population are either all $1.0M_\odot$, all $1.4M_\odot$, or all $1.8M_\odot$. In order to make a direct comparison between these four populations, we hold all of the parameters the same except for the masses, and adjust the tidal parameter of each system as determined by the fit to the MPA1 EOS. Because we are only examining the loudest 5 systems, adjusting their masses in this range will not push these events above or below the detection threshold. 
+The density profile in a NS depends on its mass, with more massive stars consisting of denser matter. We thus expect low mass stars to better estimate the lower density EOS, and higher mass stars to better estimate the higher density EOS. We examine how the error in recovering the EOS depends on the range of masses in the BNS population. As before, we use the piecewise polytrope fit to the MPA1 EOS as the true EOS and we examine the results for the loudest 5 BNS systems. The first population is the same as above, using masses uniformly sampled in the range $1.2M_\odot$--$1.6M_\odot$. We also examine three additional sets of masses where the NSs in the population are either all $1.0M_\odot$, all $1.4M_\odot$, or all $1.8M_\odot$. In order to make a direct comparison between these four populations, we hold all of the parameters fixed except for the masses, then adjust the tidal parameter of each system as determined by the fit to the MPA1 EOS. Because we are only examining the loudest 5 systems, adjusting their masses in this range will not push these events above or below the detection threshold. 
 
 In Fig.~\ref{fig:popmass}, we find that when all NSs have masses of either $1.0M_\odot$, $1.4M_\odot$, or $1.8M_\odot$, the uncertainty in pressure is smallest around $10^{14.6}$~g/cm$^3$, $10^{14.7}$~g/cm$^3$, or $10^{14.8}$~g/cm$^3$ respectively. We find similar results for the radius and tidal deformability; the location of the minimum uncertainty scales with the observed masses. Interestingly, the results for masses fixed at 1.4M_\odot$ and for a uniform distribution from $1.2M_\odot$--$1.6M_\odot$ are almost identical, indicating that useful information can be found even if the range of observed masses is very small.
 
@@ -460,7 +478,7 @@ We have examined the measurability of the EOS for the 7 EOSs in Table~\ref{tab:e
 \begin{figure*}[!htb]
 \begin{center}
 \includegraphics[width=6.4in]{perroralleos.pdf}
-\caption{Dependence of the EOS credible region on the true EOS for the 20 loudest BNS systems. Contours represent the 68\% and 95\% credible regions. The BNS population is the same as in Fig.~\ref{fig:mpa1fit} except for the choice of tabulated EOS. From left to right then top to bottom, the ``true'' EOSs are SLy, ENG, MPA1, MS1, MS1b, H4, and ALF2. Unlike the results above the ``true'' EOSs used here are the tabulated EOSs, so these results also include the systematic bias from the inexact EOS parameterization as discussed in Section~\ref{sec:systematicEOS}. The corresponding best-fit piecewise polytropes are shown as dashed curves. For each panel, the other EOSs are also shown relative to the ``true'' EOS.}
+\caption{Dependence of the EOS credible region on the true EOS for the 20 loudest BNS systems. Contours represent the 68\% and 95\% credible regions. The BNS population is the same as in Fig.~\ref{fig:mpa1fit} except for the choice of tabulated EOS. Results were calculated using the Fisher matrix approximation to the quasilikelihood, and the SNR in the Fisher matrix calculation was scaled to match the network SNR as in Fig.~\ref{fig:fisher}. From left to right then top to bottom, the ``true'' EOSs are SLy, ENG, MPA1, MS1, MS1b, H4, and ALF2. Unlike the results above, the ``true'' EOSs used here are the tabulated EOSs, so these results also include the systematic bias from the inexact EOS parameterization as discussed in Section~\ref{sec:systematicEOS}. The corresponding best-fit piecewise polytropes are shown as dashed curves. For each panel, the other EOSs are also shown relative to the ``true'' tabulated EOS. The quantity $p/p_{\rm true}$ is not defined above the highest density in the EOS table, and for SLy, MPA1, and H4, the EOS table ends before the $10^{15.5}$~g/cm$^3$ right limit of each panel.}
 \label{fig:perroralleos}
 \end{center}
 \end{figure*}
@@ -472,7 +490,7 @@ The corresponding statistical uncertainty in $R$ and $\lambda$ for these 7 EOSs 
 \begin{figure*}[!htb]
 \begin{center}
 \includegraphics[width=6.4in]{constraintsalleos.pdf}
-\caption{Dependence of radius and tidal deformability credible regions for the same BNS systems and EOSs used in Fig.~\ref{fig:perroralleos}. Each band represents the 95\% credible region. In the left panels the EOSs are SLy, MPA1, H4, MS1 from bottom to top, and in the right panels they are ENG, ALF2 and MS1b from bottom to top. The lower bound from the mass and causality prior is also shown.}
+\caption{Dependence of radius and tidal deformability credible regions for the same loudest 20 BNS systems and EOSs used in Fig.~\ref{fig:perroralleos}. Each band represents the 95\% credible region. In the left panels the EOSs are SLy, MPA1, H4, MS1 from bottom to top, and in the right panels they are ENG, ALF2 and MS1b from bottom to top. The lower bound from the mass and causality prior is also shown. \red{[[Should include fit as in the p/ptrue plot for consistency.]]}}
 \label{fig:structurealleos}
 \end{center}
 \end{figure*}
@@ -532,34 +550,29 @@ The original intent of the 4-parameter piecewise polytrope was to provide a reas
 
 \subsection{Other potential sources of error}
 
-In addition to the above sources of systematic error which can be reduced with better modeling, there have been other suggestions that could alter the measurability of tidal parameters. Recently it was suggested, using the unipolar inductor model of Goldreich and Lynden-Bell~\cite{GoldreichLyndenBell1969}, that interactions between a NS with a large magnetic dipole and its NS companion could create a torque on the binary that could potentially lead to a phase shift in the waveform of a few cycles~\cite{Piro2012}. If true, this would likely contaminate the measurement of tidal interactions. However, as pointed out by Lai~\cite{Lai2012}, the current in the circuit between the binary pair will generate a toroidal magnetic field that breaks the circuit leading to a maximum current. Lai then found that this upper limit is orders of magnitude too small to effect the waveform of the binary.
+In addition to the systematic errors from the waveform model and EOS fit which can be reduced with better modeling, other effects that could interfere with the measurement of $\tilde\Lambda$ and the EOS have been suggested. Using the unipolar inductor model of Goldreich and Lynden-Bell~\cite{GoldreichLyndenBell1969}, it was suggested that interactions between a NS with a large magnetic dipole and its NS companion could create a torque on the binary that could potentially lead to a phase shift in the waveform of a few cycles~\cite{Piro2012}. If true, this would likely contaminate the measurement of tidal interactions. However, as pointed out by Lai~\cite{Lai2012}, the current in the circuit between the binary pair will generate a toroidal magnetic field that breaks the circuit leading to a maximum current. Lai then found that this upper limit is orders of magnitude too small to effect the waveform of the binary.
 
-[[Tidal excitation of g-modes~\cite{Lai1994}.]]
+The tidal interaction discussed so far in this paper assumes the tidal field changes adiabatically. However, if the frequency of the tidal field variation (a multiple of the orbital frequency) approaches the resonant frequency of the various NS oscillation modes, the mode can be driven to large amplitudes. If the mode couples strongly to the tidal potential, this can lead to a phase shift as the binary passes through that resonance during the inspiral. This effect was examined for the g-modes, f-modes, and r-modes of nonspinning and spinning NSs~\cite{Lai1994, HoLai1999}. In general, the g-modes and r-modes will lead to a phase shift less than 0.1~radians, with maximum values for the largest spins and radii. The f-mode that has a small impact on the last few cycles, as discussed above, can lead to an appreciable effect at lower GW frequencies only if the NS is spinning at several hundred Hz. 
 
-[[Mode coupling. Tidally deformed NSs are unstable to the coupling of high order p-modes and g-modes~\cite{WeinbergArrasBurkart2013}. Accounting for three- and four-mode couplings, this instability cancels~\cite{VenumadhavZimmermanHirata2014}.]]
-
-[[Cosmological expansion redshifts mass measurement, but effects tidal parameter in different way. Z can sort of be measured, but true chirp mass will be off by order 1\% (noted by Chris Messenger).]]
+%[[Mode coupling. Tidally deformed NSs are unstable to the coupling of high order p-modes and g-modes~\cite{WeinbergArrasBurkart2013}. Accounting for three- and four-mode couplings, this instability cancels~\cite{VenumadhavZimmermanHirata2014}.]]
 
 Finally, detector calibration errors will also impact the recovery of parameters. The uncertainty in the amplitude and phase of the Fourier transformed detector output $\tilde d(f)$ due to calibration errors are frequency dependent, and, for initial LIGO, were $\sim 10\%$ for the amplitude and $\sim 0.05$~radians for the phase of $\tilde d(f)$ over the bandwidth of the detector~\cite{VitaleDelPozzoLi2012}. The intrinsic parameters we are interested in here (masses and tidal parameters) are mostly determined by the phase evolution, and under the assumption that calibration errors will be similar for aLIGO, Vitale {\it et al.} found, using a Bayesian analysis, that the uncertainties in the chirp mass and symmetric mass ratio due to calibration errors would be $\sim 20\%$ of a standard deviation for the statistical errors from detector noise~\cite{VitaleDelPozzoLi2012}. For the tidal parameter $\tilde\Lambda$ which contributes a few radians to the GW phase, this $\sim 0.05$~radian calibration error is not likely to dominate over the statistical error, but it should be included in future studies.
 
 \section{Discussion}
 \label{sec:discussion}
 
-We have shown that, with a realistic population of BNS inspiral events, the advanced LIGO--Virgo GW network now undergoing construction can provide valuable information about the EOS and NS properties such as the radius and tidal deformability. Typical statistical errors in the pressure will be on the order of 10\% to a factor of 2 from 1--4 times nuclear density. This corresponds to a full width 95\% confidence of $\sim 1$--2~km for the radius and $\sim 1$--$2\times 10^{36}$~g~cm$^2$~s$^2$ for the tidal deformability over the mass range 1--$2M_\odot$. These results are in agreement with those of Ref.~\cite{DelPozzoLiAgathos2013} who found that with tens of BNS observations, $\lambda$ could be measured at a reference mass of $1.4M_\odot$ to about 10\%. However, our results show that the prior information about the EOS allows us to measure NS properties at other masses as well, and this is true even with a more realistic range of NS masses.
+We have shown that, with a realistic population of BNS inspiral events, the advanced LIGO--Virgo GW network now undergoing construction can provide valuable information about the EOS and NS properties such as the radius and tidal deformability. Typical statistical errors in the pressure will be on the order of 10\% to a factor of 2 from 1--4 times nuclear density. This corresponds to a 95\% credible region of width $\sim 1$--2~km for the radius and $\sim 1$--$2\times 10^{36}$~g~cm$^2$~s$^2$ for the tidal deformability over the mass range $1M_\odot$--$2M_\odot$. These results are in agreement with those of Ref.~\cite{DelPozzoLiAgathos2013} who found that with tens of BNS observations, $\lambda$ could be measured at a reference mass of $1.4M_\odot$ to about 10\%. However, our results show that incorporating additional known EOS information allows us to measure NS properties at other masses as well, and this is true even with a more narrow, realistic range of NS masses.
 
-However, we found in Section~\ref{sec:systematic} that currently unknown high order PN point-particle terms will create a large systematic bias in recovering the EOS that will be larger than the statistical uncertainties. These terms will need to be calculated or fit with numerical simulations to accurately measure the EOS. The choice of EOS parameters can also effect the recovery of the EOS, and EOSs with complex behavior will need to be modeled with more sophisticated EOS parameterizations. Other currently unmodeled behavior such as magnetic interactions or tidally induced resonances with low frequency g-modes are unlikely to have an important effect on the waveform phase.
+However, in Section~\ref{sec:systematic} we found that currently unknown high order PN point-particle terms will create a large systematic bias in the recovered EOS that will be larger than the statistical uncertainties. These terms will need to be calculated or fit with numerical simulations to accurately measure the EOS, and significant work remains before the resulting waveform templates can be trusted to be sufficiently accurate. The choice of EOS parameterization can also effect the recovered EOS, and EOSs with complex behavior such as the ALF2 EOS will need to be modeled with more sophisticated EOS parameterizations. 
+%Other currently unmodeled behavior such as magnetic interactions or tidally induced resonances with low frequency g-modes are unlikely to have an important effect on the waveform phase.
 
-[[Significant work remains on the part of numerical and analytical modeling of BNS waveforms to produce accurate templates and in efficiently implementing the resulting waveforms templates for Bayesian parameter estimation, as well as incorporating the known effects (very end of the inspiral until amplitude reaches zero, precessing spin, eccentricity, cosmological redshift, analysis of calibration errors). However, these are not show stoppers.]]
+%[[Significant work remains on the part of numerical and analytical modeling of BNS waveforms to produce accurate templates and in efficiently implementing the resulting waveforms templates for Bayesian parameter estimation, as well as incorporating the known effects (very end of the inspiral until amplitude reaches zero, precessing spin, eccentricity, cosmological redshift, analysis of calibration errors). However, these are not show stoppers.]]
 
-Although it is difficult to make a direct comparison with electromagnetic observations of NS masses and radii, our results indicate that advanced GW detectors can measure the NS radius with similar statistical errors. However, although both EM and GW observations have systematic errors, the gravitational waveforms from inspiralling BNS systems are an intrinsically cleaner source of data than the EM emission from NSs. Ultimately, EM and GW measurements will have to agree, and comparing the results will provide an important consistency check on our understanding of general relativity, electromagnetic radiation from NSs, and the EOS.
+Our results indicate that advanced GW detectors can measure the NS radius with similar statistical errors to those from electromagnetic observations of NSs whose errors are typically in the range of a few km. However, although both electromagnetic and GW observations have systematic errors, the gravitational waveforms from inspiralling BNS systems are an intrinsically cleaner source of data than the electromagnetic emission of NSs. Ultimately, electromagnetic and GW measurements will have to agree, and comparing the results will provide an important consistency check on our understanding of general relativity, electromagnetic radiation from NSs, and the EOS.
  
-%[[In addition, the Steiner {\it et al.}~\cite{SteinerLattimerBrown2010} parameterization is very restrictive around nuclear density. Many of the theoretical EOS models that will be used in this paper cannot be easily fit to this EOS [[I think]]. By providing a very specific form for the EOS around nuclear density the Steiner {\it et al.} parameterization allows for a smaller range of pressure. However, they have used variable dividing densities at higher densities which provides a wider range of behavior.]]
-
 \acknowledgements
 
-[[Thank Andrew Steiner for discussion at INT.]]
-
-BL sincerely thanks Walter Del Pozzo and Tyson Littenberg for advice and many helpful discussions as well as discussions with Chris Van Den Broeck, Tjonnie Li, and Will Farr. \red{[[Chris Messenger for discussions of redshift. The Seattle program for discussions of systematic error in general. Andrew Steiner for discussions related to the EOS parameterization.]]} The authors would also like to thank Evan Ochsner and Jolien Creighton for advice and help in simulating BNS populations. This work was supported by NSF Grants PHY-1305682, and PHY-xxxxxxx. Simulations were run on the Nemo cluster at the University of Wisconsin--Milwaukee and the Orbital cluster at Princeton University.
+BL sincerely thanks Walter Del Pozzo and Tyson Littenberg for advice, many helpful discussions, and correcting misunderstandings in the implementation of Bayesian techniques, as well as Will Farr, Tjonnie Li, Chris Van Den Broeck, and Andrew Steiner. BL also had several informative discussions at the University of Washington's Institute for Nuclear Theory Program 14-2a. The authors would also like to thank Evan Ochsner and Jolien Creighton for advice and for generating the parameters of the BNS population used here. This work was supported by NSF Grants PHY-1305682, and PHY-\red{xxxxxxx [[Les, fill this in]]}. Simulations were run on the Nemo cluster at the University of Wisconsin--Milwaukee and the Orbital cluster at Princeton University.
 
 \bibliography{paper}
 \end{document}  

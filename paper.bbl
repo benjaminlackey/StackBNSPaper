@@ -290,6 +290,21 @@
 \emph{\bibinfo{title}{{LSC} algorithm library}},
   \urlprefix\url{http://www.lsc-group.phys.uwm.edu/lal}.
 
+\bibitem[{\citenamefont{{van der Sluys} et~al.}(2008)\citenamefont{{van der
+  Sluys}, {Raymond}, {Mandel}, {R{\"o}ver}, {Christensen}, {Kalogera}, {Meyer},
+  and {Vecchio}}}]{VanDerSluysRaymondMandel2008}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{van der Sluys}}},
+  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{{Raymond}}},
+  \bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{{Mandel}}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{{R{\"o}ver}}},
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Christensen}}},
+  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{{Kalogera}}},
+  \bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Meyer}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Vecchio}}},
+  \bibinfo{journal}{Classical and Quantum Gravity}
+  \textbf{\bibinfo{volume}{25}}, \bibinfo{eid}{184011} (\bibinfo{year}{2008}),
+  \eprint{0805.1689}.
+
 \bibitem[{\citenamefont{{Gelman} and {Rubin}}(1992)}]{GelmanRubin1992}
 \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Gelman}}} \bibnamefont{and}
   \bibinfo{author}{\bibfnamefont{D.~B.} \bibnamefont{{Rubin}}},
@@ -494,22 +509,11 @@
   \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{270}},
   \bibinfo{pages}{611} (\bibinfo{year}{1994}), \eprint{astro-ph/9404062}.
 
-\bibitem[{\citenamefont{{Weinberg} et~al.}(2013)\citenamefont{{Weinberg},
-  {Arras}, and {Burkart}}}]{WeinbergArrasBurkart2013}
-\bibinfo{author}{\bibfnamefont{N.~N.} \bibnamefont{{Weinberg}}},
-  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{{Arras}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Burkart}}},
-  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{769}}, \bibinfo{eid}{121}
-  (\bibinfo{year}{2013}), \eprint{1302.2292}.
-
-\bibitem[{\citenamefont{{Venumadhav} et~al.}(2014)\citenamefont{{Venumadhav},
-  {Zimmerman}, and {Hirata}}}]{VenumadhavZimmermanHirata2014}
-\bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{{Venumadhav}}},
-  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Zimmerman}}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~M.}
-  \bibnamefont{{Hirata}}}, \bibinfo{journal}{\apj}
-  \textbf{\bibinfo{volume}{781}}, \bibinfo{eid}{23} (\bibinfo{year}{2014}),
-  \eprint{1307.2890}.
+\bibitem[{\citenamefont{{Ho} and {Lai}}(1999)}]{HoLai1999}
+\bibinfo{author}{\bibfnamefont{W.~C.~G.} \bibnamefont{{Ho}}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{{Lai}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{308}},
+  \bibinfo{pages}{153} (\bibinfo{year}{1999}), \eprint{astro-ph/9812116}.
 
 \bibitem[{\citenamefont{{Vitale} et~al.}(2012)\citenamefont{{Vitale}, {Del
   Pozzo}, {Li}, {Van Den Broeck}, {Mandel}, {Aylott}, and
