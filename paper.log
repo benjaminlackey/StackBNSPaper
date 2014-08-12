@@ -1,23 +1,19 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  12 AUG 2014 12:27
+This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2008.8.22)  12 AUG 2014 15:11
 entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
+\write18 enabled.
  %&-line parsing enabled.
 **paper.tex
 (./paper.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
-ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
-rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
-kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
- polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
-lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
-welsh, loaded.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/revtex4/revtex4.cls
+LaTeX2e <2005/12/01>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, german-x-2008-06-18, ngerman-x-2008-06-18, ancientgreek, ibycus, ar
+abic, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutc
+h, esperanto, estonian, farsi, finnish, french, galician, german, ngerman, mono
+greek, greek, hungarian, icelandic, indonesian, interlingua, irish, italian, la
+tin, mongolian, mongolian2a, bokmal, nynorsk, polish, portuguese, romanian, rus
+sian, sanskrit, serbian, slovak, slovenian, spanish, swedish, turkish, ukenglis
+h, ukrainian, uppersorbian, welsh, loaded.
+(/usr/local/texlive/2008/texmf-dist/tex/latex/revtex/revtex4.cls
 Document Class: revtex4 2001/08/02 v4.0 (http://publish.aps.org/revtex4/ for do
 cumentation)
  Copyright (c) 2001 The American Physical Society.
@@ -43,7 +39,7 @@ ltxgrid: portions licensed from W. E. Baxter (web@superscript.com)
 \pagegrid@col=\count82
 Class revtex4 Info: Incorporating package {textcase}  [1998/11/12 v0.06 Text on
 ly upper/lower case changing (DPC)]. on input line 3682.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/ltxmisc/url.sty
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
@@ -60,112 +56,104 @@ Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 \c@figure=\count90
 \c@table=\count91
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/natbib/natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
+(/usr/local/texlive/2008/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2007/10/30 8.1 (PWD)
 \bibhang=\skip43
 \bibsep=\skip44
-LaTeX Info: Redefining \cite on input line 694.
+LaTeX Info: Redefining \cite on input line 602.
 \c@NAT@ctr=\count92
 )
 \widetext@top=\box32
 \widetext@bot=\box33
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/revtex4/revsymb.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/revtex/revsymb.sty
 Package: revsymb 2001/08/02 v4.0 (http://publish.aps.org/revtex4/ for documenta
 tion)
 LaTeX Info: Redefining \REV@mathfrak on input line 118.
 ))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2009/06/22 v3.00
+(/usr/local/texlive/2008/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+(/usr/local/texlive/2008/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
 \@emptytoks=\toks16
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
-LaTeX Info: Redefining \frak on input line 99.
-LaTeX Info: Redefining \Bbb on input line 101.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+LaTeX Info: Redefining \frak on input line 135.
+LaTeX Info: Redefining \Bbb on input line 137.
 ))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/revtex4/aps.rtx
+(/usr/local/texlive/2008/texmf-dist/tex/latex/revtex/aps.rtx
 File: aps.rtx 2001/08/02 v4.0 (http://publish.aps.org/revtex4/ for documentatio
 n)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/revtex4/10pt.rtx
+(/usr/local/texlive/2008/texmf-dist/tex/latex/revtex/10pt.rtx
 File: 10pt.rtx 2001/08/02 v4.0 (http://publish.aps.org/revtex4/ for documentati
 on)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/color.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
+(/usr/local/texlive/2008/texmf/tex/latex/config/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
+(/usr/local/texlive/2008/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2008/07/16 v0.04k Graphics/color for pdfTeX
 \Gread@gobject=\count93
 ))
-(/usr/local/texlive/2012/texmf-dist/tex/generic/ulem/ulem.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/ltxmisc/ulem.sty
 \UL@box=\box34
 \UL@hyphenbox=\box35
 \UL@skip=\skip45
 \UL@hook=\toks17
-\UL@height=\dimen102
 \UL@pe=\count94
-\UL@pixel=\dimen103
+\UL@pixel=\dimen102
 \ULC@box=\box36
-Package: ulem 2012/05/18
-\ULdepth=\dimen104
+Package: ulem 2000/05/26
+\ULdepth=\dimen103
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks18
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/local/texlive/2008/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 90.
 )
-\Gin@req@height=\dimen105
-\Gin@req@width=\dimen106
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks19
-\ex@=\dimen107
+\ex@=\dimen106
 ))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen108
+\pmbraise@=\dimen107
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count95
@@ -180,7 +168,7 @@ LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box37
 \strutbox@=\box38
-\big@size=\dimen109
+\big@size=\dimen108
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \macc@depth=\count100
@@ -193,12 +181,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \column@=\count105
 \maxfields@=\count106
 \andhelp@=\toks21
-\eqnshift@=\dimen110
-\alignsep@=\dimen111
-\tagshift@=\dimen112
-\tagwidth@=\dimen113
-\totwidth@=\dimen114
-\lineht@=\dimen115
+\eqnshift@=\dimen109
+\alignsep@=\dimen110
+\tagshift@=\dimen111
+\tagwidth@=\dimen112
+\totwidth@=\dimen113
+\lineht@=\dimen114
 \@envbody=\toks22
 \multlinegap=\skip47
 \multlinetaggap=\skip48
@@ -206,58 +194,28 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf.sty
-Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+(/usr/local/texlive/2008/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2008/05/06 v1.7 Conversion with epstopdf on the fly (HO)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+(/usr/local/texlive/2008/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
 )
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+(/usr/local/texlive/2008/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
 )
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+(/usr/local/texlive/2008/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2007/10/18 v3.0 Keyval support for LaTeX options (HO)
 )
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
+(/usr/local/texlive/2008/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2007/12/12 v0.3 LuaTeX support for pdfTeX utility functions
+ (HO)
+Package pdftexcmds Info: LuaTeX not detected on input line 139.
 )
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-)))
+(grfext)             \AppendGraphicsExtensions on input line 323.
+)
 
 LaTeX Warning: Unused global option(s):
     [epsf].
@@ -280,382 +238,263 @@ LaTeX Font Info:    ... okay on input line 20.
 Class revtex4 Info: Patching LaTeX tabular. on input line 20.
 Class revtex4 Info: cite was not loaded (OK!) on input line 20.
 Class revtex4 Info: multicol was not loaded (OK!) on input line 20.
-
-(/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2008/texmf-dist/tex/context/base/supp-pdf.tex
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count107
-\scratchdimen=\dimen116
+\scratchdimen=\dimen115
 \scratchbox=\box39
 \nofMPsegments=\count108
 \nofMParguments=\count109
 \everyMPshowfont=\toks24
 \MPscratchCnt=\count110
-\MPscratchDim=\dimen117
+\MPscratchDim=\dimen116
 \MPnumerator=\count111
-\makeMPintoPDFobject=\count112
 \everyMPtoPDFconversion=\toks25
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 32.
- (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+ (/usr/local/texlive/2008/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
- [3] [4]
-<mvs3d.png, id=38, 1420.30624pt x 978.65625pt>
+(/usr/local/texlive/2008/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+) [1{/usr/local/texlive/2008/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+ [3]
+
+Package natbib Warning: Citation `Nikhef_paper_2' on page 4 undefined on input 
+line 179.
+
+[4] [5] <mvs3d.png, id=41, 1420.30624pt x 978.65625pt>
 File: mvs3d.png Graphic file (type png)
  <use mvs3d.png>
-Package pdftex.def Info: mvs3d.png used on input line 204.
-(pdftex.def)             Requested size: 231.26378pt x 159.35081pt.
-
-<Radiuslambda.pdf, id=39, 517.02847pt x 731.89842pt>
+<Radiuslambda.pdf, id=42, 517.02847pt x 731.89842pt>
 File: Radiuslambda.pdf Graphic file (type pdf)
  <use Radiuslambda.pdf>
-Package pdftex.def Info: Radiuslambda.pdf used on input line 241.
-(pdftex.def)             Requested size: 231.26378pt x 327.37453pt.
-
-Underfull \hbox (badness 1028) in paragraph at lines 255--256
+Underfull \hbox (badness 1028) in paragraph at lines 350--351
 \OT1/cmr/m/n/10 pa-ram-e-ters $[] = ([](\OML/cmm/m/it/10 p[]\OT1/cmr/m/n/10 )\O
 ML/cmm/m/it/10 ; \OT1/cmr/m/n/10 ^^@[]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 ^^@[]\
 OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 ^^@[])$ that are com-
  []
 
-[5 <./mvs3d.png (PNG copy)>]
-Underfull \hbox (badness 1735) in paragraph at lines 267--269
+[6 <./mvs3d.png (PNG copy)> <./Radiuslambda.pdf>]
+Underfull \hbox (badness 1735) in paragraph at lines 362--364
 \OT1/cmr/m/n/10 so we will de-com-pose it into blocks that can be
  []
 
 
-Underfull \hbox (badness 2401) in paragraph at lines 267--269
+Underfull \hbox (badness 2401) in paragraph at lines 362--364
 \OT1/cmr/m/n/10 in-di-vid-u-ally com-puted. First, we de-com-pose the
  []
 
 
-Underfull \hbox (badness 4621) in paragraph at lines 284--286
+Underfull \hbox (badness 4621) in paragraph at lines 379--381
 \OT1/cmr/m/n/10 and we have used the fact that the like-li-hood
  []
 
 
-Overfull \hbox (35.34407pt too wide) in paragraph at lines 295--295
+Overfull \hbox (35.34407pt too wide) in paragraph at lines 390--390
 [] 
  []
 
-[6]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 315.
-
-[7 <./Radiuslambda.pdf>] [8]
-<LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20p.pdf, id=165, 512.05678pt x 732.90218pt>
+[7] [8] [9]
+<LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20p.pdf, id=168, 512.05678pt x 732.90218pt>
 File: LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20p.pdf Graphic file (type pdf)
 
 <use LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20p.pdf>
-Package pdftex.def Info: LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20p.pdf used on inpu
-t line 408.
-(pdftex.def)             Requested size: 231.26378pt x 331.01071pt.
-
-<LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20Radiuslambda.pdf, id=166, 517.02847pt x 73
+<LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20Radiuslambda.pdf, id=170, 517.02847pt x 73
 1.89842pt>
 File: LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20Radiuslambda.pdf Graphic file (type p
 df)
- <use LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20Radiuslambda.pdf>
-Package pdftex.def Info: LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20Radiuslambda.pdf u
-sed on input line 409.
-(pdftex.def)             Requested size: 231.26378pt x 327.37453pt.
- [9]
-<LALMCMCmpa1FitTaylorF2ZeroNoiseperror.pdf, id=170, 512.05678pt x 396.8467pt>
+ <use LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20Radiuslambda.pdf> [10]
+<LALMCMCmpa1FitTaylorF2ZeroNoiseperror.pdf, id=175, 512.05678pt x 396.8467pt>
 File: LALMCMCmpa1FitTaylorF2ZeroNoiseperror.pdf Graphic file (type pdf)
 
 <use LALMCMCmpa1FitTaylorF2ZeroNoiseperror.pdf>
-Package pdftex.def Info: LALMCMCmpa1FitTaylorF2ZeroNoiseperror.pdf used on inpu
-t line 425.
-(pdftex.def)             Requested size: 231.26378pt x 179.23334pt.
-
-<LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf, id=171, 517.02847pt x 731.898
+<LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf, id=177, 517.02847pt x 731.898
 42pt>
 File: LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf Graphic file (type pdf)
- <use LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf>
-Package pdftex.def Info: LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf used o
-n input line 426.
-(pdftex.def)             Requested size: 231.26378pt x 327.37453pt.
- [10 <./LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20p.pdf> <./LALMCMCmpa1FitTaylorF2Zer
-oNoiseBNS20Radiuslambda.pdf
-
-pdfTeX warning: /usr/texbin/pdflatex (file ./LALMCMCmpa1FitTaylorF2ZeroNoiseBNS
-20Radiuslambda.pdf): PDF inclusion: multiple pdfs with page group included in a
- single page
->]
+ <use LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf> [11 <./LALMCMCmpa1FitTay
+lorF2ZeroNoiseBNS20p.pdf> <./LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20Radiuslambda.p
+df>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 436.
+ on input line 533.
 
-<priormmaxperror.pdf, id=327, 512.05678pt x 396.8467pt>
+<priormmaxperror.pdf, id=333, 512.05678pt x 396.8467pt>
 File: priormmaxperror.pdf Graphic file (type pdf)
 
 <use priormmaxperror.pdf>
-Package pdftex.def Info: priormmaxperror.pdf used on input line 441.
-(pdftex.def)             Requested size: 231.26378pt x 179.23334pt.
-
-<priormmaxRadiuslambda.pdf, id=328, 517.02847pt x 731.89842pt>
+<priormmaxRadiuslambda.pdf, id=335, 517.02847pt x 731.89842pt>
 File: priormmaxRadiuslambda.pdf Graphic file (type pdf)
 
-<use priormmaxRadiuslambda.pdf>
-Package pdftex.def Info: priormmaxRadiuslambda.pdf used on input line 442.
-(pdftex.def)             Requested size: 231.26378pt x 327.37453pt.
-
-./paper.tex:454: Missing $ inserted.
-<inserted text> 
-                $
-l.454 ...ly, the results for masses fixed at 1.4M_
-                                                  \odot$ and for a uniform d...
-
-? 
-[11 <./LALMCMCmpa1FitTaylorF2ZeroNoiseperror.pdf> <./LALMCMCmpa1FitTaylorF2Zero
-NoiseRadiuslambda.pdf
-
-pdfTeX warning: /usr/texbin/pdflatex (file ./LALMCMCmpa1FitTaylorF2ZeroNoiseRad
-iuslambda.pdf): PDF inclusion: multiple pdfs with page group included in a sing
-le page
->]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 455.
-
-<LALMCMCmpa1FitTaylorF2VaryMassperror.pdf, id=478, 512.05678pt x 396.8467pt>
+<use priormmaxRadiuslambda.pdf> [12 <./LALMCMCmpa1FitTaylorF2ZeroNoiseperror.pd
+f> <./LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf> <./priormmaxperror.pdf> 
+<./priormmaxRadiuslambda.pdf>]
+<LALMCMCmpa1FitTaylorF2VaryMassperror.pdf, id=636, 512.05678pt x 396.8467pt>
 File: LALMCMCmpa1FitTaylorF2VaryMassperror.pdf Graphic file (type pdf)
 
 <use LALMCMCmpa1FitTaylorF2VaryMassperror.pdf>
-Package pdftex.def Info: LALMCMCmpa1FitTaylorF2VaryMassperror.pdf used on input
- line 460.
-(pdftex.def)             Requested size: 231.26378pt x 179.23334pt.
-
-<LALMCMCmpa1FitTaylorF2VaryMassRadiuslambda.pdf, id=479, 517.02847pt x 731.8984
+<LALMCMCmpa1FitTaylorF2VaryMassRadiuslambda.pdf, id=638, 517.02847pt x 731.8984
 2pt>
 File: LALMCMCmpa1FitTaylorF2VaryMassRadiuslambda.pdf Graphic file (type pdf)
- <use LALMCMCmpa1FitTaylorF2VaryMassRadiuslambda.pdf>
-Package pdftex.def Info: LALMCMCmpa1FitTaylorF2VaryMassRadiuslambda.pdf used on
- input line 461.
-(pdftex.def)             Requested size: 231.26378pt x 327.37453pt.
- [12 <./priormmaxperror.pdf> <./priormmaxRadiuslambda.pdf
-
-pdfTeX warning: /usr/texbin/pdflatex (file ./priormmaxRadiuslambda.pdf): PDF in
-clusion: multiple pdfs with page group included in a single page
-> <./LALMCMCmpa1FitTaylorF2VaryMassperror.pdf
-
-pdfTeX warning: /usr/texbin/pdflatex (file ./LALMCMCmpa1FitTaylorF2VaryMassperr
-or.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-
-> <./LALMCMCmpa1FitTaylorF2VaryMassRadiuslambda.pdf
-
-pdfTeX warning: /usr/texbin/pdflatex (file ./LALMCMCmpa1FitTaylorF2VaryMassRadi
-uslambda.pdf): PDF inclusion: multiple pdfs with page group included in a singl
-e page
->] <CompareLALFisherZeroNoiseperror.pdf, id=794, 512.05678pt x 396.8467pt>
+ <use LALMCMCmpa1FitTaylorF2VaryMassRadiuslambda.pdf> [13 <./LALMCMCmpa1FitTayl
+orF2VaryMassperror.pdf> <./LALMCMCmpa1FitTaylorF2VaryMassRadiuslambda.pdf>] <Co
+mpareLALFisherZeroNoiseperror.pdf, id=802, 512.05678pt x 396.8467pt>
 File: CompareLALFisherZeroNoiseperror.pdf Graphic file (type pdf)
 
 <use CompareLALFisherZeroNoiseperror.pdf>
-Package pdftex.def Info: CompareLALFisherZeroNoiseperror.pdf used on input line
- 477.
-(pdftex.def)             Requested size: 231.26378pt x 179.23334pt.
-
-<CompareLALFisherZeroNoiseRadiuslambda.pdf, id=795, 517.02847pt x 731.89842pt>
+<CompareLALFisherZeroNoiseRadiuslambda.pdf, id=804, 517.02847pt x 731.89842pt>
 File: CompareLALFisherZeroNoiseRadiuslambda.pdf Graphic file (type pdf)
 
 <use CompareLALFisherZeroNoiseRadiuslambda.pdf>
-Package pdftex.def Info: CompareLALFisherZeroNoiseRadiuslambda.pdf used on inpu
-t line 478.
-(pdftex.def)             Requested size: 231.26378pt x 327.37453pt.
-
-<perroralleos.pdf, id=796, 960.1308pt x 956.9392pt>
+<perroralleos.pdf, id=806, 960.1308pt x 956.9392pt>
 File: perroralleos.pdf Graphic file (type pdf)
  <use perroralleos.pdf>
-Package pdftex.def Info: perroralleos.pdf used on input line 491.
-(pdftex.def)             Requested size: 462.52756pt x 460.99019pt.
-
-[13 <./CompareLALFisherZeroNoiseperror.pdf> <./CompareLALFisherZeroNoiseRadiusl
-ambda.pdf
-
-pdfTeX warning: /usr/texbin/pdflatex (file ./CompareLALFisherZeroNoiseRadiuslam
-bda.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
-e
->] <constraintsalleos.pdf, id=953, 965.1025pt x 725.82103pt>
+<constraintsalleos.pdf, id=808, 965.1025pt x 725.82103pt>
 File: constraintsalleos.pdf Graphic file (type pdf)
 
 <use constraintsalleos.pdf>
-Package pdftex.def Info: constraintsalleos.pdf used on input line 503.
-(pdftex.def)             Requested size: 462.52756pt x 347.84744pt.
- [14 <./perroralleos.pdf>]
-<LALMCMCmpa1FitTaylorF2CompareNoiseperror.pdf, id=1053, 512.05678pt x 396.8467p
-t>
+<LALMCMCmpa1FitTaylorF2CompareNoiseperror.pdf, id=810, 512.05678pt x 396.8467pt
+>
 File: LALMCMCmpa1FitTaylorF2CompareNoiseperror.pdf Graphic file (type pdf)
  <use LALMCMCmpa1FitTaylorF2CompareNoiseperror.pdf>
-Package pdftex.def Info: LALMCMCmpa1FitTaylorF2CompareNoiseperror.pdf used on i
-nput line 516.
-(pdftex.def)             Requested size: 231.26378pt x 179.23334pt.
-
-<LALMCMCmpa1FitTaylorF2CompareNoiseRadiuslambda.pdf, id=1054, 517.02847pt x 731
-.89842pt>
+<LALMCMCmpa1FitTaylorF2CompareNoiseRadiuslambda.pdf, id=812, 517.02847pt x 731.
+89842pt>
 File: LALMCMCmpa1FitTaylorF2CompareNoiseRadiuslambda.pdf Graphic file (type pdf
 )
- <use LALMCMCmpa1FitTaylorF2CompareNoiseRadiuslambda.pdf>
-Package pdftex.def Info: LALMCMCmpa1FitTaylorF2CompareNoiseRadiuslambda.pdf use
-d on input line 517.
-(pdftex.def)             Requested size: 231.26378pt x 327.37453pt.
- [15 <./constraintsalleos.pdf>]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 531.
-
-
-<LALMCMCmpa1FitCompareF2T1T4ZeroNoiseperror.pdf, id=1141, 512.05678pt x 396.846
+ <use LALMCMCmpa1FitTaylorF2CompareNoiseRadiuslambda.pdf> [14 <./CompareLALFish
+erZeroNoiseperror.pdf> <./CompareLALFisherZeroNoiseRadiuslambda.pdf>]
+[15 <./perroralleos.pdf>]
+<LALMCMCmpa1FitCompareF2T1T4ZeroNoiseperror.pdf, id=1065, 512.05678pt x 396.846
 7pt>
 File: LALMCMCmpa1FitCompareF2T1T4ZeroNoiseperror.pdf Graphic file (type pdf)
  <use LALMCMCmpa1FitCompareF2T1T4ZeroNoiseperror.pdf>
-Package pdftex.def Info: LALMCMCmpa1FitCompareF2T1T4ZeroNoiseperror.pdf used on
- input line 536.
-(pdftex.def)             Requested size: 231.26378pt x 179.23334pt.
-
-<LALMCMCmpa1FitCompareF2T1T4ZeroNoiseRadiuslambda.pdf, id=1142, 517.02847pt x 7
+<LALMCMCmpa1FitCompareF2T1T4ZeroNoiseRadiuslambda.pdf, id=1067, 517.02847pt x 7
 31.89842pt>
 File: LALMCMCmpa1FitCompareF2T1T4ZeroNoiseRadiuslambda.pdf Graphic file (type p
 df)
- <use LALMCMCmpa1FitCompareF2T1T4ZeroNoiseRadiuslambda.pdf>
-Package pdftex.def Info: LALMCMCmpa1FitCompareF2T1T4ZeroNoiseRadiuslambda.pdf u
-sed on input line 537.
-(pdftex.def)             Requested size: 231.26378pt x 327.37453pt.
- [16 <./LALMCMCmpa1FitTaylorF2CompareNoiseperror.pdf> <./LALMCMCmpa1FitTaylorF2
-CompareNoiseRadiuslambda.pdf
-
-pdfTeX warning: /usr/texbin/pdflatex (file ./LALMCMCmpa1FitTaylorF2CompareNoise
-Radiuslambda.pdf): PDF inclusion: multiple pdfs with page group included in a s
-ingle page
->]
+ <use LALMCMCmpa1FitCompareF2T1T4ZeroNoiseRadiuslambda.pdf> [16 <./constraintsa
+lleos.pdf>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 546.
+ on input line 639.
 
-[17 <./LALMCMCmpa1FitCompareF2T1T4ZeroNoiseperror.pdf> <./LALMCMCmpa1FitCompare
-F2T1T4ZeroNoiseRadiuslambda.pdf
-
-pdfTeX warning: /usr/texbin/pdflatex (file ./LALMCMCmpa1FitCompareF2T1T4ZeroNoi
-seRadiuslambda.pdf): PDF inclusion: multiple pdfs with page group included in a
- single page
->] [18] (./paper.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 85--89
+[17 <./LALMCMCmpa1FitTaylorF2CompareNoiseperror.pdf> <./LALMCMCmpa1FitTaylorF2C
+ompareNoiseRadiuslambda.pdf> <./LALMCMCmpa1FitCompareF2T1T4ZeroNoiseperror.pdf>
+ <./LALMCMCmpa1FitCompareF2T1T4ZeroNoiseRadiuslambda.pdf>] [18] (./paper.bbl
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 85--90
  []\OT1/cmr/m/n/9 F. Ac-er-nese, et al. (Virgo Col-lab-o-ra-tion),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--89
+Underfull \hbox (badness 10000) in paragraph at lines 85--90
  |   [] \OT1/cmr/m/n/9 (2009),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--89
+Underfull \hbox (badness 10000) in paragraph at lines 85--90
  \OT1/cmr/m/n/9 URL $\OT1/cmtt/m/n/9 https : / / tds . ego-[]gw . it / itf / td
 s / file . php ?
  []
 
 
-Underfull \hbox (badness 1881) in paragraph at lines 94--106
+Underfull \hbox (badness 1881) in paragraph at lines 95--107
  []\OT1/cmr/m/n/9 LIGO Sci-en-tific Col-lab-o-ra-tion, Virgo Col-lab-o-ra-tion,
 
  []
 
 
-Underfull \hbox (badness 1509) in paragraph at lines 116--124
+Underfull \hbox (badness 1509) in paragraph at lines 117--125
  \OT1/cmr/m/n/9 rand-har, S. Raja, and A. Sen-gupta, LIGO Doc-u-
  []
 
-./paper.bbl:148: Undefined control sequence.
+! Undefined control sequence.
 <argument> \mnras 
                   
-l.148 ...font{{Janka}}}, \bibinfo{journal}{\mnras}
+l.149 ...font{{Janka}}}, \bibinfo{journal}{\mnras}
                                                   
 ? 
 
-Underfull \hbox (badness 1237) in paragraph at lines 155--163
+Underfull \hbox (badness 1237) in paragraph at lines 156--164
  []\OT1/cmr/m/n/9 J. Clark, A. Bauswein, L. Cado-nati, H.-T. Janka,
  []
 
 
-Underfull \hbox (badness 2142) in paragraph at lines 260--263
+Underfull \hbox (badness 2142) in paragraph at lines 271--274
  []\OT1/cmr/m/n/9 L. Lind-blom, Phys. Rev. D  \OT1/cmr/bx/n/9 82\OT1/cmr/m/n/9 
 , 103011 (2010),
  []
 
-./paper.bbl:279: Undefined control sequence.
+! Undefined control sequence.
 <argument> \apjl 
                  
-l.279 ...efont{{Brown}}}, \bibinfo{journal}{\apjl}
+l.290 ...efont{{Brown}}}, \bibinfo{journal}{\apjl}
                                                   
 ? 
 
-Underfull \hbox (badness 2229) in paragraph at lines 290--292
+Underfull \hbox (badness 2229) in paragraph at lines 301--303
  []|   []\OT1/cmr/m/n/9 , URL $\OT1/cmtt/m/n/9 http : / / www . lsc-[]group .
  []
 
-./paper.bbl:321: Undefined control sequence.
+! Undefined control sequence.
 <argument> \pasp 
                  
-l.321   \bibinfo{journal}{\pasp}
+l.332   \bibinfo{journal}{\pasp}
                                  \textbf{\bibinfo{volume}{125}}, \bibinfo{pa...
 
 ? 
 
-Overfull \hbox (19.53568pt too wide) in paragraph at lines 341--345
+Overfull \hbox (19.53568pt too wide) in paragraph at lines 352--356
  []\OT1/cmr/m/n/9 D. Shoe-maker, |   []
  []
 
 
-Underfull \hbox (badness 1694) in paragraph at lines 341--345
+Underfull \hbox (badness 1694) in paragraph at lines 352--356
  \OT1/cmr/m/n/9 (LSC, 2009), URL $\OT1/cmtt/m/n/9 https : / / dcc . ligo . org 
 / cgi-[]bin /
  []
 
 
-Underfull \hbox (badness 1331) in paragraph at lines 358--371
+Underfull \hbox (badness 1331) in paragraph at lines 369--382
  \OT1/cmr/m/n/9 T. Ac-ca-dia, F. Ac-er-nese, C. Adams, R. Ad-hikari,
  []
 
 
-Underfull \hbox (badness 2401) in paragraph at lines 382--389
+Underfull \hbox (badness 2401) in paragraph at lines 393--400
  []\OT1/cmr/m/n/9 K. Hebeler, J. M. Lat-timer, C. J. Pethick, and
  []
 
-[19]
-./paper.bbl:410: Undefined control sequence.
+! Undefined control sequence.
 <argument> \apjl 
                  
-l.410 ...ont{{Pletsch}}}, \bibinfo{journal}{\apjl}
+l.421 ...ont{{Pletsch}}}, \bibinfo{journal}{\apjl}
                                                   
 ? 
-./paper.bbl:476: Undefined control sequence.
+! Undefined control sequence.
 <argument> \apjl 
                  
-l.476 ...efont{{Harry}}}, \bibinfo{journal}{\apjl}
+l.487 ...efont{{Harry}}}, \bibinfo{journal}{\apjl}
                                                   
 ? 
-./paper.bbl:504: Undefined control sequence.
+! Undefined control sequence.
 <argument> \apjl 
                  
-l.504   \bibinfo{journal}{\apjl}
+l.515   \bibinfo{journal}{\apjl}
                                  \textbf{\bibinfo{volume}{757}}, \bibinfo{ei...
 
 ? 
-./paper.bbl:509: Undefined control sequence.
+! Undefined control sequence.
 <argument> \mnras 
                   
-l.509   \bibinfo{journal}{\mnras}
+l.520   \bibinfo{journal}{\mnras}
                                   \textbf{\bibinfo{volume}{270}},
 ? 
-./paper.bbl:515: Undefined control sequence.
+! Undefined control sequence.
 <argument> \mnras 
                   
-l.515   \bibinfo{journal}{\mnras}
+l.526   \bibinfo{journal}{\mnras}
                                   \textbf{\bibinfo{volume}{308}},
 ? 
 )
@@ -663,44 +502,45 @@ l.515   \bibinfo{journal}{\mnras}
 Class revtex4 Warning: Environment acknowledgements is obsolete;
 Use acknowledgments instead.
 
+
+Package natbib Warning: There were undefined citations.
+
 [20] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 4402 strings out of 493488
- 61674 string characters out of 3141326
- 161743 words of memory out of 3000000
- 7626 multiletter control sequences out of 15000+200000
- 12029 words of font info for 48 fonts, out of 3000000 for 9000
- 957 hyphenation exceptions out of 8191
- 42i,18n,27p,2073b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmbx9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi5.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9
-.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
-fb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb>
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></u
-sr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/
-local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
-al/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/
-texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
-exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/tex
-live/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texli
-ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
-/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2
-012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/20
-12/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2012
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2012/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2012/te
-xmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on paper.pdf (20 pages, 1240835 bytes).
+ 3820 strings out of 493886
+ 50476 string characters out of 1151099
+ 151361 words of memory out of 3000000
+ 7028 multiletter control sequences out of 10000+50000
+ 12355 words of font info for 49 fonts, out of 3000000 for 5000
+ 714 hyphenation exceptions out of 8191
+ 29i,18n,27p,2073b,355s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/
+cmbx10.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmbx12.pf
+b></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmbx9.pfb></usr/lo
+cal/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmex10.pfb></usr/local/texli
+ve/2008/texmf-dist/fonts/type1/bluesky/cm/cmmi10.pfb></usr/local/texlive/2008/t
+exmf-dist/fonts/type1/bluesky/cm/cmmi5.pfb></usr/local/texlive/2008/texmf-dist/
+fonts/type1/bluesky/cm/cmmi6.pfb></usr/local/texlive/2008/texmf-dist/fonts/type
+1/bluesky/cm/cmmi7.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/
+cm/cmmi8.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmmi9.p
+fb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmr10.pfb></usr/l
+ocal/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmr5.pfb></usr/local/texliv
+e/2008/texmf-dist/fonts/type1/bluesky/cm/cmr6.pfb></usr/local/texlive/2008/texm
+f-dist/fonts/type1/bluesky/cm/cmr7.pfb></usr/local/texlive/2008/texmf-dist/font
+s/type1/bluesky/cm/cmr8.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/blu
+esky/cm/cmr9.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cms
+y10.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmsy5.pfb></
+usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmsy6.pfb></usr/local/
+texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmsy7.pfb></usr/local/texlive/20
+08/texmf-dist/fonts/type1/bluesky/cm/cmsy9.pfb></usr/local/texlive/2008/texmf-d
+ist/fonts/type1/bluesky/cm/cmti10.pfb></usr/local/texlive/2008/texmf-dist/fonts
+/type1/bluesky/cm/cmti9.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/blu
+esky/cm/cmtt10.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/c
+mtt9.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/ams/msam10.pfb
+>
+Output written on paper.pdf (20 pages, 1256424 bytes).
 PDF statistics:
- 1536 PDF objects out of 1728 (max. 8388607)
- 415 compressed objects within 5 object streams
- 0 named destinations out of 1000 (max. 500000)
+ 1542 PDF objects out of 1728 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -81,18 +81,65 @@ We organize the paper as follows. In Section~\ref{sec:waveform} we describe the 
 
 \red{[[Make sure you cite Damour's papers (two for 4PN energy, and the TaylorXy convention). See his email.]]}
 
-\red{[[Les: Want to write this section?]]}
+\les{Mention: Only leading-order in amplitude.}{}
 
-%In this paper we use the post-Newtonian (PN) formalism to construct our waveform model [[as does everyone else]]. In the PN formalism the energy for circular orbits is found from the conservative parts of the Hamiltonian which is now known up to 4PN order [[is this true? Define what xPN order means]] The luminosity is found from a multipolar decomposition of the metric perturbation in the wave zone, which is then matched to the post-Newtonian multipolar decomposition in the near zone \red{[[None of this really matters.]]}. The phase evolution of the orbit is calculated from the assumption of energy balance $dE/dt = -\mathcal{L}$.
+The strain $h$ observed in a gravitational-wave detector from a wave emitted by a BNS system is related to the two polarizations of the wave and to the detector's antenna beam pattern response:
+\begin{equation}
+h=F_+ h_+ + F_\times h_\times.
+\end{equation}
+For a single interferometric detector, the antenna patterns take the form
+\begin{align}
+\begin{split}
+F_+(\theta,\phi,\psi)=&-\frac{1}{2}(1+\cos^2\theta)\cos(2\phi)\cos(2\psi)\\
+&-\cos(\theta)\sin(2\phi)\sin(2\psi),
+\end{split}\\
+\begin{split}
+F_\times(\theta,\phi,\psi)=&+\frac{1}{2}(1+\cos^2\theta)\cos(2\phi)\sin(2\psi)\\
+&-\cos(\theta)\sin(2\phi)\cos(2\psi),
+\end{split}
+\end{align}
+in a coordinate system where the two arms define the x-axis and the y-axis, and the z-axis is normal to the x-y plane.  Here, $(\theta, \phi)$ are the sky position in spherical coordinates, and $\psi$ is the polarization angle.  Assuming the binary components are point particles in a circular orbit, the two polarizations of the emitted gravitational wave seen by an observer at a distance $r$ away are
+\begin{eqnarray}
+\label{hoftp}
+h_+(t)&=&-\frac{4\mu}{r}\left(\frac{1+\cos^2\iota}{2}\right)x(t)\cos\left[2\Phi(t)\right],\\
+\label{hoftc}
+h_\times(t)&=&-\frac{4\mu}{r}\cos\iota\mbox{ }x(t)\sin\left[2\Phi(t)\right],
+\end{eqnarray}
+in the time-domain, where $\mu=m_1 m_2/M$ is the reduced mass, $M=m_1+m_2$ is the total mass, $\iota$ is the inclination angle, $\Phi(t)$ is the orbital phase, and $x=(\pi M f)^{2/3}$ where $f$ is the gravitational-wave frequency.  The stationary-phase approximation can be used to find the two polarizations in the frequency-domain:
+\begin{eqnarray}
+\label{hoffp}
+\tilde{h}_+(f)&=&\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}r}\left(\frac{1+\cos^2\iota}{2}\right)e^{i\Psi(f)},\\
+\label{hoffc}
+\tilde{h}_\times(f)&=&i\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}r}\cos\iota\mbox{ }e^{i\Psi(f)},
+\end{eqnarray}
+where the chirp mass ${\cal M}=\eta^{3/5}M$, the symmetric mass ratio $\eta=m_1 m_2/M^2$, $\Psi(f)=2\pi f t(v) - 2\Phi(v) - \pi/4$, and $\tilde{h}_+(f)$ and $\tilde{h}_\times(f)$ are the Fourier transforms of $h_+(t)$ and $h_\times(t)$ respectively.
 
-Tidal interactions contribute to the phase of the orbit by adding a monopole-quadrupole interaction term to the energy, and the additional quadrupole moment adds to the total quadrupole moment of the system, increasing the luminosity. As was done in most previous works~\cite{WadeCreightonOchsner2014, DelPozzoLiAgathos2013, Favata2014, YagiYunes2014} we will use the point-particle terms to 3.5PN order as well as the leading and next-to-leading tidal contributions which enter the energy and luminosity at the same order as 5 and 6PN point-particle terms respectively.
+The orbital phase evolution is described by the following system of ordinary differential equations:
+\begin{eqnarray}
+\label{dPhidt}
+\frac{d\Phi(t)}{dt}&=&\frac{x^{3/2}}{M},\\
+\label{dxdt}
+\frac{d x(t)}{dt}&=&\frac{-{\cal L}}{E^{\prime}},
+\end{eqnarray}
+where $E^{\prime}=dE/dx$ is the analytic derivative of the energy $E$, and the luminosity ${\cal L}$ is related to energy via the energy balance requirement $dE/dt=-{\cal L}$.  Given an energy and luminosity, Eqs.~\eqref{dPhidt} and~\eqref{dxdt} can be solved to find $\Phi(t)$ and $x(t)$, which determines the two time-domain gravitational-wave polarizations in Eqs.~\eqref{hoftp} and~\eqref{hoftc}.
 
-The energy and luminosity have the form
+Integrating Eqs.~\eqref{dPhidt} and~\eqref{dxdt} gives the alternate form:
+\begin{eqnarray}
+\label{int_t}
+t(x)&=&t_{\rm ref}+\int_x^{x_{\rm ref}}\frac{E^\prime(y)}{{\cal L}(y)}dy,\\
+\label{int_Phi}
+\Phi(x)&=&\Phi_{\rm ref}+\int_x^{x_{\rm ref}}\frac{y^{3/2}}{M}\frac{E^\prime(y)}{{\cal L}(y)}dy,
+\end{eqnarray}
+where $t_{\rm ref}=t(x_{\rm ref})$, $\Phi_{\rm ref}=\Phi(x_{\rm ref})$, and $x_{\rm ref}$ is an arbitrary reference value, following \cite{BuonannoIyerOchsner2009}.  Given an energy and luminosity, Eqs.~\eqref{int_t} and~\eqref{int_Phi} can be solved and used to find $\Psi(f)$, which determines the two frequency-domain gravitational-wave polarizations in Eqs.~\eqref{hoffp} and~\eqref{hoffc}.
+
+The energy and luminosity of two orbiting point-particles during their inspiral can be easily solved for in the Newtonian limit of General Relativity.  However, as the system approaches merger, the orbital speed becomes relativistic, and this quasi-Newtonian limit is not enough to accurately describe its waveform.  We therefore use post-Newtonian (PN) theory, which involves expansions of the equations of motion in orders of orbital speed, to push beyond this limit.  Furthermore, compact binaries containing a neutron star noticeably depart from the point-particle approximation at high frequencies and require an additional correction to the energy and luminosity of the system relative to the point-particle terms.  More specifically, tidal interactions contribute to the phase of the orbit by adding a monopole-quadrupole interaction term to the energy.  This additional quadrupole moment adds to the total quadrupole moment of the system, which also increases the luminosity.
+
+As was done in most previous works~\cite{WadeCreightonOchsner2014, DelPozzoLiAgathos2013, Favata2014, YagiYunes2014}, we keep the PN point-particle corrections to the energy and luminosity up to 3.5PN order as well as the leading-order and next-to-leading-order tidal contributions, which enter at the same order as 5PN and 6PN point-particle terms respectively.  The energy and luminosity take the form:
 \begin{align}
 E &= - \frac{1}{2} M \eta x \left[1 + e_\text{PP-PN}(\eta) + e_\text{Tidal}(\eta, \Lambda_1, \Lambda_2)\right], \\
 \mathcal{L} &= \frac{32}{5}\eta^2 x^5 \left[ 1 + l_\text{PP-PN}(\eta) + l_\text{Tidal}(\eta, \Lambda_1, \Lambda_2)\right],
 \end{align}
-where the point-particle PN terms $e_\text{PP-PN}$ and $l_\text{PP-PN}$ are given in Ref.~\cite{Blanchet2014Review}, and using the definition $m_1 \ge m_2$, the tidal terms are
+where the point-particle PN terms $e_\text{PP-PN}$ and $l_\text{PP-PN}$ are given in Ref.~\cite{Blanchet2014Review}, and the tidal terms are
 \begin{widetext}
 \begin{align}
 \begin{split}
@@ -101,62 +148,110 @@ e_\text{Tidal} &= -\frac{9\eta}{2} \left[ (1-3\eta)(\Lambda_1+\Lambda_2) + \sqrt
 \end{split} \\
 \begin{split}
 l_\text{Tidal} &= 3 \left[ (1-2\eta-4\eta^2)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}(1-2\eta^2)(\Lambda_1-\Lambda_2) \right]x^5 \\
-& - \frac{22}{7} \left[ \left(1-\frac{15\eta}{176}+\frac{147\eta^2}{88}-\frac{1547\eta^3}{44}\right)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}\left(1+\frac{337\eta}{176}+\frac{15\eta^2}{2}-\frac{1085\eta^3}{88}\right)(\Lambda_1-\Lambda_2) \right]x^6.
+& - \frac{22}{7} \left[ \left(1-\frac{15\eta}{176}+\frac{147\eta^2}{88}-\frac{1547\eta^3}{44}\right)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}\left(1+\frac{337\eta}{176}+\frac{15\eta^2}{2}-\frac{1085\eta^3}{88}\right)(\Lambda_1-\Lambda_2) \right]x^6,
 \end{split}
 \end{align}
 \end{widetext}
+where $\Lambda_1=\lambda_1/m_1$ and $\Lambda_2=\lambda_2/m_2$.  We have also asserted that $m_1 \ge m_2$ in order to express each correction in terms of dimensionless quantities.
 
-As is described in detail in the Appendix of Ref.~\cite{WadeCreightonOchsner2014}, there are several methods to integrate the energy balance equation $dE/dt = -\mathcal{L}$ to determine the phase evolution from the energy and luminosity, and we will use three of them. In the TaylorT1 method, one numerically integrates the energy balance equations in the form
-\begin{align}
-\label{eq:dpdt}
-\frac{d\phi}{dt} = \frac{x^{3/2}}{M},\\
-\label{eq:dedt}
-\frac{dx}{dt} = \frac{-\mathcal{L}}{dE/dx},
-\end{align}
-where $dE/dx$ is the analytic derivative of $E$. The TaylorT4 method is a slight variation where one re-expands the right hand side of Eq.~\eqref{eq:dedt} then truncates the series at the highest known PN order (here 3.5PN). The TaylorF2 method uses the stationary phase approximation to provide the Fourier transformed waveform. One first analytically integrates Eqs.~\eqref{eq:dpdt}--\eqref{eq:dedt} to obtain the parametric solutions $t(x)$ and $\phi(x)$, then uses the stationary phase approximation to find the Fourier transformed waveform which has the form
+As is described in detail in the Appendix of Ref.~\cite{WadeCreightonOchsner2014}, there are several methods to determine the phase evolution of the system from its energy and luminosity, and we use three of them.  In the TaylorT1 method, one numerically integrates Eqs.~\eqref{dPhidt} and~\eqref{dxdt} to find $\Phi(t)$ and $x(t)$. The TaylorT4 method is a slight variation where one re-expands the ratio $-{\cal L}/E^\prime$ on right hand side of Eq.~\eqref{dxdt} then truncates the series at the highest known PN order (here 3.5PN) before numerically integrating to find $\Phi(t)$ and $x(t)$. The TaylorF2 method uses the stationary phase approximation to estimate the Fourier transformed waveform.  Eqs.~\eqref{int_t} and~\eqref{int_Phi} are used to write $\Psi(f)$ in the following form:
 \begin{equation}
-\tilde h(f_{\rm gw}) = A(f_{\rm gw}) e^{i \psi(f_{\rm gw})}.
+\label{psi}
+\Psi(f)=2\pi f t_{\rm ref} - 2\Phi_{\rm ref} + 2\int_x^{x_{\rm ref}}\frac{x^{3/2} - y^{3/2}}{M}\frac{E^\prime(y)}{{\cal L}(y)}dy.
 \end{equation}
+The ratio $E^\prime/{\cal L}$ is then re-expanded and truncated at the highest known PN order (here 3.5PN) before the integral in Eq.~\eqref{psi} is analytically computed to find $\Psi(f)$.  The differences in the PN waveform families are due mostly to the way terms beyond 3.5PN order are truncated.  Thus, the differences in results using one waveform family as the injection and another as templates should give a reasonable estimate of systematic errors due to unknown higher order terms.
 
-The differences in these waveforms are due mostly to the way terms beyond 3.5PN order are truncated, and thus, the differences in results using these waveforms as templates should give a reasonable estimate of systematic errors due to unknown higher order terms.
-
-The Fourier transform of a restricted TaylorF2 waveform is 
-\begin{align}
-\tilde h_+(f) &= \sqrt{\frac{5}{24}}\frac{1}{\pi^{2/3}} \frac{\mathcal{M}^{5/6} f^{-7/6}}{r} e^{i\psi(f)} \frac{1+\cos^2\iota}{2} \\
-\tilde h_\times(f) &= \sqrt{\frac{5}{24}}\frac{1}{\pi^{2/3}} \frac{\mathcal{M}^{5/6} f^{-7/6}}{r} e^{i[\psi(f) + \pi/2]} \cos\iota,
-\end{align}
+The majority of this work uses the TaylorF2 waveform approximant because its fully analytic frequency-domain form makes it the fastest PN waveform to generate.  For reference, the tidal corrections to the TaylorF2 phase are
+\begin{widetext}
+\begin{equation}
+\delta\psi_{\rm tidal}=\frac{3}{128\eta x^{5/2}}\left[ \left(-\frac{39}{2}\tilde{\Lambda}\right)x^5+ \left(-\frac{3115}{64}\tilde{\Lambda}+\frac{6595}{364}\sqrt{1-4\eta}\mbox{ }\delta\tilde{\Lambda}\right)x^6 \right],
+\end{equation}
 where
-\begin{equation}
-\psi(f) = 2\pi f t_c - \phi_c - \frac{\pi}{4} + \frac{3}{128\eta} \sum_{n=0}^{12} a_n (\pi M f)^{n/3}.
-\end{equation}
+\begin{eqnarray}
+\label{LT}
+\tilde{\Lambda}&=&\frac{8}{13}\left[\left(1+7\eta-31\eta^2\right)\left(\Lambda_1+\Lambda_2\right)+\sqrt{1-4\eta}\left(1+9\eta-11\eta^2\right)\left(\Lambda_1-\Lambda_2\right)\right]\\
+\label{dLT}
+\delta\tilde{\Lambda}&=&\frac{1}{2}\left[\sqrt{1-4\eta}\left(1-\frac{13272}{1319}\eta+\frac{8944}{1319}\eta^2\right)\left(\Lambda_1+\Lambda_2\right) + \left(1-\frac{15910}{1319}\eta+\frac{32850}{1319}\eta^2+\frac{3380}{1319}\eta^3\right)\left(\Lambda_1-\Lambda_2\right)\right].
+\end{eqnarray}
+\end{widetext}
+For more details regarding this choice of tidal deformability parameters, see \cite{WadeCreightonOchsner2014} and \cite{Favata2014}.
 
-The antenna pattern functions are
-\begin{align}
-\begin{split}
-F_+(\theta, \phi; \psi) =& - \frac{1}{2}(1+\cos^2\theta) \cos(2\phi) \cos(2\psi) \\
-& - \cos\theta \sin(2\phi) \sin(2\psi),
-\end{split}\\
-\begin{split}
-F_\times(\theta, \phi; \psi) =& + \frac{1}{2}(1+\cos^2\theta) \cos(2\phi) \sin(2\psi) \\
-& - \cos\theta \sin(2\phi) \cos(2\psi),
-\end{split}
-\end{align}
-where $(\theta, \phi)$ are the sky position in spherical coordinates, and the polarization angle $\psi$ is defined by ...blah... [[See Flanagan Cutler for discussion in terms of orientation of binary angular momentum axis]]
+We choose to ignore spin and precession in this study for simplicity.  However, it has been shown that ignoring spin in BNS systems can noticeably bias parameter estimation, even for relatively small spin magnitudes \cite{Favata2014}.  Additionally, we choose to end our waveforms when they reach $f_{\rm ISCO}=(6^{3/2}\pi M)$, where $f_{\rm ISCO}$ is the gravitational-wave frequency when the binary reaches the inner-most stable circular orbit (ISCO).  For certain EOSs, this termination frequency may be greater than the frequency at which the two components come into contact.  A parallel investigation into the effect of how spin and the choice of high-frequency cutoffs can affect the estimation of tidal parameters is nearing completion \cite{Nikhef_paper_2}.
 
-The gravitational wave signal is
-\begin{align}
-\tilde h(f) &=  F_+ h_+(f) + F_\times h_\times(f) \\
-&= \sqrt{\frac{5}{24}}\frac{1}{\pi^{2/3}} \frac{Q(\theta, \phi, \psi, \iota)}{r} \mathcal{M}^{5/6} f^{-7/6} e^{i\psi(f)},
-\end{align}
-where
-\begin{equation}
-Q(\theta, \phi, \psi, \iota) = F_+(\theta, \phi; \psi) \frac{1+\cos^2\iota}{2} + i F_\times(\theta, \phi; \psi) \cos\iota.
-\end{equation}
-For a single detector, this signal can be rewritten in terms of a single effective distance parameter $D_{\rm eff} = r/|Q(\theta, \phi, \psi, \iota)|$, where $D_{\rm eff} \ge r$, so that the signal becomes
-\begin{equation}
-\tilde h(f) =  \sqrt{\frac{5}{24}}\frac{1}{\pi^{2/3}}  \frac{1}{D_{\rm eff}} \mathcal{M}^{5/6} f^{-7/6} e^{i\psi(f)},
-\end{equation}
-and we have absorbed the argument $\arg(Q)$ into the definition of $\phi_c$.
+%In this paper we use the post-Newtonian (PN) formalism to construct our waveform model [[as does everyone else]]. In the PN formalism the energy for circular orbits is found from the conservative parts of the Hamiltonian which is now known up to 4PN order [[is this true? Define what xPN order means]] The luminosity is found from a multipolar decomposition of the metric perturbation in the wave zone, which is then matched to the post-Newtonian multipolar decomposition in the near zone \red{[[None of this really matters.]]}. The phase evolution of the orbit is calculated from the assumption of energy balance $dE/dt = -\mathcal{L}$.
+
+%Tidal interactions contribute to the phase of the orbit by adding a monopole-quadrupole interaction term to the energy, and the additional quadrupole moment adds to the total quadrupole moment of the system, increasing the luminosity. As was done in most previous works~\cite{WadeCreightonOchsner2014, DelPozzoLiAgathos2013, Favata2014, YagiYunes2014} we will use the point-particle terms to 3.5PN order as well as the leading and next-to-leading tidal contributions which enter the energy and luminosity at the same order as 5 and 6PN point-particle terms respectively.
+%
+%The energy and luminosity have the form
+%\begin{align}
+%E &= - \frac{1}{2} M \eta x \left[1 + e_\text{PP-PN}(\eta) + e_\text{Tidal}(\eta, \Lambda_1, \Lambda_2)\right], \\
+%\mathcal{L} &= \frac{32}{5}\eta^2 x^5 \left[ 1 + l_\text{PP-PN}(\eta) + l_\text{Tidal}(\eta, \Lambda_1, \Lambda_2)\right],
+%\end{align}
+%where the point-particle PN terms $e_\text{PP-PN}$ and $l_\text{PP-PN}$ are given in Ref.~\cite{Blanchet2014Review}, and using the definition $m_1 \ge m_2$, the tidal terms are
+%\begin{widetext}
+%\begin{align}
+%\begin{split}
+%e_\text{Tidal} &= -\frac{9\eta}{2} \left[ (1-3\eta)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}(1-\eta)(\Lambda_1-\Lambda_2) \right]x^5 \\
+%& - 22\eta \left[ \left(1-4\eta+\frac{19\eta^2}{8}\right)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}\left(1-2\eta+\frac{3\eta^2}{8}\right)(\Lambda_1-\Lambda_2) \right]x^6,
+%\end{split} \\
+%\begin{split}
+%l_\text{Tidal} &= 3 \left[ (1-2\eta-4\eta^2)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}(1-2\eta^2)(\Lambda_1-\Lambda_2) \right]x^5 \\
+%& - \frac{22}{7} \left[ \left(1-\frac{15\eta}{176}+\frac{147\eta^2}{88}-\frac{1547\eta^3}{44}\right)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}\left(1+\frac{337\eta}{176}+\frac{15\eta^2}{2}-\frac{1085\eta^3}{88}\right)(\Lambda_1-\Lambda_2) \right]x^6.
+%\end{split}
+%\end{align}
+%\end{widetext}
+%
+%As is described in detail in the Appendix of Ref.~\cite{WadeCreightonOchsner2014}, there are several methods to integrate the energy balance equation $dE/dt = -\mathcal{L}$ to determine the phase evolution from the energy and luminosity, and we will use three of them. In the TaylorT1 method, one numerically integrates the energy balance equations in the form
+%\begin{align}
+%\label{eq:dpdt}
+%\frac{d\phi}{dt} = \frac{x^{3/2}}{M},\\
+%\label{eq:dedt}
+%\frac{dx}{dt} = \frac{-\mathcal{L}}{dE/dx},
+%\end{align}
+%where $dE/dx$ is the analytic derivative of $E$. The TaylorT4 method is a slight variation where one re-expands the right hand side of Eq.~\eqref{eq:dedt} then truncates the series at the highest known PN order (here 3.5PN). The TaylorF2 method uses the stationary phase approximation to provide the Fourier transformed waveform. One first analytically integrates Eqs.~\eqref{eq:dpdt}--\eqref{eq:dedt} to obtain the parametric solutions $t(x)$ and $\phi(x)$, then uses the stationary phase approximation to find the Fourier transformed waveform which has the form
+%\begin{equation}
+%\tilde h(f_{\rm gw}) = A(f_{\rm gw}) e^{i \psi(f_{\rm gw})}.
+%\end{equation}
+%
+%The differences in these waveforms are due mostly to the way terms beyond 3.5PN order are truncated, and thus, the differences in results using these waveforms as templates should give a reasonable estimate of systematic errors due to unknown higher order terms.
+%
+%The Fourier transform of a restricted TaylorF2 waveform is 
+%\begin{align}
+%\tilde h_+(f) &= \sqrt{\frac{5}{24}}\frac{1}{\pi^{2/3}} \frac{\mathcal{M}^{5/6} f^{-7/6}}{r} e^{i\psi(f)} \frac{1+\cos^2\iota}{2} \\
+%\tilde h_\times(f) &= \sqrt{\frac{5}{24}}\frac{1}{\pi^{2/3}} \frac{\mathcal{M}^{5/6} f^{-7/6}}{r} e^{i[\psi(f) + \pi/2]} \cos\iota,
+%\end{align}
+%where
+%\begin{equation}
+%\psi(f) = 2\pi f t_c - \phi_c - \frac{\pi}{4} + \frac{3}{128\eta} \sum_{n=0}^{12} a_n (\pi M f)^{n/3}.
+%\end{equation}
+%
+%The antenna pattern functions are
+%\begin{align}
+%\begin{split}
+%F_+(\theta, \phi; \psi) =& - \frac{1}{2}(1+\cos^2\theta) \cos(2\phi) \cos(2\psi) \\
+%& - \cos\theta \sin(2\phi) \sin(2\psi),
+%\end{split}\\
+%\begin{split}
+%F_\times(\theta, \phi; \psi) =& + \frac{1}{2}(1+\cos^2\theta) \cos(2\phi) \sin(2\psi) \\
+%& - \cos\theta \sin(2\phi) \cos(2\psi),
+%\end{split}
+%\end{align}
+%where $(\theta, \phi)$ are the sky position in spherical coordinates, and the polarization angle $\psi$ is defined by ...blah... [[See Flanagan Cutler for discussion in terms of orientation of binary angular momentum axis]]
+%
+%The gravitational wave signal is
+%\begin{align}
+%\tilde h(f) &=  F_+ h_+(f) + F_\times h_\times(f) \\
+%&= \sqrt{\frac{5}{24}}\frac{1}{\pi^{2/3}} \frac{Q(\theta, \phi, \psi, \iota)}{r} \mathcal{M}^{5/6} f^{-7/6} e^{i\psi(f)},
+%\end{align}
+%where
+%\begin{equation}
+%Q(\theta, \phi, \psi, \iota) = F_+(\theta, \phi; \psi) \frac{1+\cos^2\iota}{2} + i F_\times(\theta, \phi; \psi) \cos\iota.
+%\end{equation}
+%For a single detector, this signal can be rewritten in terms of a single effective distance parameter $D_{\rm eff} = r/|Q(\theta, \phi, \psi, \iota)|$, where $D_{\rm eff} \ge r$, so that the signal becomes
+%\begin{equation}
+%\tilde h(f) =  \sqrt{\frac{5}{24}}\frac{1}{\pi^{2/3}}  \frac{1}{D_{\rm eff}} \mathcal{M}^{5/6} f^{-7/6} e^{i\psi(f)},
+%\end{equation}
+%and we have absorbed the argument $\arg(Q)$ into the definition of $\phi_c$.
 
 \red{[[Brief statement about how you will be ignoring spin/possible precession, and how that will effect the results. Cite Favata's paper.]]}
 
@@ -451,7 +546,7 @@ In Fig.~\ref{fig:varymmax} we demonstrate that the confirmation of a NS with a l
 
 The density profile in a NS depends on its mass, with more massive stars consisting of denser matter. We thus expect low mass stars to better estimate the lower density EOS, and higher mass stars to better estimate the higher density EOS. We examine how the error in recovering the EOS depends on the range of masses in the BNS population. As before, we use the piecewise polytrope fit to the MPA1 EOS as the true EOS and we examine the results for the loudest 5 BNS systems. The first population is the same as above, using masses uniformly sampled in the range $1.2M_\odot$--$1.6M_\odot$. We also examine three additional sets of masses where the NSs in the population are either all $1.0M_\odot$, all $1.4M_\odot$, or all $1.8M_\odot$. In order to make a direct comparison between these four populations, we hold all of the parameters fixed except for the masses, then adjust the tidal parameter of each system as determined by the fit to the MPA1 EOS. Because we are only examining the loudest 5 systems, adjusting their masses in this range will not push these events above or below the detection threshold. 
 
-In Fig.~\ref{fig:popmass}, we find that when all NSs have masses of either $1.0M_\odot$, $1.4M_\odot$, or $1.8M_\odot$, the uncertainty in pressure is smallest around $10^{14.6}$~g/cm$^3$, $10^{14.7}$~g/cm$^3$, or $10^{14.8}$~g/cm$^3$ respectively. We find similar results for the radius and tidal deformability; the location of the minimum uncertainty scales with the observed masses. Interestingly, the results for masses fixed at 1.4M_\odot$ and for a uniform distribution from $1.2M_\odot$--$1.6M_\odot$ are almost identical, indicating that useful information can be found even if the range of observed masses is very small.
+In Fig.~\ref{fig:popmass}, we find that when all NSs have masses of either $1.0M_\odot$, $1.4M_\odot$, or $1.8M_\odot$, the uncertainty in pressure is smallest around $10^{14.6}$~g/cm$^3$, $10^{14.7}$~g/cm$^3$, or $10^{14.8}$~g/cm$^3$ respectively. We find similar results for the radius and tidal deformability; the location of the minimum uncertainty scales with the observed masses. Interestingly, the results for masses fixed at $1.4M_\odot$ and for a uniform distribution from $1.2M_\odot$--$1.6M_\odot$ are almost identical, indicating that useful information can be found even if the range of observed masses is very small.
 
 \red{[[Error is smallest at $1.0M_\odot$. Probably because uncertainty in $\tilde\Lambda$ decreases with mass of observed event.]]} 
 

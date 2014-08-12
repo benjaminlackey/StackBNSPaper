@@ -1,55 +1,53 @@
-This is BibTeX, Version 0.99d (TeX Live 2012)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99c (Web2C 7.5.7)
 The top-level auxiliary file: paper.aux
 The style file: apsrev.bst
-Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: paper.bib
 You're missing a field name---line 555 of file paper.bib
  : 
  : %    title    = {Gravitational Radiation from Post-Newtonian Sources and Inspiralling Compact Binaries},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Nikhef_paper_2"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 59 entries,
+You've used 60 entries,
             3411 wiz_defined-function locations,
-            1560 strings with 22350 characters,
-and the built_in function-call counts, 42855 in all, are:
-= -- 2296
-> -- 1661
-< -- 223
-+ -- 1402
-- -- 408
-* -- 6101
-:= -- 4555
-add.period$ -- 59
-call.type$ -- 59
-change.case$ -- 238
-chr.to.int$ -- 59
-cite$ -- 61
-duplicate$ -- 3918
-empty$ -- 3541
-format.name$ -- 988
-if$ -- 7932
+            1568 strings with 22638 characters,
+and the built_in function-call counts, 43710 in all, are:
+= -- 2337
+> -- 1702
+< -- 228
++ -- 1438
+- -- 418
+* -- 6231
+:= -- 4640
+add.period$ -- 60
+call.type$ -- 60
+change.case$ -- 242
+chr.to.int$ -- 60
+cite$ -- 62
+duplicate$ -- 3997
+empty$ -- 3608
+format.name$ -- 1011
+if$ -- 8086
 int.to.chr$ -- 1
-int.to.str$ -- 60
-missing$ -- 600
-newline$ -- 192
-num.names$ -- 174
-pop$ -- 952
+int.to.str$ -- 61
+missing$ -- 612
+newline$ -- 195
+num.names$ -- 177
+pop$ -- 972
 preamble$ -- 1
-purify$ -- 236
+purify$ -- 240
 quote$ -- 0
-skip$ -- 1597
+skip$ -- 1626
 stack$ -- 0
-substring$ -- 1004
-swap$ -- 3196
-text.length$ -- 198
+substring$ -- 1015
+swap$ -- 3265
+text.length$ -- 203
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 352
+type$ -- 358
 warning$ -- 0
-while$ -- 142
+while$ -- 144
 width$ -- 0
-write$ -- 649
+write$ -- 660
 (There was 1 error message)

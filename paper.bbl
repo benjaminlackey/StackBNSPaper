@@ -1,4 +1,4 @@
-\begin{thebibliography}{59}
+\begin{thebibliography}{60}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -85,7 +85,8 @@
 \bibinfo{author}{\bibnamefont{{F. Acernese, et al.\ (Virgo Collaboration)}}},
   \emph{\bibinfo{title}{Advanced virgo baseline design, {VIR-027A-09}}}
   (\bibinfo{year}{2009}),
-  \urlprefix\url{https://tds.ego-gw.it/itf/tds/file.php?callFile=VIR-0027A-09.pdf}.
+  \urlprefix\url{https://tds.ego-gw.it/itf/tds/file.php?callFile=VIR-0027A-09.%
+pdf}.
 
 \bibitem[{\citenamefont{{LIGO Scientific Collaboration}
   et~al.}(2013)\citenamefont{{LIGO Scientific Collaboration}, {Virgo
@@ -229,6 +230,16 @@
   \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Yunes}}},
   \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{89}}, \bibinfo{eid}{021303}
   (\bibinfo{year}{2014}), \eprint{1310.8358}.
+
+\bibitem[{\citenamefont{{Buonanno} et~al.}(2009)\citenamefont{{Buonanno},
+  {Iyer}, {Ochsner}, {Pan}, and {Sathyaprakash}}}]{BuonannoIyerOchsner2009}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Buonanno}}},
+  \bibinfo{author}{\bibfnamefont{B.~R.} \bibnamefont{{Iyer}}},
+  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{{Ochsner}}},
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Pan}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{B.~S.} \bibnamefont{{Sathyaprakash}}},
+  \bibinfo{journal}{\prd} \textbf{\bibinfo{volume}{80}}, \bibinfo{eid}{084043}
+  (\bibinfo{year}{2009}), \eprint{0907.0700}.
 
 \bibitem[{\citenamefont{Blanchet}(2014)}]{Blanchet2014Review}
 \bibinfo{author}{\bibfnamefont{L.}~\bibnamefont{Blanchet}},
