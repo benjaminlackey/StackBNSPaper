@@ -1,4 +1,6 @@
-%\documentclass[onecolumn,prd,amssymb,aps,nofootinbib,showpacs,epsf]{revtex4}
+% To tar for submission:
+%tar cvzf paper.tgz paper.tex paper.bbl <other_figure_files>
+
 \documentclass[twocolumn,prd,amssymb,aps,nofootinbib,showpacs,epsf]{revtex4}
 \usepackage[usenames]{color}
 \usepackage{ulem}
@@ -6,9 +8,14 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{epstopdf}
+
 \newcommand{\red}{\textcolor{red}}
+\newcommand\ben[2]{\textcolor{red}{{#1}\sout{#2}}}
+\newcommand\les[2]{\textcolor{blue}{{#1}\sout{#2}}}
 
 %\def\pasp{\ref@jnl{PASP}}               % Publications of the ASP
+
+
 
 \begin{document}
 
@@ -32,6 +39,10 @@ Gravitational-wave observations of inspiralling binary neutron star systems can 
 }
 
 \maketitle
+
+\ben{new text from Ben}{old text}
+
+\les{new text from Les}{old text}
 
 [[Update the PACS numbers.]]
 
