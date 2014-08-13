@@ -98,19 +98,19 @@ F_\times(\theta,\phi,\psi)=&+\frac{1}{2}(1+\cos^2\theta)\cos(2\phi)\sin(2\psi)\\
 &-\cos(\theta)\sin(2\phi)\cos(2\psi),
 \end{split}
 \end{align}
-in a coordinate system where the two arms define the x-axis and the y-axis, and the z-axis is normal to the x-y plane.  Here, $(\theta, \phi)$ are the sky position in spherical coordinates, and $\psi$ is the polarization angle.  Assuming the binary components are point particles in a circular orbit, the two polarizations of the emitted gravitational wave seen by an observer at a distance $r$ away are
+in a coordinate system where the two arms define the x-axis and the y-axis, and the z-axis is normal to the x-y plane.  Here, $(\theta, \phi)$ are the sky position in spherical coordinates, and $\psi$ is the polarization angle.  Assuming the binary components are point particles in a circular orbit, the two polarizations of the emitted gravitational wave seen by an observer at a distance $D$ away are
 \begin{eqnarray}
 \label{hoftp}
-h_+(t)&=&-\frac{4\mu}{r}\left(\frac{1+\cos^2\iota}{2}\right)x(t)\cos\left[2\Phi(t)\right],\\
+h_+(t)&=&-\frac{4\mu}{D}\left(\frac{1+\cos^2\iota}{2}\right)x(t)\cos\left[2\Phi(t)\right],\\
 \label{hoftc}
-h_\times(t)&=&-\frac{4\mu}{r}\cos\iota\mbox{ }x(t)\sin\left[2\Phi(t)\right],
+h_\times(t)&=&-\frac{4\mu}{D}\cos\iota\mbox{ }x(t)\sin\left[2\Phi(t)\right],
 \end{eqnarray}
 in the time-domain, where $\mu=m_1 m_2/M$ is the reduced mass, $M=m_1+m_2$ is the total mass, $\iota$ is the inclination angle, $\Phi(t)$ is the orbital phase, and $x=(\pi M f)^{2/3}$ where $f$ is the gravitational-wave frequency.  The stationary-phase approximation can be used to find the two polarizations in the frequency-domain:
 \begin{eqnarray}
 \label{hoffp}
-\tilde{h}_+(f)&=&\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}r}\left(\frac{1+\cos^2\iota}{2}\right)e^{i\Psi(f)},\\
+\tilde{h}_+(f)&=&\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}D}\left(\frac{1+\cos^2\iota}{2}\right)e^{i\Psi(f)},\\
 \label{hoffc}
-\tilde{h}_\times(f)&=&i\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}r}\cos\iota\mbox{ }e^{i\Psi(f)},
+\tilde{h}_\times(f)&=&i\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}D}\cos\iota\mbox{ }e^{i\Psi(f)},
 \end{eqnarray}
 where the chirp mass ${\cal M}=\eta^{3/5}M$, the symmetric mass ratio $\eta=m_1 m_2/M^2$, $\Psi(f)=2\pi f t(v) - 2\Phi(v) - \pi/4$, and $\tilde{h}_+(f)$ and $\tilde{h}_\times(f)$ are the Fourier transforms of $h_+(t)$ and $h_\times(t)$ respectively.
 
@@ -141,16 +141,13 @@ E &= - \frac{1}{2} M \eta x \left[1 + e_\text{PP-PN}(\eta) + e_\text{Tidal}(\eta
 \end{align}
 where the point-particle PN terms $e_\text{PP-PN}$ and $l_\text{PP-PN}$ are given in Ref.~\cite{Blanchet2014Review}, and the tidal terms are
 \begin{widetext}
-\begin{align}
-\begin{split}
-e_\text{Tidal} &= -\frac{9\eta}{2} \left[ (1-3\eta)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}(1-\eta)(\Lambda_1-\Lambda_2) \right]x^5 \\
-& - 22\eta \left[ \left(1-4\eta+\frac{19\eta^2}{8}\right)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}\left(1-2\eta+\frac{3\eta^2}{8}\right)(\Lambda_1-\Lambda_2) \right]x^6,
-\end{split} \\
-\begin{split}
-l_\text{Tidal} &= 3 \left[ (1-2\eta-4\eta^2)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}(1-2\eta^2)(\Lambda_1-\Lambda_2) \right]x^5 \\
-& - \frac{22}{7} \left[ \left(1-\frac{15\eta}{176}+\frac{147\eta^2}{88}-\frac{1547\eta^3}{44}\right)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}\left(1+\frac{337\eta}{176}+\frac{15\eta^2}{2}-\frac{1085\eta^3}{88}\right)(\Lambda_1-\Lambda_2) \right]x^6,
-\end{split}
-\end{align}
+\begin{eqnarray}
+e_\text{Tidal} &=& -\frac{9\eta}{2} \left[ (1-3\eta)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}(1-\eta)(\Lambda_1-\Lambda_2) \right]x^5 \\
+&& - 22\eta \left[ \left(1-4\eta+\frac{19\eta^2}{8}\right)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}\left(1-2\eta+\frac{3\eta^2}{8}\right)(\Lambda_1-\Lambda_2) \right]x^6,\\
+l_\text{Tidal}&=&3 \left[ (1-2\eta-4\eta^2)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}(1-2\eta^2)(\Lambda_1-\Lambda_2) \right]x^5 \\
+&& - \frac{22}{7} \left[ \left(1-\frac{15\eta}{176}+\frac{147\eta^2}{88}-\frac{1547\eta^3}{44}\right)(\Lambda_1+\Lambda_2) \right . \\
+&& \left . + \sqrt{1-4\eta}\left(1+\frac{337\eta}{176}+\frac{15\eta^2}{2}-\frac{1085\eta^3}{88}\right)(\Lambda_1-\Lambda_2) \right]x^6,
+\end{eqnarray}
 \end{widetext}
 where $\Lambda_1=\lambda_1/m_1$ and $\Lambda_2=\lambda_2/m_2$.  We have also asserted that $m_1 \ge m_2$ in order to express each correction in terms of dimensionless quantities.
 
@@ -161,20 +158,34 @@ As is described in detail in the Appendix of Ref.~\cite{WadeCreightonOchsner2014
 \end{equation}
 The ratio $E^\prime/{\cal L}$ is then re-expanded and truncated at the highest known PN order (here 3.5PN) before the integral in Eq.~\eqref{psi} is analytically computed to find $\Psi(f)$.  The differences in the PN waveform families are due mostly to the way terms beyond 3.5PN order are truncated.  Thus, the differences in results using one waveform family as the injection and another as templates should give a reasonable estimate of systematic errors due to unknown higher order terms.
 
-The majority of this work uses the TaylorF2 waveform approximant because its fully analytic frequency-domain form makes it the fastest PN waveform to generate.  For reference, the tidal corrections to the TaylorF2 phase are
+The majority of this work uses the TaylorF2 waveform approximant because its fully analytic frequency-domain form makes it the fastest PN waveform to generate.  The complete TaylorF2 strain can be written more compactly in the following form:
+\begin{equation}
+\tilde{h}(f)=\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}}{\pi^{2/3}}\frac{Q(\theta,\phi,\psi,\iota)}{D}f^{-7/6}e^{i\Psi(f)},
+\end{equation}
+where
+\begin{equation}
+Q(\theta,\phi,\psi,\iota) = F_+(\theta,\phi,\psi)\frac{1+\cos\iota}{2} + i F_\times(\theta,\phi,\psi)\cos\iota.
+\end{equation}
+For a single detector, the extrinsic parameters in the amplitude can be grouped together into a single effective distance parameter, which is $D_{\rm eff}=|Q(\theta,\phi,\psi,\iota)|/D$.  The analytic form for the phase $\Psi(f)$ with point-particle terms up to 3.5PN order and leading-order and next-to-leading-order tidal contributions is
+\begin{equation}
+\Psi(f)=\frac{3}{128\eta x^{5/2}}\left[1+\psi_\text{PP-PN}(\eta)+\psi_\text{Tidal}(\eta,\Lambda_1,\Lambda_2)\right],
+\end{equation}
+where $\psi_\text{PP-PN}(\eta)$ is given in \cite{BuonannoIyerOchsner2009}, and
 \begin{widetext}
 \begin{equation}
-\delta\psi_{\rm tidal}=\frac{3}{128\eta x^{5/2}}\left[ \left(-\frac{39}{2}\tilde{\Lambda}\right)x^5+ \left(-\frac{3115}{64}\tilde{\Lambda}+\frac{6595}{364}\sqrt{1-4\eta}\mbox{ }\delta\tilde{\Lambda}\right)x^6 \right],
+\label{psi_tidal}
+\psi_\text{Tidal}(\eta,\Lambda_1,\Lambda_2)=\left[-\frac{39}{2}\tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)\right]x^5+ \left[-\frac{3115}{64}\tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)+\frac{6595}{364}\sqrt{1-4\eta}\mbox{ }\delta\tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)\right]x^6,
 \end{equation}
 where
 \begin{eqnarray}
 \label{LT}
-\tilde{\Lambda}&=&\frac{8}{13}\left[\left(1+7\eta-31\eta^2\right)\left(\Lambda_1+\Lambda_2\right)+\sqrt{1-4\eta}\left(1+9\eta-11\eta^2\right)\left(\Lambda_1-\Lambda_2\right)\right]\\
+\tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)&=&\frac{8}{13}\left[\left(1+7\eta-31\eta^2\right)\left(\Lambda_1+\Lambda_2\right)+\sqrt{1-4\eta}\left(1+9\eta-11\eta^2\right)\left(\Lambda_1-\Lambda_2\right)\right],\\
 \label{dLT}
-\delta\tilde{\Lambda}&=&\frac{1}{2}\left[\sqrt{1-4\eta}\left(1-\frac{13272}{1319}\eta+\frac{8944}{1319}\eta^2\right)\left(\Lambda_1+\Lambda_2\right) + \left(1-\frac{15910}{1319}\eta+\frac{32850}{1319}\eta^2+\frac{3380}{1319}\eta^3\right)\left(\Lambda_1-\Lambda_2\right)\right].
+\delta\tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)&=&\frac{1}{2}\left[\sqrt{1-4\eta}\left(1-\frac{13272}{1319}\eta+\frac{8944}{1319}\eta^2\right)\left(\Lambda_1+\Lambda_2\right) \right .\\
+&& + \left . \left(1-\frac{15910}{1319}\eta+\frac{32850}{1319}\eta^2+\frac{3380}{1319}\eta^3\right)\left(\Lambda_1-\Lambda_2\right)\right].
 \end{eqnarray}
 \end{widetext}
-For more details regarding this choice of tidal deformability parameters, see \cite{WadeCreightonOchsner2014} and \cite{Favata2014}.
+We express the tidal contributions to the TaylorF2 phase in terms of $(\tilde\Lambda,\delta\tilde\Lambda)$ because $\tilde\Lambda$ is comparably more measurable than $\Lambda_1$ and $\Lambda_2$ individually.  For more details regarding this parameterization, see \cite{WadeCreightonOchsner2014,Favata2014}.
 
 We choose to ignore spin and precession in this study for simplicity.  However, it has been shown that ignoring spin in BNS systems can noticeably bias parameter estimation, even for relatively small spin magnitudes \cite{Favata2014}.  Additionally, we choose to end our waveforms when they reach $f_{\rm ISCO}=(6^{3/2}\pi M)$, where $f_{\rm ISCO}$ is the gravitational-wave frequency when the binary reaches the inner-most stable circular orbit (ISCO).  For certain EOSs, this termination frequency may be greater than the frequency at which the two components come into contact.  A parallel investigation into the effect of how spin and the choice of high-frequency cutoffs can affect the estimation of tidal parameters is nearing completion \cite{Nikhef_paper_2}.
 
