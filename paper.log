@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2008.8.22)  13 AUG 2014 10:25
+This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2008.8.22)  13 AUG 2014 11:44
 entering extended mode
 \write18 enabled.
  %&-line parsing enabled.
@@ -260,47 +260,48 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 (/usr/local/texlive/2008/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 ) [1{/usr/local/texlive/2008/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
- [3]
+ [3] [4]
 
-Package natbib Warning: Citation `Nikhef_paper_2' on page 4 undefined on input 
-line 190.
+Package natbib Warning: Citation `Nikhef_paper_2' on page 5 undefined on input 
+line 199.
 
-[4] [5] <mvs3d.png, id=41, 1420.30624pt x 978.65625pt>
+[5] <mvs3d.png, id=39, 1420.30624pt x 978.65625pt>
 File: mvs3d.png Graphic file (type png)
  <use mvs3d.png>
-<Radiuslambda.pdf, id=42, 517.02847pt x 731.89842pt>
+<Radiuslambda.pdf, id=40, 517.02847pt x 731.89842pt>
 File: Radiuslambda.pdf Graphic file (type pdf)
  <use Radiuslambda.pdf>
-Underfull \hbox (badness 1028) in paragraph at lines 361--362
+[6 <./mvs3d.png (PNG copy)>]
+Underfull \hbox (badness 1028) in paragraph at lines 370--371
 \OT1/cmr/m/n/10 pa-ram-e-ters $[] = ([](\OML/cmm/m/it/10 p[]\OT1/cmr/m/n/10 )\O
 ML/cmm/m/it/10 ; \OT1/cmr/m/n/10 ^^@[]\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 ^^@[]\
 OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 ^^@[])$ that are com-
  []
 
-[6 <./mvs3d.png (PNG copy)>]
-Underfull \hbox (badness 1735) in paragraph at lines 373--375
+
+Underfull \hbox (badness 1735) in paragraph at lines 382--384
 \OT1/cmr/m/n/10 so we will de-com-pose it into blocks that can be
  []
 
 
-Underfull \hbox (badness 2401) in paragraph at lines 373--375
+Underfull \hbox (badness 2401) in paragraph at lines 382--384
 \OT1/cmr/m/n/10 in-di-vid-u-ally com-puted. First, we de-com-pose the
  []
 
 
-Underfull \hbox (badness 4621) in paragraph at lines 390--392
+Underfull \hbox (badness 4621) in paragraph at lines 399--401
 \OT1/cmr/m/n/10 and we have used the fact that the like-li-hood
  []
 
 
-Overfull \hbox (35.34407pt too wide) in paragraph at lines 401--401
+Overfull \hbox (35.34407pt too wide) in paragraph at lines 410--410
 [] 
  []
 
 [7]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 421.
+ on input line 410.
 
 [8 <./Radiuslambda.pdf>] [9]
 <LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20p.pdf, id=168, 512.05678pt x 732.90218pt>
@@ -312,20 +313,16 @@ File: LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20p.pdf Graphic file (type pdf)
 File: LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20Radiuslambda.pdf Graphic file (type p
 df)
  <use LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20Radiuslambda.pdf> [10]
-<LALMCMCmpa1FitTaylorF2ZeroNoiseperror.pdf, id=175, 512.05678pt x 396.8467pt>
+[11 <./LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20p.pdf> <./LALMCMCmpa1FitTaylorF2Zero
+NoiseBNS20Radiuslambda.pdf>]
+<LALMCMCmpa1FitTaylorF2ZeroNoiseperror.pdf, id=329, 512.05678pt x 396.8467pt>
 File: LALMCMCmpa1FitTaylorF2ZeroNoiseperror.pdf Graphic file (type pdf)
 
 <use LALMCMCmpa1FitTaylorF2ZeroNoiseperror.pdf>
-<LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf, id=177, 517.02847pt x 731.898
+<LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf, id=331, 517.02847pt x 731.898
 42pt>
 File: LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf Graphic file (type pdf)
- <use LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf> [11 <./LALMCMCmpa1FitTay
-lorF2ZeroNoiseBNS20p.pdf> <./LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20Radiuslambda.p
-df>]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 542.
-
+ <use LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf>
 <priormmaxperror.pdf, id=333, 512.05678pt x 396.8467pt>
 File: priormmaxperror.pdf Graphic file (type pdf)
 
@@ -337,7 +334,7 @@ File: priormmaxRadiuslambda.pdf Graphic file (type pdf)
 f> <./LALMCMCmpa1FitTaylorF2ZeroNoiseRadiuslambda.pdf>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 561.
+ on input line 568.
 
 <LALMCMCmpa1FitTaylorF2VaryMassperror.pdf, id=484, 512.05678pt x 396.8467pt>
 File: LALMCMCmpa1FitTaylorF2VaryMassperror.pdf Graphic file (type pdf)
@@ -347,56 +344,54 @@ File: LALMCMCmpa1FitTaylorF2VaryMassperror.pdf Graphic file (type pdf)
 2pt>
 File: LALMCMCmpa1FitTaylorF2VaryMassRadiuslambda.pdf Graphic file (type pdf)
  <use LALMCMCmpa1FitTaylorF2VaryMassRadiuslambda.pdf> [13 <./priormmaxperror.pd
-f> <./priormmaxRadiuslambda.pdf> <./LALMCMCmpa1FitTaylorF2VaryMassperror.pdf> <
-./LALMCMCmpa1FitTaylorF2VaryMassRadiuslambda.pdf>]
-<CompareLALFisherZeroNoiseperror.pdf, id=802, 512.05678pt x 396.8467pt>
+f> <./priormmaxRadiuslambda.pdf>]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 587.
+
+<CompareLALFisherZeroNoiseperror.pdf, id=644, 512.05678pt x 396.8467pt>
 File: CompareLALFisherZeroNoiseperror.pdf Graphic file (type pdf)
 
 <use CompareLALFisherZeroNoiseperror.pdf>
-<CompareLALFisherZeroNoiseRadiuslambda.pdf, id=804, 517.02847pt x 731.89842pt>
+<CompareLALFisherZeroNoiseRadiuslambda.pdf, id=646, 517.02847pt x 731.89842pt>
 File: CompareLALFisherZeroNoiseRadiuslambda.pdf Graphic file (type pdf)
 
-<use CompareLALFisherZeroNoiseRadiuslambda.pdf>
-<perroralleos.pdf, id=806, 960.1308pt x 956.9392pt>
+<use CompareLALFisherZeroNoiseRadiuslambda.pdf> [14 <./LALMCMCmpa1FitTaylorF2Va
+ryMassperror.pdf> <./LALMCMCmpa1FitTaylorF2VaryMassRadiuslambda.pdf> <./Compare
+LALFisherZeroNoiseperror.pdf> <./CompareLALFisherZeroNoiseRadiuslambda.pdf>]
+<perroralleos.pdf, id=959, 960.1308pt x 956.9392pt>
 File: perroralleos.pdf Graphic file (type pdf)
  <use perroralleos.pdf>
-[14 <./CompareLALFisherZeroNoiseperror.pdf> <./CompareLALFisherZeroNoiseRadiusl
-ambda.pdf>] <constraintsalleos.pdf, id=961, 965.1025pt x 725.82103pt>
+<constraintsalleos.pdf, id=961, 965.1025pt x 725.82103pt>
 File: constraintsalleos.pdf Graphic file (type pdf)
 
-<use constraintsalleos.pdf> [15 <./perroralleos.pdf>]
-<LALMCMCmpa1FitTaylorF2CompareNoiseperror.pdf, id=1061, 512.05678pt x 396.8467p
-t>
+<use constraintsalleos.pdf>
+<LALMCMCmpa1FitTaylorF2CompareNoiseperror.pdf, id=963, 512.05678pt x 396.8467pt
+>
 File: LALMCMCmpa1FitTaylorF2CompareNoiseperror.pdf Graphic file (type pdf)
  <use LALMCMCmpa1FitTaylorF2CompareNoiseperror.pdf>
-<LALMCMCmpa1FitTaylorF2CompareNoiseRadiuslambda.pdf, id=1063, 517.02847pt x 731
-.89842pt>
+<LALMCMCmpa1FitTaylorF2CompareNoiseRadiuslambda.pdf, id=965, 517.02847pt x 731.
+89842pt>
 File: LALMCMCmpa1FitTaylorF2CompareNoiseRadiuslambda.pdf Graphic file (type pdf
 )
- <use LALMCMCmpa1FitTaylorF2CompareNoiseRadiuslambda.pdf> [16 <./constraintsall
-eos.pdf>]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 637.
-
-
-<LALMCMCmpa1FitCompareF2T1T4ZeroNoiseperror.pdf, id=1150, 512.05678pt x 396.846
-7pt>
+ <use LALMCMCmpa1FitTaylorF2CompareNoiseRadiuslambda.pdf>
+<LALMCMCmpa1FitCompareF2T1T4ZeroNoiseperror.pdf, id=967, 512.05678pt x 396.8467
+pt>
 File: LALMCMCmpa1FitCompareF2T1T4ZeroNoiseperror.pdf Graphic file (type pdf)
  <use LALMCMCmpa1FitCompareF2T1T4ZeroNoiseperror.pdf>
-<LALMCMCmpa1FitCompareF2T1T4ZeroNoiseRadiuslambda.pdf, id=1152, 517.02847pt x 7
-31.89842pt>
+<LALMCMCmpa1FitCompareF2T1T4ZeroNoiseRadiuslambda.pdf, id=969, 517.02847pt x 73
+1.89842pt>
 File: LALMCMCmpa1FitCompareF2T1T4ZeroNoiseRadiuslambda.pdf Graphic file (type p
 df)
- <use LALMCMCmpa1FitCompareF2T1T4ZeroNoiseRadiuslambda.pdf> [17 <./LALMCMCmpa1F
-itTaylorF2CompareNoiseperror.pdf> <./LALMCMCmpa1FitTaylorF2CompareNoiseRadiusla
-mbda.pdf>]
+ <use LALMCMCmpa1FitCompareF2T1T4ZeroNoiseRadiuslambda.pdf> [15]
+[16 <./perroralleos.pdf>] [17 <./constraintsalleos.pdf>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 652.
+ on input line 667.
 
-[18 <./LALMCMCmpa1FitCompareF2T1T4ZeroNoiseperror.pdf> <./LALMCMCmpa1FitCompare
-F2T1T4ZeroNoiseRadiuslambda.pdf>] [19] (./paper.bbl
+[18 <./LALMCMCmpa1FitTaylorF2CompareNoiseperror.pdf> <./LALMCMCmpa1FitTaylorF2C
+ompareNoiseRadiuslambda.pdf> <./LALMCMCmpa1FitCompareF2T1T4ZeroNoiseperror.pdf>
+ <./LALMCMCmpa1FitCompareF2T1T4ZeroNoiseRadiuslambda.pdf>] [19] (./paper.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 85--90
  []\OT1/cmr/m/n/9 F. Ac-er-nese, et al. (Virgo Col-lab-o-ra-tion),
  []
@@ -440,6 +435,7 @@ Underfull \hbox (badness 2142) in paragraph at lines 271--274
 , 103011 (2010),
  []
 
+[20]
 ! Undefined control sequence.
 <argument> \apjl 
                  
@@ -474,7 +470,7 @@ Underfull \hbox (badness 1331) in paragraph at lines 369--382
  \OT1/cmr/m/n/9 T. Ac-ca-dia, F. Ac-er-nese, C. Adams, R. Ad-hikari,
  []
 
-[20]
+
 Underfull \hbox (badness 2401) in paragraph at lines 393--400
  []\OT1/cmr/m/n/9 K. Hebeler, J. M. Lat-timer, C. J. Pethick, and
  []
@@ -520,13 +516,13 @@ Package natbib Warning: There were undefined citations.
 
 [21] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 3820 strings out of 493886
- 50476 string characters out of 1151099
- 143447 words of memory out of 3000000
- 7028 multiletter control sequences out of 10000+50000
+ 3823 strings out of 493886
+ 50547 string characters out of 1151099
+ 155941 words of memory out of 3000000
+ 7031 multiletter control sequences out of 10000+50000
  12355 words of font info for 49 fonts, out of 3000000 for 5000
  714 hyphenation exceptions out of 8191
- 29i,18n,27p,2073b,355s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,18n,27p,2134b,355s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/
 cmbx10.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmbx12.pf
 b></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmbx9.pfb></usr/lo
@@ -551,7 +547,7 @@ ist/fonts/type1/bluesky/cm/cmti10.pfb></usr/local/texlive/2008/texmf-dist/fonts
 esky/cm/cmtt10.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/c
 mtt9.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/ams/msam10.pfb
 >
-Output written on paper.pdf (21 pages, 1258617 bytes).
+Output written on paper.pdf (21 pages, 1261071 bytes).
 PDF statistics:
  1545 PDF objects out of 1728 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
