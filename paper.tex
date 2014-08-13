@@ -83,8 +83,6 @@ We organize the paper as follows. In Section~\ref{sec:waveform} we describe the 
 
 \les{Some citations still needed...  (Ben, you mention an email from Damour.  Do you want to add in those citations?)}{}
 
-\les{Mention that we only use leading-order in amplitude.}{}
-
 \les{Check that notation is consistent with rest of paper.}{}
 
 \les{Should I include $c$'s and $G$'s?}{}
@@ -102,19 +100,23 @@ F_\times(\theta,\phi,\psi)&=&\frac{1}{2}(1+\cos^2\theta)\cos(2\phi)\sin(2\psi)\\
 \nonumber
 &&-\cos(\theta)\sin(2\phi)\cos(2\psi),
 \end{eqnarray}
-in a coordinate system where the two arms define the x-axis and the y-axis, and the z-axis is normal to the x-y plane.  Here, $(\theta, \phi)$ are the sky position in spherical coordinates, and $\psi$ is the polarization angle \les{Should I define what the polarization angle is?}{}.  Assuming the binary components are point particles in a circular orbit, the two polarizations of the emitted GW seen by an observer at a distance $D$ away are
+in a coordinate system where the two arms define the x-axis and the y-axis, and the z-axis is normal to the x-y plane \les{[cite gr-qc/0008066]}{}.  Here, $(\theta, \phi)$ are the sky position in spherical coordinates, and $\psi$ is the polarization angle \les{Should I define what the polarization angle is?}{}.  Assuming the binary components are point particles in a circular orbit and restricting to leading order in amplitude, the two polarizations of the emitted GW seen by an observer at a distance $D$ away are
 \begin{eqnarray}
 \label{eq:hoftp}
 h_+(t)&=&-\frac{4\mu}{D}\left(\frac{1+\cos^2\iota}{2}\right)x(t)\cos\left[2\Phi(t)\right],\\
 \label{eq:hoftc}
 h_\times(t)&=&-\frac{4\mu}{D}\cos\iota\mbox{ }x(t)\sin\left[2\Phi(t)\right],
 \end{eqnarray}
-in the time-domain, where $\mu=m_1 m_2/M$ is the reduced mass, $M=m_1+m_2$ is the total mass, $\iota$ is the inclination angle \les{Should I define what the inclination angle is?}{}, $\Phi(t)$ is the orbital phase, and $x=(\pi M f)^{2/3}$ where $f$ is the GW frequency.  The stationary-phase approximation can be used to find the two polarizations in the frequency-domain:
+in the time-domain, where $\mu=m_1 m_2/M$ is the reduced mass, $M=m_1+m_2$ is the total mass, $\iota$ is the inclination angle \les{Should I define what the inclination angle is?}{}, $\Phi(t)$ is the orbital phase, and $x=(\pi M f)^{2/3}$ where $f$ is the GW frequency.  Using the Fourier transform convention
+\begin{equation}
+\tilde{h}(f)=\int_{-\infty}^{+\infty} h(t) e^{-2\pi i f t}dt,
+\end{equation}
+the stationary-phase approximation can be used to find the two polarizations in the frequency-domain:
 \begin{eqnarray}
 \label{eq:hoffp}
-\tilde{h}_+(f)&=&\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}D}\left(\frac{1+\cos^2\iota}{2}\right)e^{i\Psi(f)},\\
+\tilde{h}_+(f)&=&\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}D}\left(\frac{1+\cos^2\iota}{2}\right)e^{-i\Psi(f)},\\
 \label{eq:hoffc}
-\tilde{h}_\times(f)&=&i\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}D}\cos\iota\mbox{ }e^{i\Psi(f)},
+\tilde{h}_\times(f)&=&-i\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}D}\cos\iota\mbox{ }e^{-i\Psi(f)},
 \end{eqnarray}
 where the chirp mass ${\cal M}=\eta^{3/5}M$, the symmetric mass ratio $\eta=m_1 m_2/M^2$, $\Psi(f)=2\pi f t(v) - 2\Phi(v) - \pi/4$, and $\tilde{h}_+(f)$ and $\tilde{h}_\times(f)$ are the Fourier transforms of $h_+(t)$ and $h_\times(t)$ respectively.
 
@@ -163,22 +165,24 @@ where $\Lambda_1=\lambda_1/m_1$ and $\Lambda_2=\lambda_2/m_2$.  In order to writ
 As is described in detail in the Appendix of Ref.~\cite{WadeCreightonOchsner2014}, there are several methods to determine the phase evolution of the system from its energy and luminosity, and we use three of them.  In the TaylorT1 method, one numerically integrates Eqs.~\eqref{eq:dPhidt} and~\eqref{eq:dxdt} to find $\Phi(t)$ and $x(t)$. The TaylorT4 method is a slight variation where one re-expands the ratio $-{\cal L}/E^\prime$ on right hand side of Eq.~\eqref{eq:dxdt} then truncates the series at the highest known PN order (here 3.5PN) before numerically integrating to find $\Phi(t)$ and $x(t)$. The TaylorF2 method uses the stationary phase approximation to estimate the Fourier transformed waveform.  Eqs.~\eqref{eq:int_t} and~\eqref{eq:int_Phi} are used to write $\Psi(f)$ in the following form:
 \begin{equation}
 \label{eq:psi}
-\Psi(f)=2\pi f t_{\rm ref} - 2\Phi_{\rm ref} + 2\int_x^{x_{\rm ref}}\frac{x^{3/2} - y^{3/2}}{M}\frac{E^\prime(y)}{{\cal L}(y)}dy.
+\Psi(f)=2\pi f t_{\rm ref} - 2\Phi_{\rm ref} -\frac{\pi}{4}+ 2\int_x^{x_{\rm ref}}\frac{x^{3/2} - y^{3/2}}{M}\frac{E^\prime(y)}{{\cal L}(y)}dy.
 \end{equation}
 The ratio $E^\prime/{\cal L}$ is then re-expanded and truncated at the highest known PN order (here 3.5PN) before the integral in Eq.~\eqref{eq:psi} is analytically computed to find $\Psi(f)$.  The differences in the PN waveform families are due mostly to the way terms beyond 3.5PN order are truncated.  Thus, the differences in results using one waveform family as the injection and another as templates should give a reasonable estimate of systematic errors due to unknown higher order terms.
 
 The majority of this work uses the TaylorF2 waveform approximant because its fully analytic frequency-domain form makes it the fastest PN waveform to generate.  The complete TaylorF2 strain can be written more compactly in the following form:
 \begin{equation}
-\tilde{h}(f)=\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}}{\pi^{2/3}}\frac{Q(\theta,\phi,\psi,\iota)}{D}f^{-7/6}e^{i\Psi(f)},
+\tilde{h}(f)=\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}}{\pi^{2/3}}\frac{Q(\theta,\phi,\psi,\iota)}{D}f^{-7/6}e^{-i\Psi(f)},
 \end{equation}
 where
 \begin{equation}
-Q(\theta,\phi,\psi,\iota) = F_+(\theta,\phi,\psi)\frac{1+\cos\iota}{2} + i F_\times(\theta,\phi,\psi)\cos\iota.
+Q(\theta,\phi,\psi,\iota) = F_+(\theta,\phi,\psi)\frac{1+\cos^2\iota}{2} - i F_\times(\theta,\phi,\psi)\cos\iota.
 \end{equation}
-For a single detector, the extrinsic parameters in the amplitude can be grouped together into a single effective distance parameter, which is $D_{\rm eff}=|Q(\theta,\phi,\psi,\iota)|/D$.  The analytic form for the phase $\Psi(f)$ with point-particle terms up to 3.5PN order and leading-order and next-to-leading-order tidal contributions is
-\begin{equation}
-\Psi(f)=\frac{3}{128\eta x^{5/2}}\left[1+\psi_\text{PP-PN}(\eta)+\psi_\text{Tidal}(\eta,\Lambda_1,\Lambda_2)\right],
-\end{equation}
+For a single detector, the extrinsic parameters in the amplitude can be grouped together into a single effective distance parameter, which is $D_{\rm eff}=D/|Q(\theta,\phi,\psi,\iota)|$.  The analytic form for the phase $\Psi(f)$ with point-particle terms up to 3.5PN order and leading-order and next-to-leading-order tidal contributions is
+\begin{eqnarray}
+\Psi(f)&=&2\pi f t_{\rm ref} - 2\Phi_{\rm ref} -\frac{\pi}{4}\\
+\nonumber
+&&+\frac{3}{128\eta x^{5/2}}\left[1+\psi_\text{PP-PN}(\eta)+\psi_\text{Tidal}(\eta,\Lambda_1,\Lambda_2)\right],
+\end{eqnarray}
 where the point-particle PN terms $\psi_\text{PP-PN}(\eta)$ are given in \cite{BuonannoIyerOchsner2009}, and
 \begin{widetext}
 \begin{equation}
@@ -196,7 +200,7 @@ where
 \end{widetext}
 We express the tidal contributions to the TaylorF2 phase in terms of $(\tilde\Lambda,\delta\tilde\Lambda)$ because $\tilde\Lambda$ is comparably more measurable than $\Lambda_1$ and $\Lambda_2$ individually.  For more details regarding this parameterization, see \cite{WadeCreightonOchsner2014,Favata2014}.
 
-We choose to ignore spin and precession in this study for simplicity.  However, it has been shown that ignoring spin in BNS systems can noticeably bias parameter estimation, even for relatively small spin magnitudes \cite{Favata2014}.  Additionally, we choose to end our waveforms when they reach $f_{\rm ISCO}=(6^{3/2}\pi M)$, where $f_{\rm ISCO}$ is the gravitational-wave frequency when the binary reaches the inner-most stable circular orbit (ISCO).  For certain EOSs, this termination frequency may be greater than the frequency at which the two components come into contact.  A parallel investigation which studies how spin and the choice of high-frequency cutoffs can affect the estimation of tidal parameters is nearing completion \cite{Nikhef_paper_2} \les{(I don't know how to cite this, but I think they will be publishing this or putting it on the arxiv soon)}{}.
+We choose to ignore spin and precession in this study for simplicity.  However, it has been shown that ignoring spin in BNS systems can noticeably bias parameter estimation, even for relatively small spin magnitudes \cite{Favata2014}.  Additionally, we choose to end our waveforms when they reach $f_{\rm ISCO}=(6^{3/2}\pi M)$, where $f_{\rm ISCO}$ is the GW frequency of the innermost stable circular orbit (ISCO) of a test particle about a Schwarzschild BH of mass $M$.  For certain EOSs, this termination frequency may be greater than the frequency at which the two components come into contact.  A parallel investigation which studies how spin and the choice of high-frequency cutoffs can affect the estimation of tidal parameters is nearing completion \cite{Nikhef_paper_2} \les{(I don't know how to cite this, but I think they will be publishing this or putting it on the arxiv soon)}{}.
 
 %In this paper we use the post-Newtonian (PN) formalism to construct our waveform model [[as does everyone else]]. In the PN formalism the energy for circular orbits is found from the conservative parts of the Hamiltonian which is now known up to 4PN order [[is this true? Define what xPN order means]] The luminosity is found from a multipolar decomposition of the metric perturbation in the wave zone, which is then matched to the post-Newtonian multipolar decomposition in the near zone \red{[[None of this really matters.]]}. The phase evolution of the orbit is calculated from the assumption of energy balance $dE/dt = -\mathcal{L}$.
 
@@ -303,7 +307,7 @@ For each piece of a piecewise polytrope, the pressure $p$ in the rest-mass densi
 \begin{equation}
 p(\rho) = K_i \rho^{\Gamma_i},
 \end{equation}
-where $\Gamma_i$ is the adiabatic index and the constant $K_i$ is chosen such that $p$ is continuous at the boundary $\rho_{i-1}$. For the core of the star, we use 3 polytropes with adiabatic indices $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$, separated by the fixed dividing densities $\rho_1 = 10^{14.7}$~g/cm$^3$ and $\rho_2 = 10^{15}$~g/cm$^3$. These fixed dividing densities were chosen to minimize the least-squares error between the piecewise polytrope fit and a set of 34 tabulated theoretical EOSs~\cite{ReadLackey2009}. In addition to the three adiabatic indices, we also require an additional parameter to determine the overall pressure scaling which we choose to be $p_1 = p(\rho_1)$, the pressure at the first dividing density. We will therefore use as our four EOS parameters $\vec E = (\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3)$.
+where $\Gamma_i$ is the adiabatic index and the constant $K_i$ is chosen such that $p$ is continuous at the boundary $\rho_{i-1}$. For the core of the star, we use 3 polytropes with adiabatic indices $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$, separated by the fixed dividing densities $\rho_1 = 10^{14.7}$~g/cm$^3$ and $\rho_2 = 10^{15}$~g/cm$^3$. These fixed dividing densities were chosen to minimize the least-squares error between the piecewise polytrope fit and a set of 34 tabulated theoretical EOSs~\cite{ReadLackey2009}. In addition to the three adiabatic indices, we also require an additional parameter to determine the overall pressure scaling which we choose to be $p_1 = p(\rho_1)$, the pressure at the first dividing density. We will therefore use as our four EOS parameters $\vec E = (\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3)$ \les{($E$ was used as energy in Section II.  We should change one or the other, I think)}{}.
 
 For the lower density crust of the NS we use a 4-piece polytrope fit to the SLy EOS given by Table~II of Ref.~\cite{ReadLackey2009}\footnote{The values for $K_i$ in Table~II of Ref.~\cite{ReadLackey2009} incorrectly give the pressure in mass-density units $p/c^2$. The values of $K_i$ in the table should therefore be multiplied by $c^2$.}, and we note that the particular choice of the crust EOS effects the results at less than a percent level. We join the fixed crust EOS and parameterized core EOS together at the density $\rho_0$ where the two EOSs intersect. This usually occurs below $\rho_{\rm nuc}$, and we reject any set of EOS parameters where the joining density is below $2.63\times 10^{12}$~g/cm$^3$, where we consider the EOS to be known. Finally, given this EOS, the energy density $\epsilon$, used for solving the stellar structure equations that determine the radius and tidal deformability, can be evaluated by integrating the first law of thermodynamics
 \begin{equation}
@@ -312,7 +316,7 @@ d\frac{\epsilon}{\rho} = - p d\frac{1}{\rho}.
 
 We note that for NSs around $1.4M_\odot$ found in BNS systems, the central density is close to or just above the last dividing density $\rho_2 = 10^{15}$~g/cm$^3$ for most EOS parameters~\cite{ReadLackey2009}. Information about $\Gamma_3$ therefore cannot come from BNS inspiral observations alone. However, when used in conjunction with the priors from causality and high mass NS observations, the inspiral will help constrain $\Gamma_3$ and the EOS above $\rho_2$.
 
-In Fig.~\ref{fig:mvs3d}, we show the constraints placed on the parameter space by the requirement of causality and the existence of a NS with a mass of at least $1.93M_\odot$. Although the causality requirement must hold for all densities, we have only assumed that the piecewise polytrope used here is a sufficiently good fit to the true EOS for densities below $\rho_{\rm c, max}$, the central density of the maximum mass NS. Above this density the EOS could take some other form that is not well described by the expression $p = K_3 \rho^{\Gamma_3}$. We have therefore used the weaker constraint of excluding EOS parameters that result in $v_s > c$ below $\rho_{\rm c, max}$ but accepting those parameters if $v_s > c$ above $\rho_{\rm c, max}$ as discussed in Ref.~\cite{ReadLackey2009}. Because most of the mass in a NS at its maximum mass is above $\rho_1$, the maximum mass and maximum speed of sound are mostly independent of $\Gamma_1$, the adiabatic index below $\rho_1$. We therefore show the constraint in the 3 parameter $(\log(p_1), \Gamma_2, \Gamma_3)$ subspace with $\Gamma_1$ fixed at 3.0\red{[[?]]}. 
+In Fig.~\ref{fig:mvs3d}, we show the constraints placed on the parameter space by the requirement of causality and the existence of a NS with a mass of at least $1.93M_\odot$. Although the causality requirement must hold for all densities, we have only assumed that the piecewise polytrope used here is a sufficiently good fit to the true EOS for densities below $\rho_{\rm c, max}$, the central density of the maximum mass NS. Above this density the EOS could take some other form that is not well described by the expression $p = K_3 \rho^{\Gamma_3}$. We have therefore used the weaker constraint of excluding EOS parameters that result in $v_s > c$ below $\rho_{\rm c, max}$ but accepting those parameters if $v_s > c$ above $\rho_{\rm c, max}$ as discussed in Ref.~\cite{ReadLackey2009}. Because most of the mass in a NS at its maximum \les{allowed}{} mass is above $\rho_1$, the maximum mass and maximum speed of sound are mostly independent of $\Gamma_1$, the adiabatic index below $\rho_1$. We therefore show the constraint in the 3 parameter $(\log(p_1), \Gamma_2, \Gamma_3)$ subspace with $\Gamma_1$ fixed at 3.0\red{[[?]]}. 
 
 \begin{figure}[!htb]
 \begin{center}
@@ -367,7 +371,7 @@ ALF2&34.616&4.070&2.411&1.890&0.043& 0.642&1.50& 2.086&-5.26& 13.188&-3.66\\
 
 \red{[[Make sure all the waveform parameters are explicitly defined in Section II, or else you'll have to define them here.]]}
 
-Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We use Bayes' theorem to write the posterior density function (PDF) for the universal EOS parameters $\vec E = (\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3)$ that are common to all NSs and the waveform parameters $\vec\theta = (D_L, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda)$ that are unique to each of the $n$ BNS systems as
+Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We use Bayes' theorem to write the posterior density function (PDF) for the universal EOS parameters $\vec E = (\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3)$ that are common to all NSs \les{(The referee made me provide a citation for this type of statement)}{} and the waveform parameters $\vec\theta = (D_L, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda)$ \les{(Note: Sec II calls $\alpha$ and $\delta$ something else, and uses $D$ instead of $D_L$...)}{} that are unique to each of the $n$ BNS systems as
 \begin{equation}
 \begin{split}
 p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})
@@ -375,7 +379,7 @@ p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})
 & \times\frac{ p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I}) }{ p(D | \mathcal{H},\mathcal{I}) }.
 \end{split}
 \end{equation}
-The data $D = \vec d_1,\dots, \vec d_n$ is composed of the data streams $\vec d_i(t)$ from the GW detector network for each of the $n$ inspiral events. $\mathcal{H}$ represents the EOS and waveform models, and $\mathcal{I}$ represents the background information for the parameters. The quantity $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I})$ is the prior probability density for the EOS and waveform parameters, $p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I})$ is the likelihood, and the normalization constant $p(D | \mathcal{H},\mathcal{I})$, which we will not need to calculate here, is the evidence. The marginalized PDF for the EOS parameters is then
+The data $D = \vec d_1,\dots, \vec d_n$ \les{(Note: I used $D$ as distance in Section II.)}{} is composed of the data streams $\vec d_i(t)$ from the GW detector network for each of the $n$ inspiral events. $\mathcal{H}$ represents the EOS and waveform models, and $\mathcal{I}$ represents \les{the background information for the parameters (I'm not sure what this means)}{}. The quantity $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I})$ is the prior probability density for the EOS and waveform parameters, $p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I})$ is the likelihood, and the normalization constant $p(D | \mathcal{H},\mathcal{I})$, which we will not need to calculate here, is the evidence. The marginalized PDF for the EOS parameters is then
 \begin{equation}
 \label{eq:margEOS}
 p(\vec E | D,\mathcal{H},\mathcal{I}) = \int d\vec\theta_1 \dots d\vec\theta_n p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I}).
@@ -390,10 +394,10 @@ The conditional prior for the waveform parameters of each binary can be further 
 \begin{equation}
 \begin{split}
 p(\vec\theta_i | \vec E, \mathcal{H},\mathcal{I}) =& p(m_{1i}, m_{2i} | \vec E, \mathcal{H},\mathcal{I}) p(\tilde\Lambda | m_{1i}, m_{2i}, \vec E, \mathcal{H},\mathcal{I})\\
-&\times p(\theta_{\rm ex, i} | \mathcal{H}, \mathcal{I}).
+&\times p(\theta_{{\rm ex,}\textcolor{blue}i} | \mathcal{H}, \mathcal{I}).
 \end{split}
 \end{equation}
-Likewise, the likelihood for the $n$ independent BNS observations is
+\les{I tried to get the equation above, but I don't think I understand it...  Also, was ``ex,i'' in the subscript supposed to be ``ex,$i$''?}{}  Likewise, the likelihood for the $n$ independent BNS observations is
 \begin{equation}
 p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n, \mathcal{H},\mathcal{I}) = \prod_{i=1}^n p(d_i | \vec\theta_i, \mathcal{H},\mathcal{I}),
 \end{equation}
