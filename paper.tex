@@ -29,7 +29,7 @@ $^2$Department of Physics, University of Wisconsin--Milwaukee, P.O. Box 413, Mil
 }
 
 \begin{abstract}
-Gravitational-wave observations of inspiralling binary neutron star systems can be used to measure the neutron-star equation of state (EOS) through the tidally induced shift in the waveform phase that depends on the tidal deformability parameter $\lambda$. Previous work has shown that $\lambda$, a function of the neutron-star EOS and mass, is marginally measurable by Advanced LIGO for a single event when including tidal information up to the merger frequency. In this work, we describe a method for stacking measurements of $\lambda$ from multiple inspiral events to measure the EOS. We use Markov chain Monte Carlo simulations to estimate the parameters of a 4-parameter piecewise polytrope EOS that matches theoretical EOS models to a few percent. We find that, for ``realistic'' event rates ($\sim 40$ binary neutron star inspiral events per year with signal-to-noise ratio $> 8$ in a single Advanced LIGO detector), combining a year of gravitational-wave data with the constraints from causality and recent high mass neutron-star measurements, the EOS above nuclear density can be measured to better than a factor of two in most cases. We also find that in the mass range $1M_\odot$--$2M_\odot$, the neutron-star radius can be measured to $\pm 1$~km and the tidal deformability can be measured to $\pm 1 \times 10^{36}$~g~cm$^2$~s$^2$. The overwhelming majority of this information comes from the loudest $\sim 5$ events. Current uncertainties in the post-Newtonian waveform model, however, lead to systematic errors in the EOS measurement that are as large as the statistical errors, and more accurate waveform models are needed to remove this error.
+Gravitational-wave observations of inspiralling binary neutron star systems can be used to measure the neutron-star equation of state (EOS) through the tidally induced shift in the waveform phase that depends on the tidal deformability parameter $\lambda$. Previous work has shown that $\lambda$, a function of the neutron-star EOS and mass, is marginally measurable by Advanced LIGO for a single event when including tidal information up to the merger frequency. In this work, we describe a method for stacking measurements of $\lambda$ from multiple inspiral events to measure the EOS. We use Markov chain Monte Carlo simulations to estimate the parameters of a 4-parameter piecewise polytrope EOS that matches theoretical EOS models to a few percent. We find that, for ``realistic'' event rates ($\sim 40$ binary neutron star inspiral events per year with signal-to-noise ratio $> 8$ in a single Advanced LIGO detector), combining a year of \les{triple-coincident}{} gravitational-wave data with the constraints from causality and recent high mass neutron-star measurements, the EOS above nuclear density can be measured to better than a factor of two in most cases. We also find that in the mass range $1M_\odot$--$2M_\odot$, the neutron-star radius can be measured to $\pm 1$~km and the tidal deformability can be measured to $\pm 1 \times 10^{36}$~g~cm$^2$~s$^2$. The overwhelming majority of this information comes from the loudest $\sim 5$ events. Current uncertainties in the post-Newtonian waveform model, however, lead to systematic errors in the EOS measurement that are as large as the statistical errors, and more accurate waveform models are needed to \les{minimize? reduce? (we'll never remove this error) }{remove} this error.
 \end{abstract}
 
 \pacs{
@@ -54,21 +54,21 @@ Gravitational-wave observations of inspiralling binary neutron star systems can 
 
 [[Replace instances of ``confidence interval'', ``uncertainty'', ``error'', etc. with ``credible interval'' / ``credible region'' where appropriate.]]
 
-[[How do I remove the little space before the underscore in \texttt{lalinference\_mcmc}?]]
+[[How do I remove the little space before the underscore in \texttt{lalinference\_mcmc}? \les{It looks like the now use \texttt{LALInferenceMCMC}, according to the new \texttt{LALInference} paper. OCD crisis averted :-) !!}{}]]
 
 [[State the value of $\rho_{\rm nuc}$]]
 
 \section{Introduction}
 
-Observations of neutron stars (NSs), consisting of nuclear matter in the ground state from zero to several times nuclear saturation density, in principle provide an ideal way to measure the nuclear equation of state (EOS) that describes the pressure $p$ as a function of density $\rho$. The most rigorous EOS constraints from NSs have come from measurements of high mass pulsars in compact binary systems, and it is now clear that the EOS must allow for NS masses $\gtrsim 2 M_\odot$~\cite{DemorestPennucciRansom2010, AntoniadisFreireWex2013}. More precise information can be obtained if the NS mass $M$ and radius $R$ are simultaneously measured, and Lindblom demonstrated explicitly that there is a one-to-one map between the relations $R(M)$ and $p(\rho)$~\cite{Lindblom1992}. However, there has been disagreement about the reliability of NS radius measurements. Recent works using multiple NS observations have concluded that the radius of a canonical $1.4M_\odot$ NS, for example, is $9$--$12$~km (for the range of 95\% confidence intervals for three NSs shown in Fig.~1 of Ref.~\cite{OzelBaymGuver2010}), $10.7$--12.5~km (95\% confidence)~\cite{SteinerLattimerBrown2010}, and 7.6--10.4km (90\% confidence)~\cite{GuillotServillatWebb2013}.
+Observations of neutron stars (NSs), consisting of nuclear matter in the ground state from zero to several times nuclear saturation density, in principle provide an ideal way to measure the nuclear equation of state (EOS) that describes the pressure $p$ as a function of density $\rho$. The most rigorous EOS constraints from NSs have come from measurements of high mass pulsars in compact binary systems, and it is now clear that the EOS must allow for NS masses $\gtrsim 2 M_\odot$~\cite{DemorestPennucciRansom2010, AntoniadisFreireWex2013}. More precise information can be obtained if the NS mass $M$ and radius $R$ are simultaneously measured, and Lindblom demonstrated explicitly that there is a one-to-one map between the relations $R(M)$ and $p(\rho)$~\cite{Lindblom1992}. However, there has been disagreement about the reliability of NS radius measurements. Recent works using multiple NS observations have concluded that the radius of a canonical $1.4M_\odot$ NS, for example, is $9$--$12$~km (for the range of 95\% confidence intervals for three NSs shown in Fig.~1 of Ref.~\cite{OzelBaymGuver2010}), $10.7$--12.5~km (95\% confidence)~\cite{SteinerLattimerBrown2010}, and 7.6--10.4km (90\% confidence)~\cite{GuillotServillatWebb2013}. \les{This sentence confused me.  Is the ``multiple NS observations'' referring to three of the NSs from Fig 1, like you state in the parenthesis?  Is the point that these three papers independently used observations from three of the NSs in Fig 1 (did they use the same three?) to estimate the radius of a $1.4M_\odot$ NS, and all came up with different ranges?}{}
 
-Gravitational-wave (GW) observations of NSs in inspiralling compact binaries, on the other hand, are sensitive only to the density profile of NSs, and are therefore free of the model-dependent uncertainties in the emission and absorption mechanisms that plague electromagnetic observations. In the next few years, science runs will begin for second generation detectors, including the two Advanced LIGO (aLIGO) detectors~\cite{Harry2010} and Advanced Virgo~\cite{Acernese2009}, and design sensitivity will likely be reached by the end of the decade~\cite{AasiAbadieAbbott2013}. In addition, \mbox{KAGRA}~\cite{Somiya2012} (formerly LCGT) and possibly LIGO-India~\cite{IyerSouradeepUnnikrishnan2011} will come online a few years later. The EOS information provided by these detectors comes mainly from tidal interactions during the inspiral of binary neutron star (BNS) and black hole-neutron star (BHNS) systems~\cite{FlanaganHinderer2008}. Because the tidal effect is a strong function of the mass ratio, and observed BNS events are likely to be significantly closer, this tidal interaction is likely to be seen for only BNS systems~\cite{PannaraleRezzollaOhmeRead2011}. Additional information may also come from modes in the post-merger remnant of BNS systems~\cite{StergioulasBausweinZagkouris2011, ClarkBausweinCadonati2014} as well as the damping of quasi-normal modes for low mass, high spin BHNS systems~\cite{LackeyKyutokuShibata2014}. In the adiabatic approximation, the quadrupole moment $Q_{ij}$ of one star depends on the tidal field $\mathcal{E}_{ij}$ from the monopole of the other star through the relation $Q_{ij} = -\lambda \mathcal{E}_{ij}$. Here, $\lambda$ is the EOS dependent tidal deformability and is related to the neutron star's dimensionless Love number $k_2$, first calculated in Ref.~\cite{Hinderer2008}, and radius $R$ through the relation $\lambda = \frac{2}{3G} k_2 R^5$, where $G$ is the gravitational constant.
+Gravitational-wave (GW) observations of NSs in inspiralling compact binaries, on the other hand, are sensitive only to the density profile of NSs, and are therefore free of the model-dependent uncertainties in the emission and absorption mechanisms that plague electromagnetic observations. In the next few years, science runs will begin for second generation detectors, including the two Advanced LIGO (aLIGO) detectors~\cite{Harry2010} and Advanced Virgo~\cite{Acernese2009}, and design sensitivity will likely be reached by the end of the decade~\cite{AasiAbadieAbbott2013}. In addition, \mbox{KAGRA}~\cite{Somiya2012} (formerly LCGT) and possibly LIGO-India~\cite{IyerSouradeepUnnikrishnan2011} will come online a few years later. The EOS information provided by these detectors comes mainly from tidal interactions during the inspiral of binary neutron star (BNS) and black hole-neutron star (BHNS) systems~\cite{FlanaganHinderer2008}. Because the tidal effect is a strong function of the mass ratio, and observed BNS events are likely to be significantly closer, this tidal interaction is likely to be seen for only BNS systems~\cite{PannaraleRezzollaOhmeRead2011}. Additional information may also come from modes in the post-merger remnant of BNS systems~\cite{StergioulasBausweinZagkouris2011, ClarkBausweinCadonati2014} as well as the damping of quasi-normal modes for low mass, high spin BHNS systems~\cite{LackeyKyutokuShibata2014}. In the \les{quasi-stationary approximation (When I wrote this in our last paper, Jolien said that ``adiabatic approximation'' wasn't exactly right) }{adiabatic approximation}, the quadrupole moment $Q_{ij}$ of one star depends on the tidal field $\mathcal{E}_{ij}$ from the monopole of the other star through the relation $Q_{ij} = -\lambda \mathcal{E}_{ij}$. Here, $\lambda$ is the EOS dependent tidal deformability and is related to the neutron star's dimensionless Love number $k_2$, first calculated in Ref.~\cite{Hinderer2008}, and radius $R$ through the relation $\lambda = \frac{2}{3G} k_2 R^5$, where $G$ is the gravitational constant.
  
-The measurability of tidal parameters in BNS systems with aLIGO for gravitational wave frequencies below 450Hz (prior to the last $\sim 20$ GW cycles before merger where higher order corrections to the tidal effect become important) was first examined for polytropic EOSs in~\cite{FlanaganHinderer2008} and for theoretical hadronic and quark matter EOSs in~\cite{HindererLackeyLangRead2010}.  These studies found that for a single aLIGO detector, tidal interactions were only observable during this early inspiral stage for stiff EOSs, NS masses below 1.4~$M_\odot$, and for nearby sources around 100Mpc with typical signal to noise ratios (SNR) $\gtrsim 30$. Damour {\it et al.}, however, found that when also including EOS information from the last $\sim 20$ GW cycles prior to contact, tidal parameters are in fact observable for more likely SNRs of $\sim 16$~\cite{DamourNagarVillain2012}. 
+The measurability of tidal parameters in BNS systems with aLIGO for gravitational wave frequencies below 450Hz (prior to the last $\sim 20$ GW cycles before merger where higher order corrections to the tidal effect become important) was first examined for polytropic EOSs in~\cite{FlanaganHinderer2008} and for theoretical hadronic and quark matter EOSs in~\cite{HindererLackeyLangRead2010}.  These studies found that for a single aLIGO detector, tidal interactions were only observable during this early inspiral stage for stiff EOSs, NS masses below 1.4~$M_\odot$, and for nearby sources around 100Mpc with typical signal to noise ratios (SNR) $\gtrsim 30$. Damour {\it et al.}, however, found that when also including EOS information from the last $\sim 20$ GW cycles prior to contact, tidal parameters are in fact observable \les{for more likely}{} SNRs of $\sim 16$~\cite{DamourNagarVillain2012}. \les{The highlighted phrase in the previous sentence confused me.  Are you saying that, by including information from the last 20 cycles, the signals are now observable at SNR~16, and that SNR~16 signals are much more likely than SNR~30 signals? }{}
 
 The above studies relied on the Fisher matrix approximation for parameter estimation which assumes the distribution of parameters follows a multivariate Gaussian. Recent works using a fully Bayesian analysis for the three detector LIGO-Virgo network have confirmed that the tidal signal is indeed measurable when including the entire inspiral up to merger~\cite{DelPozzoLiAgathos2013, WadeCreightonOchsner2014}. In particular Del Pozzo {\it et al.}\ used a method to stack tens of observations of a large number of BNS inspiral events to measure $\lambda(M)$~\cite{DelPozzoLiAgathos2013}. By parametrizing $\lambda(M)$ with a linear fit, they found that $\lambda$ could be measured to $\sim 10\%$ at $1.4M_\odot$, but the mass dependence of $\lambda$ could not be found. This was true even though they used an unrealistically large NS mass range of $1M_\odot$--$2M_\odot$ for their simulated population.
 
-In this paper we will demonstrate the advantages of parameterizing the EOS instead of $\lambda(M)$. The main benefit comes from including prior information about the EOS parameters that would be difficult to include for the parameters of a $\lambda(M)$ fit. As will be discussed in Section~\ref{sec:eos}, thermodynamic stability and causality provide the simple constraint that the slope of the EOS must be in the range $0 \le dp/d\epsilon \le c^2$, where $\epsilon$ is the energy density. Additionally, the constraints from the observed $2M_\odot$ NSs can be included by simply rejecting any EOS parameters that lead to a NS maximum mass below $2M_\odot$. We will find that incorporating this information allows us to make significantly stronger statements about the EOS and macroscopic NS properties. And, this is true when using a much narrower, realistic range of NS masses than used by Del Pozzo {\it et al.}~\cite{DelPozzoLiAgathos2013}.
+In this paper we will demonstrate the advantages of parameterizing the EOS instead of $\lambda(M)$. The main benefit comes from including prior information about the EOS parameters that would be difficult to include for the parameters of a $\lambda(M)$ fit. As will be discussed in Section~\ref{sec:eos}, thermodynamic stability and causality provide the simple constraint that the slope of the EOS must be in the range $0 \le dp/d\epsilon \le c^2$, where $\epsilon$ is the energy density \les{and $c$ is the speed of light (You defined G previously, so maybe define $c$ to be consistent? Your call.)}{}. Additionally, the constraints from the observed $2M_\odot$ NSs can be included by simply rejecting any EOS parameters that lead to a NS maximum mass below $2M_\odot$. We will find that incorporating this information allows us to make significantly stronger statements about the EOS and macroscopic NS properties. And, this is true when using a much narrower, realistic range of NS masses than used by Del Pozzo {\it et al.}~\cite{DelPozzoLiAgathos2013}.
 
 The BNS inspiral signal is almost exactly characterized by the mass, spin, and tidal deformability of each NS, and is therefore free from the intrinsic variability and uncertainties that bias electromagnetic measurements of the mass and radius. Uncertainties in the post-Newtonian waveform model, however, will lead to systematic errors in recovering the tidal deformabilities and, to a lesser extent, masses. Using the Fisher matrix approximation~\cite{Favata2014, YagiYunes2014} as well as a Markov chain Monte Carlo (MCMC) Bayesian analysis~\cite{WadeCreightonOchsner2014}, it was found that the systematic error in $\lambda$ from waveform uncertainties can be as large as the statistical error for a single BNS inspiral observation. When stacking observations the problem becomes worse, as the statistical errors decrease with more observations but the systematic errors do not. We will discuss how systematic errors impact the recovery of the EOS.
 
@@ -81,58 +81,64 @@ We organize the paper as follows. In Section~\ref{sec:waveform} we describe the 
 
 \red{[[Make sure you cite Damour's papers (two for 4PN energy, and the TaylorXy convention). See his email.]]}
 
-\les{Mention: Only leading-order in amplitude.}{}
+\les{Some citations still needed...  (Ben, you mention an email from Damour.  Do you want to add in those citations?)}{}
 
-The strain $h$ observed in a gravitational-wave detector from a wave emitted by a BNS system is related to the two polarizations of the wave and to the detector's antenna beam pattern response:
+\les{Check that notation is consistent with rest of paper.}{}
+
+\les{Should I include $c$'s and $G$'s?}{}
+
+The strain $h$ observed in a GW detector from a wave emitted by a BNS system is related to the two polarizations of the wave and to the detector's antenna beam pattern response:
 \begin{equation}
 h=F_+ h_+ + F_\times h_\times.
 \end{equation}
 For a single interferometric detector, the antenna patterns take the form
-\begin{align}
-\begin{split}
-F_+(\theta,\phi,\psi)=&-\frac{1}{2}(1+\cos^2\theta)\cos(2\phi)\cos(2\psi)\\
-&-\cos(\theta)\sin(2\phi)\sin(2\psi),
-\end{split}\\
-\begin{split}
-F_\times(\theta,\phi,\psi)=&+\frac{1}{2}(1+\cos^2\theta)\cos(2\phi)\sin(2\psi)\\
-&-\cos(\theta)\sin(2\phi)\cos(2\psi),
-\end{split}
-\end{align}
-in a coordinate system where the two arms define the x-axis and the y-axis, and the z-axis is normal to the x-y plane.  Here, $(\theta, \phi)$ are the sky position in spherical coordinates, and $\psi$ is the polarization angle.  Assuming the binary components are point particles in a circular orbit, the two polarizations of the emitted gravitational wave seen by an observer at a distance $r$ away are
 \begin{eqnarray}
-\label{hoftp}
-h_+(t)&=&-\frac{4\mu}{r}\left(\frac{1+\cos^2\iota}{2}\right)x(t)\cos\left[2\Phi(t)\right],\\
-\label{hoftc}
-h_\times(t)&=&-\frac{4\mu}{r}\cos\iota\mbox{ }x(t)\sin\left[2\Phi(t)\right],
+F_+(\theta,\phi,\psi)&=&-\frac{1}{2}(1+\cos^2\theta)\cos(2\phi)\cos(2\psi)\\
+\nonumber
+&&-\cos(\theta)\sin(2\phi)\sin(2\psi),\\
+F_\times(\theta,\phi,\psi)&=&\frac{1}{2}(1+\cos^2\theta)\cos(2\phi)\sin(2\psi)\\
+\nonumber
+&&-\cos(\theta)\sin(2\phi)\cos(2\psi),
 \end{eqnarray}
-in the time-domain, where $\mu=m_1 m_2/M$ is the reduced mass, $M=m_1+m_2$ is the total mass, $\iota$ is the inclination angle, $\Phi(t)$ is the orbital phase, and $x=(\pi M f)^{2/3}$ where $f$ is the gravitational-wave frequency.  The stationary-phase approximation can be used to find the two polarizations in the frequency-domain:
+in a coordinate system where the two arms define the x-axis and the y-axis, and the z-axis is normal to the x-y plane \les{[cite gr-qc/0008066]}{}.  Here, $(\theta, \phi)$ are the sky position in spherical coordinates, and $\psi$ is the polarization angle \les{Should I define what the polarization angle is?}{}.  Assuming the binary components are point particles in a circular orbit and restricting to leading order in amplitude, the two polarizations of the emitted GW seen by an observer at a distance $D$ away are
 \begin{eqnarray}
-\label{hoffp}
-\tilde{h}_+(f)&=&\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}r}\left(\frac{1+\cos^2\iota}{2}\right)e^{i\Psi(f)},\\
-\label{hoffc}
-\tilde{h}_\times(f)&=&i\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}r}\cos\iota\mbox{ }e^{i\Psi(f)},
+\label{eq:hoftp}
+h_+(t)&=&-\frac{4\mu}{D}\left(\frac{1+\cos^2\iota}{2}\right)x(t)\cos\left[2\Phi(t)\right],\\
+\label{eq:hoftc}
+h_\times(t)&=&-\frac{4\mu}{D}\cos\iota\mbox{ }x(t)\sin\left[2\Phi(t)\right],
+\end{eqnarray}
+in the time-domain, where $\mu=m_1 m_2/M$ is the reduced mass, $M=m_1+m_2$ is the total mass, $\iota$ is the inclination angle \les{Should I define what the inclination angle is?}{}, $\Phi(t)$ is the orbital phase, and $x=(\pi M f)^{2/3}$ where $f$ is the GW frequency.  Using the Fourier transform convention
+\begin{equation}
+\tilde{h}(f)=\int_{-\infty}^{+\infty} h(t) e^{-2\pi i f t}dt,
+\end{equation}
+the stationary-phase approximation can be used to find the two polarizations in the frequency-domain:
+\begin{eqnarray}
+\label{eq:hoffp}
+\tilde{h}_+(f)&=&\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}D}\left(\frac{1+\cos^2\iota}{2}\right)e^{-i\Psi(f)},\\
+\label{eq:hoffc}
+\tilde{h}_\times(f)&=&-i\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}D}\cos\iota\mbox{ }e^{-i\Psi(f)},
 \end{eqnarray}
 where the chirp mass ${\cal M}=\eta^{3/5}M$, the symmetric mass ratio $\eta=m_1 m_2/M^2$, $\Psi(f)=2\pi f t(v) - 2\Phi(v) - \pi/4$, and $\tilde{h}_+(f)$ and $\tilde{h}_\times(f)$ are the Fourier transforms of $h_+(t)$ and $h_\times(t)$ respectively.
 
 The orbital phase evolution is described by the following system of ordinary differential equations:
 \begin{eqnarray}
-\label{dPhidt}
+\label{eq:dPhidt}
 \frac{d\Phi(t)}{dt}&=&\frac{x^{3/2}}{M},\\
-\label{dxdt}
+\label{eq:dxdt}
 \frac{d x(t)}{dt}&=&\frac{-{\cal L}}{E^{\prime}},
 \end{eqnarray}
-where $E^{\prime}=dE/dx$ is the analytic derivative of the energy $E$, and the luminosity ${\cal L}$ is related to energy via the energy balance requirement $dE/dt=-{\cal L}$.  Given an energy and luminosity, Eqs.~\eqref{dPhidt} and~\eqref{dxdt} can be solved to find $\Phi(t)$ and $x(t)$, which determines the two time-domain gravitational-wave polarizations in Eqs.~\eqref{hoftp} and~\eqref{hoftc}.
+where $E^{\prime}=dE/dx$ is the analytic derivative of the energy $E$, and the luminosity ${\cal L}$ is related to energy via the energy balance requirement $dE/dt=-{\cal L}$.  Given an energy and luminosity, Eqs.~\eqref{eq:dPhidt} and~\eqref{eq:dxdt} can be solved to find $\Phi(t)$ and $x(t)$, which determines the two time-domain GW polarizations in Eqs.~\eqref{eq:hoftp} and~\eqref{eq:hoftc}.
 
-Integrating Eqs.~\eqref{dPhidt} and~\eqref{dxdt} gives the alternate form:
+Integrating Eqs.~\eqref{eq:dPhidt} and~\eqref{eq:dxdt} gives the alternate form:
 \begin{eqnarray}
-\label{int_t}
+\label{eq:int_t}
 t(x)&=&t_{\rm ref}+\int_x^{x_{\rm ref}}\frac{E^\prime(y)}{{\cal L}(y)}dy,\\
-\label{int_Phi}
+\label{eq:int_Phi}
 \Phi(x)&=&\Phi_{\rm ref}+\int_x^{x_{\rm ref}}\frac{y^{3/2}}{M}\frac{E^\prime(y)}{{\cal L}(y)}dy,
 \end{eqnarray}
-where $t_{\rm ref}=t(x_{\rm ref})$, $\Phi_{\rm ref}=\Phi(x_{\rm ref})$, and $x_{\rm ref}$ is an arbitrary reference value, following \cite{BuonannoIyerOchsner2009}.  Given an energy and luminosity, Eqs.~\eqref{int_t} and~\eqref{int_Phi} can be solved and used to find $\Psi(f)$, which determines the two frequency-domain gravitational-wave polarizations in Eqs.~\eqref{hoffp} and~\eqref{hoffc}.
+where $t_{\rm ref}=t(x_{\rm ref})$, $\Phi_{\rm ref}=\Phi(x_{\rm ref})$, and $x_{\rm ref}$ is an arbitrary reference value, following \cite{BuonannoIyerOchsner2009}.  Given an energy and luminosity, Eqs.~\eqref{eq:int_t} and~\eqref{eq:int_Phi} can be solved and used to find $\Psi(f)$, which determines the two frequency-domain GW polarizations in Eqs.~\eqref{eq:hoffp} and~\eqref{eq:hoffc}.
 
-The energy and luminosity of two orbiting point-particles during their inspiral can be easily solved for in the Newtonian limit of General Relativity.  However, as the system approaches merger, the orbital speed becomes relativistic, and this quasi-Newtonian limit is not enough to accurately describe its waveform.  We therefore use post-Newtonian (PN) theory, which involves expansions of the equations of motion in orders of orbital speed, to push beyond this limit.  Furthermore, compact binaries containing a neutron star noticeably depart from the point-particle approximation at high frequencies and require an additional correction to the energy and luminosity of the system relative to the point-particle terms.  More specifically, tidal interactions contribute to the phase of the orbit by adding a monopole-quadrupole interaction term to the energy.  This additional quadrupole moment adds to the total quadrupole moment of the system, which also increases the luminosity.
+The energy and luminosity of two inspiralling point-particles can be easily solved for in the Newtonian limit of General Relativity.  However, as the system approaches merger, the orbital speed becomes relativistic, and this quasi-Newtonian limit is not enough to accurately describe its waveform.  We therefore use post-Newtonian (PN) theory, which involves expansions of the equations of motion in orders of orbital speed, to push beyond this limit.  Furthermore, compact binaries containing a neutron star noticeably depart from the point-particle approximation at high frequencies and require an additional correction to the energy and luminosity of the system relative to the point-particle terms.  More specifically, tidal interactions contribute to the phase of the orbit by adding a monopole-quadrupole interaction term to the energy.  This additional quadrupole moment adds to the total quadrupole moment of the system, which also increases the luminosity.
 
 As was done in most previous works~\cite{WadeCreightonOchsner2014, DelPozzoLiAgathos2013, Favata2014, YagiYunes2014}, we keep the PN point-particle corrections to the energy and luminosity up to 3.5PN order as well as the leading-order and next-to-leading-order tidal contributions, which enter at the same order as 5PN and 6PN point-particle terms respectively.  The energy and luminosity take the form:
 \begin{align}
@@ -141,42 +147,60 @@ E &= - \frac{1}{2} M \eta x \left[1 + e_\text{PP-PN}(\eta) + e_\text{Tidal}(\eta
 \end{align}
 where the point-particle PN terms $e_\text{PP-PN}$ and $l_\text{PP-PN}$ are given in Ref.~\cite{Blanchet2014Review}, and the tidal terms are
 \begin{widetext}
-\begin{align}
-\begin{split}
-e_\text{Tidal} &= -\frac{9\eta}{2} \left[ (1-3\eta)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}(1-\eta)(\Lambda_1-\Lambda_2) \right]x^5 \\
-& - 22\eta \left[ \left(1-4\eta+\frac{19\eta^2}{8}\right)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}\left(1-2\eta+\frac{3\eta^2}{8}\right)(\Lambda_1-\Lambda_2) \right]x^6,
-\end{split} \\
-\begin{split}
-l_\text{Tidal} &= 3 \left[ (1-2\eta-4\eta^2)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}(1-2\eta^2)(\Lambda_1-\Lambda_2) \right]x^5 \\
-& - \frac{22}{7} \left[ \left(1-\frac{15\eta}{176}+\frac{147\eta^2}{88}-\frac{1547\eta^3}{44}\right)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}\left(1+\frac{337\eta}{176}+\frac{15\eta^2}{2}-\frac{1085\eta^3}{88}\right)(\Lambda_1-\Lambda_2) \right]x^6,
-\end{split}
-\end{align}
+\begin{eqnarray}
+\label{eq:e_tidal}
+e_\text{Tidal} &=& -\frac{9\eta}{2} \left[ (1-3\eta)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}(1-\eta)(\Lambda_1-\Lambda_2) \right]x^5 \\
+\nonumber
+&& - 22\eta \left[ \left(1-4\eta+\frac{19\eta^2}{8}\right)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}\left(1-2\eta+\frac{3\eta^2}{8}\right)(\Lambda_1-\Lambda_2) \right]x^6,\\
+\label{eq:l_tidal}
+l_\text{Tidal}&=&3 \left[ (1-2\eta-4\eta^2)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}(1-2\eta^2)(\Lambda_1-\Lambda_2) \right]x^5 \\
+\nonumber
+&& - \frac{22}{7} \left[ \left(1-\frac{15\eta}{176}+\frac{147\eta^2}{88}-\frac{1547\eta^3}{44}\right)(\Lambda_1+\Lambda_2) \right . \\
+\nonumber
+&& \left . + \sqrt{1-4\eta}\left(1+\frac{337\eta}{176}+\frac{15\eta^2}{2}-\frac{1085\eta^3}{88}\right)(\Lambda_1-\Lambda_2) \right]x^6,
+\end{eqnarray}
 \end{widetext}
-where $\Lambda_1=\lambda_1/m_1$ and $\Lambda_2=\lambda_2/m_2$.  We have also asserted that $m_1 \ge m_2$ in order to express each correction in terms of dimensionless quantities.
+where $\Lambda_1=\lambda_1/m_1$ and $\Lambda_2=\lambda_2/m_2$.  In order to write Eqs.~\eqref{eq:e_tidal} and~\eqref{eq:l_tidal} in this form, we have also asserted that $m_1 \ge m_2$ in order to express each correction in terms of dimensionless quantities.
 
-As is described in detail in the Appendix of Ref.~\cite{WadeCreightonOchsner2014}, there are several methods to determine the phase evolution of the system from its energy and luminosity, and we use three of them.  In the TaylorT1 method, one numerically integrates Eqs.~\eqref{dPhidt} and~\eqref{dxdt} to find $\Phi(t)$ and $x(t)$. The TaylorT4 method is a slight variation where one re-expands the ratio $-{\cal L}/E^\prime$ on right hand side of Eq.~\eqref{dxdt} then truncates the series at the highest known PN order (here 3.5PN) before numerically integrating to find $\Phi(t)$ and $x(t)$. The TaylorF2 method uses the stationary phase approximation to estimate the Fourier transformed waveform.  Eqs.~\eqref{int_t} and~\eqref{int_Phi} are used to write $\Psi(f)$ in the following form:
+As is described in detail in the Appendix of Ref.~\cite{WadeCreightonOchsner2014}, there are several methods to determine the phase evolution of the system from its energy and luminosity, and we use three of them.  In the TaylorT1 method, one numerically integrates Eqs.~\eqref{eq:dPhidt} and~\eqref{eq:dxdt} to find $\Phi(t)$ and $x(t)$. The TaylorT4 method is a slight variation where one re-expands the ratio $-{\cal L}/E^\prime$ on right hand side of Eq.~\eqref{eq:dxdt} then truncates the series at the highest known PN order (here 3.5PN) before numerically integrating to find $\Phi(t)$ and $x(t)$. The TaylorF2 method uses the stationary phase approximation to estimate the Fourier transformed waveform.  Eqs.~\eqref{eq:int_t} and~\eqref{eq:int_Phi} are used to write $\Psi(f)$ in the following form:
 \begin{equation}
-\label{psi}
-\Psi(f)=2\pi f t_{\rm ref} - 2\Phi_{\rm ref} + 2\int_x^{x_{\rm ref}}\frac{x^{3/2} - y^{3/2}}{M}\frac{E^\prime(y)}{{\cal L}(y)}dy.
+\label{eq:psi}
+\Psi(f)=2\pi f t_{\rm ref} - 2\Phi_{\rm ref} -\frac{\pi}{4}+ 2\int_x^{x_{\rm ref}}\frac{x^{3/2} - y^{3/2}}{M}\frac{E^\prime(y)}{{\cal L}(y)}dy.
 \end{equation}
-The ratio $E^\prime/{\cal L}$ is then re-expanded and truncated at the highest known PN order (here 3.5PN) before the integral in Eq.~\eqref{psi} is analytically computed to find $\Psi(f)$.  The differences in the PN waveform families are due mostly to the way terms beyond 3.5PN order are truncated.  Thus, the differences in results using one waveform family as the injection and another as templates should give a reasonable estimate of systematic errors due to unknown higher order terms.
+The ratio $E^\prime/{\cal L}$ is then re-expanded and truncated at the highest known PN order (here 3.5PN) before the integral in Eq.~\eqref{eq:psi} is analytically computed to find $\Psi(f)$.  The differences in the PN waveform families are due mostly to the way terms beyond 3.5PN order are truncated.  Thus, the differences in results using one waveform family as the injection and another as templates should give a reasonable estimate of systematic errors due to unknown higher order terms.
 
-The majority of this work uses the TaylorF2 waveform approximant because its fully analytic frequency-domain form makes it the fastest PN waveform to generate.  For reference, the tidal corrections to the TaylorF2 phase are
+The majority of this work uses the TaylorF2 waveform approximant because its fully analytic frequency-domain form makes it the fastest PN waveform to generate.  The complete TaylorF2 strain can be written more compactly in the following form:
+\begin{equation}
+\tilde{h}(f)=\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}}{\pi^{2/3}}\frac{Q(\theta,\phi,\psi,\iota)}{D}f^{-7/6}e^{-i\Psi(f)},
+\end{equation}
+where
+\begin{equation}
+Q(\theta,\phi,\psi,\iota) = F_+(\theta,\phi,\psi)\frac{1+\cos^2\iota}{2} - i F_\times(\theta,\phi,\psi)\cos\iota.
+\end{equation}
+For a single detector, the extrinsic parameters in the amplitude can be grouped together into a single effective distance parameter, which is $D_{\rm eff}=D/|Q(\theta,\phi,\psi,\iota)|$.  The analytic form for the phase $\Psi(f)$ with point-particle terms up to 3.5PN order and leading-order and next-to-leading-order tidal contributions is
+\begin{eqnarray}
+\Psi(f)&=&2\pi f t_{\rm ref} - 2\Phi_{\rm ref} -\frac{\pi}{4}\\
+\nonumber
+&&+\frac{3}{128\eta x^{5/2}}\left[1+\psi_\text{PP-PN}(\eta)+\psi_\text{Tidal}(\eta,\Lambda_1,\Lambda_2)\right],
+\end{eqnarray}
+where the point-particle PN terms $\psi_\text{PP-PN}(\eta)$ are given in \cite{BuonannoIyerOchsner2009}, and
 \begin{widetext}
 \begin{equation}
-\delta\psi_{\rm tidal}=\frac{3}{128\eta x^{5/2}}\left[ \left(-\frac{39}{2}\tilde{\Lambda}\right)x^5+ \left(-\frac{3115}{64}\tilde{\Lambda}+\frac{6595}{364}\sqrt{1-4\eta}\mbox{ }\delta\tilde{\Lambda}\right)x^6 \right],
+\label{eq:psi_tidal}
+\psi_\text{Tidal}(\eta,\Lambda_1,\Lambda_2)=\left[-\frac{39}{2}\tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)\right]x^5+ \left[-\frac{3115}{64}\tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)+\frac{6595}{364}\sqrt{1-4\eta}\mbox{ }\delta\tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)\right]x^6,
 \end{equation}
 where
 \begin{eqnarray}
-\label{LT}
-\tilde{\Lambda}&=&\frac{8}{13}\left[\left(1+7\eta-31\eta^2\right)\left(\Lambda_1+\Lambda_2\right)+\sqrt{1-4\eta}\left(1+9\eta-11\eta^2\right)\left(\Lambda_1-\Lambda_2\right)\right]\\
-\label{dLT}
-\delta\tilde{\Lambda}&=&\frac{1}{2}\left[\sqrt{1-4\eta}\left(1-\frac{13272}{1319}\eta+\frac{8944}{1319}\eta^2\right)\left(\Lambda_1+\Lambda_2\right) + \left(1-\frac{15910}{1319}\eta+\frac{32850}{1319}\eta^2+\frac{3380}{1319}\eta^3\right)\left(\Lambda_1-\Lambda_2\right)\right].
+\label{eq:LT}
+\tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)&=&\frac{8}{13}\left[\left(1+7\eta-31\eta^2\right)\left(\Lambda_1+\Lambda_2\right)+\sqrt{1-4\eta}\left(1+9\eta-11\eta^2\right)\left(\Lambda_1-\Lambda_2\right)\right],\\
+\label{eq:dLT}
+\delta\tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)&=&\frac{1}{2}\left[\sqrt{1-4\eta}\left(1-\frac{13272}{1319}\eta+\frac{8944}{1319}\eta^2\right)\left(\Lambda_1+\Lambda_2\right) \right .\\
+&& + \left . \left(1-\frac{15910}{1319}\eta+\frac{32850}{1319}\eta^2+\frac{3380}{1319}\eta^3\right)\left(\Lambda_1-\Lambda_2\right)\right].
 \end{eqnarray}
 \end{widetext}
-For more details regarding this choice of tidal deformability parameters, see \cite{WadeCreightonOchsner2014} and \cite{Favata2014}.
+We express the tidal contributions to the TaylorF2 phase in terms of $(\tilde\Lambda,\delta\tilde\Lambda)$ because $\tilde\Lambda$ is comparably more measurable than $\Lambda_1$ and $\Lambda_2$ individually.  For more details regarding this parameterization, see \cite{WadeCreightonOchsner2014,Favata2014}.
 
-We choose to ignore spin and precession in this study for simplicity.  However, it has been shown that ignoring spin in BNS systems can noticeably bias parameter estimation, even for relatively small spin magnitudes \cite{Favata2014}.  Additionally, we choose to end our waveforms when they reach $f_{\rm ISCO}=(6^{3/2}\pi M)$, where $f_{\rm ISCO}$ is the gravitational-wave frequency when the binary reaches the inner-most stable circular orbit (ISCO).  For certain EOSs, this termination frequency may be greater than the frequency at which the two components come into contact.  A parallel investigation into the effect of how spin and the choice of high-frequency cutoffs can affect the estimation of tidal parameters is nearing completion \cite{Nikhef_paper_2}.
+We choose to ignore spin and precession in this study for simplicity.  However, it has been shown that ignoring spin in BNS systems can noticeably bias parameter estimation, even for relatively small spin magnitudes \cite{Favata2014}.  Additionally, we choose to end our waveforms when they reach $f_{\rm ISCO}=(6^{3/2}\pi M)$, where $f_{\rm ISCO}$ is the GW frequency of the innermost stable circular orbit (ISCO) of a test particle about a Schwarzschild BH of mass $M$.  For certain EOSs, this termination frequency may be greater than the frequency at which the two components come into contact.  A parallel investigation which studies how spin and the choice of high-frequency cutoffs can affect the estimation of tidal parameters is nearing completion \cite{Nikhef_paper_2} \les{(I don't know how to cite this, but I think they will be publishing this or putting it on the arxiv soon)}{}.
 
 %In this paper we use the post-Newtonian (PN) formalism to construct our waveform model [[as does everyone else]]. In the PN formalism the energy for circular orbits is found from the conservative parts of the Hamiltonian which is now known up to 4PN order [[is this true? Define what xPN order means]] The luminosity is found from a multipolar decomposition of the metric perturbation in the wave zone, which is then matched to the post-Newtonian multipolar decomposition in the near zone \red{[[None of this really matters.]]}. The phase evolution of the orbit is calculated from the assumption of energy balance $dE/dt = -\mathcal{L}$.
 
@@ -283,7 +307,7 @@ For each piece of a piecewise polytrope, the pressure $p$ in the rest-mass densi
 \begin{equation}
 p(\rho) = K_i \rho^{\Gamma_i},
 \end{equation}
-where $\Gamma_i$ is the adiabatic index and the constant $K_i$ is chosen such that $p$ is continuous at the boundary $\rho_{i-1}$. For the core of the star, we use 3 polytropes with adiabatic indices $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$, separated by the fixed dividing densities $\rho_1 = 10^{14.7}$~g/cm$^3$ and $\rho_2 = 10^{15}$~g/cm$^3$. These fixed dividing densities were chosen to minimize the least-squares error between the piecewise polytrope fit and a set of 34 tabulated theoretical EOSs~\cite{ReadLackey2009}. In addition to the three adiabatic indices, we also require an additional parameter to determine the overall pressure scaling which we choose to be $p_1 = p(\rho_1)$, the pressure at the first dividing density. We will therefore use as our four EOS parameters $\vec E = (\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3)$.
+where $\Gamma_i$ is the adiabatic index and the constant $K_i$ is chosen such that $p$ is continuous at the boundary $\rho_{i-1}$. For the core of the star, we use 3 polytropes with adiabatic indices $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$, separated by the fixed dividing densities $\rho_1 = 10^{14.7}$~g/cm$^3$ and $\rho_2 = 10^{15}$~g/cm$^3$. These fixed dividing densities were chosen to minimize the least-squares error between the piecewise polytrope fit and a set of 34 tabulated theoretical EOSs~\cite{ReadLackey2009}. In addition to the three adiabatic indices, we also require an additional parameter to determine the overall pressure scaling which we choose to be $p_1 = p(\rho_1)$, the pressure at the first dividing density. We will therefore use as our four EOS parameters $\vec E = (\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3)$ \les{($E$ was used as energy in Section II.  We should change one or the other, I think)}{}.
 
 For the lower density crust of the NS we use a 4-piece polytrope fit to the SLy EOS given by Table~II of Ref.~\cite{ReadLackey2009}\footnote{The values for $K_i$ in Table~II of Ref.~\cite{ReadLackey2009} incorrectly give the pressure in mass-density units $p/c^2$. The values of $K_i$ in the table should therefore be multiplied by $c^2$.}, and we note that the particular choice of the crust EOS effects the results at less than a percent level. We join the fixed crust EOS and parameterized core EOS together at the density $\rho_0$ where the two EOSs intersect. This usually occurs below $\rho_{\rm nuc}$, and we reject any set of EOS parameters where the joining density is below $2.63\times 10^{12}$~g/cm$^3$, where we consider the EOS to be known. Finally, given this EOS, the energy density $\epsilon$, used for solving the stellar structure equations that determine the radius and tidal deformability, can be evaluated by integrating the first law of thermodynamics
 \begin{equation}
@@ -292,7 +316,7 @@ d\frac{\epsilon}{\rho} = - p d\frac{1}{\rho}.
 
 We note that for NSs around $1.4M_\odot$ found in BNS systems, the central density is close to or just above the last dividing density $\rho_2 = 10^{15}$~g/cm$^3$ for most EOS parameters~\cite{ReadLackey2009}. Information about $\Gamma_3$ therefore cannot come from BNS inspiral observations alone. However, when used in conjunction with the priors from causality and high mass NS observations, the inspiral will help constrain $\Gamma_3$ and the EOS above $\rho_2$.
 
-In Fig.~\ref{fig:mvs3d}, we show the constraints placed on the parameter space by the requirement of causality and the existence of a NS with a mass of at least $1.93M_\odot$. Although the causality requirement must hold for all densities, we have only assumed that the piecewise polytrope used here is a sufficiently good fit to the true EOS for densities below $\rho_{\rm c, max}$, the central density of the maximum mass NS. Above this density the EOS could take some other form that is not well described by the expression $p = K_3 \rho^{\Gamma_3}$. We have therefore used the weaker constraint of excluding EOS parameters that result in $v_s > c$ below $\rho_{\rm c, max}$ but accepting those parameters if $v_s > c$ above $\rho_{\rm c, max}$ as discussed in Ref.~\cite{ReadLackey2009}. Because most of the mass in a NS at its maximum mass is above $\rho_1$, the maximum mass and maximum speed of sound are mostly independent of $\Gamma_1$, the adiabatic index below $\rho_1$. We therefore show the constraint in the 3 parameter $(\log(p_1), \Gamma_2, \Gamma_3)$ subspace with $\Gamma_1$ fixed at 3.0\red{[[?]]}. 
+In Fig.~\ref{fig:mvs3d}, we show the constraints placed on the parameter space by the requirement of causality and the existence of a NS with a mass of at least $1.93M_\odot$. Although the causality requirement must hold for all densities, we have only assumed that the piecewise polytrope used here is a sufficiently good fit to the true EOS for densities below $\rho_{\rm c, max}$, the central density of the maximum mass NS. Above this density the EOS could take some other form that is not well described by the expression $p = K_3 \rho^{\Gamma_3}$. We have therefore used the weaker constraint of excluding EOS parameters that result in $v_s > c$ below $\rho_{\rm c, max}$ but accepting those parameters if $v_s > c$ above $\rho_{\rm c, max}$ as discussed in Ref.~\cite{ReadLackey2009}. Because most of the mass in a NS at its maximum \les{allowed}{} mass is above $\rho_1$, the maximum mass and maximum speed of sound are mostly independent of $\Gamma_1$, the adiabatic index below $\rho_1$. We therefore show the constraint in the 3 parameter $(\log(p_1), \Gamma_2, \Gamma_3)$ subspace with $\Gamma_1$ fixed at 3.0\red{[[?]]}. 
 
 \begin{figure}[!htb]
 \begin{center}
@@ -347,7 +371,7 @@ ALF2&34.616&4.070&2.411&1.890&0.043& 0.642&1.50& 2.086&-5.26& 13.188&-3.66\\
 
 \red{[[Make sure all the waveform parameters are explicitly defined in Section II, or else you'll have to define them here.]]}
 
-Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We use Bayes' theorem to write the posterior density function (PDF) for the universal EOS parameters $\vec E = (\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3)$ that are common to all NSs and the waveform parameters $\vec\theta = (D_L, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda)$ that are unique to each of the $n$ BNS systems as
+Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We use Bayes' theorem to write the posterior density function (PDF) for the universal EOS parameters $\vec E = (\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3)$ that are common to all NSs \les{(The referee made me provide a citation for this type of statement)}{} and the waveform parameters $\vec\theta = (D_L, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda)$ \les{(Note: Sec II calls $\alpha$ and $\delta$ something else, and uses $D$ instead of $D_L$...)}{} that are unique to each of the $n$ BNS systems as
 \begin{equation}
 \begin{split}
 p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})
@@ -355,7 +379,7 @@ p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})
 & \times\frac{ p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I}) }{ p(D | \mathcal{H},\mathcal{I}) }.
 \end{split}
 \end{equation}
-The data $D = \vec d_1,\dots, \vec d_n$ is composed of the data streams $\vec d_i(t)$ from the GW detector network for each of the $n$ inspiral events. $\mathcal{H}$ represents the EOS and waveform models, and $\mathcal{I}$ represents the background information for the parameters. The quantity $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I})$ is the prior probability density for the EOS and waveform parameters, $p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I})$ is the likelihood, and the normalization constant $p(D | \mathcal{H},\mathcal{I})$, which we will not need to calculate here, is the evidence. The marginalized PDF for the EOS parameters is then
+The data $D = \vec d_1,\dots, \vec d_n$ \les{(Note: I used $D$ as distance in Section II.)}{} is composed of the data streams $\vec d_i(t)$ from the GW detector network for each of the $n$ inspiral events. $\mathcal{H}$ represents the EOS and waveform models, and $\mathcal{I}$ represents \les{the background information for the parameters (I'm not sure what this means)}{}. The quantity $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I})$ is the prior probability density for the EOS and waveform parameters, $p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I})$ is the likelihood, and the normalization constant $p(D | \mathcal{H},\mathcal{I})$, which we will not need to calculate here, is the evidence. The marginalized PDF for the EOS parameters is then
 \begin{equation}
 \label{eq:margEOS}
 p(\vec E | D,\mathcal{H},\mathcal{I}) = \int d\vec\theta_1 \dots d\vec\theta_n p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I}).
@@ -370,10 +394,10 @@ The conditional prior for the waveform parameters of each binary can be further 
 \begin{equation}
 \begin{split}
 p(\vec\theta_i | \vec E, \mathcal{H},\mathcal{I}) =& p(m_{1i}, m_{2i} | \vec E, \mathcal{H},\mathcal{I}) p(\tilde\Lambda | m_{1i}, m_{2i}, \vec E, \mathcal{H},\mathcal{I})\\
-&\times p(\theta_{\rm ex, i} | \mathcal{H}, \mathcal{I}).
+&\times p(\theta_{{\rm ex,}\textcolor{blue}i} | \mathcal{H}, \mathcal{I}).
 \end{split}
 \end{equation}
-Likewise, the likelihood for the $n$ independent BNS observations is
+\les{I tried to get the equation above, but I don't think I understand it...  Also, was ``ex,i'' in the subscript supposed to be ``ex,$i$''?}{}  Likewise, the likelihood for the $n$ independent BNS observations is
 \begin{equation}
 p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n, \mathcal{H},\mathcal{I}) = \prod_{i=1}^n p(d_i | \vec\theta_i, \mathcal{H},\mathcal{I}),
 \end{equation}
