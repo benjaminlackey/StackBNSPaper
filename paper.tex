@@ -87,20 +87,7 @@ We organize the paper as follows. In Section~\ref{sec:waveform} we describe the 
 
 \les{Should I include $c$'s and $G$'s?}{}
 
-The strain $h$ observed in a GW detector from a wave emitted by a BNS system is related to the two polarizations of the wave and to the detector's antenna beam pattern response:
-\begin{equation}
-h=F_+ h_+ + F_\times h_\times.
-\end{equation}
-For a single interferometric detector, the antenna patterns take the form
-\begin{eqnarray}
-F_+(\theta,\phi,\psi)&=&-\frac{1}{2}(1+\cos^2\theta)\cos(2\phi)\cos(2\psi)\\
-\nonumber
-&&-\cos(\theta)\sin(2\phi)\sin(2\psi),\\
-F_\times(\theta,\phi,\psi)&=&\frac{1}{2}(1+\cos^2\theta)\cos(2\phi)\sin(2\psi)\\
-\nonumber
-&&-\cos(\theta)\sin(2\phi)\cos(2\psi),
-\end{eqnarray}
-in a coordinate system where the two arms define the x-axis and the y-axis, and the z-axis is normal to the x-y plane \les{[cite gr-qc/0008066]}{}.  Here, $(\theta, \phi)$ are the sky position in spherical coordinates, and $\psi$ is the polarization angle \les{Should I define what the polarization angle is?}{}.  Assuming the binary components are point particles in a circular orbit and restricting to leading order in amplitude, the two polarizations of the emitted GW seen by an observer at a distance $D$ away are
+The strain $h$ observed in a GW detector from a wave emitted by a BNS system is related to the two polarizations of the wave ($h_+$ and $h_\times$) and to the detector's antenna beam pattern response ($F_+$ and $F_\times$).  Assuming the binary components are point particles in a circular orbit and restricting to leading order in amplitude, the two polarizations of the emitted GW seen by an observer at a distance $D$ away are
 \begin{eqnarray}
 \label{eq:hoftp}
 h_+(t)&=&-\frac{4\mu}{D}\left(\frac{1+\cos^2\iota}{2}\right)x(t)\cos\left[2\Phi(t)\right],\\
@@ -118,25 +105,14 @@ the stationary-phase approximation can be used to find the two polarizations in 
 \label{eq:hoffc}
 \tilde{h}_\times(f)&=&-i\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}f^{-7/6}}{\pi^{2/3}D}\cos\iota\mbox{ }e^{-i\Psi(f)},
 \end{eqnarray}
-where the chirp mass ${\cal M}=\eta^{3/5}M$, the symmetric mass ratio $\eta=m_1 m_2/M^2$, $\Psi(f)=2\pi f t(v) - 2\Phi(v) - \pi/4$, and $\tilde{h}_+(f)$ and $\tilde{h}_\times(f)$ are the Fourier transforms of $h_+(t)$ and $h_\times(t)$ respectively.
-
-The orbital phase evolution is described by the following system of ordinary differential equations:
+where the chirp mass ${\cal M}=\eta^{3/5}M$, the symmetric mass ratio $\eta=m_1 m_2/M^2$, $\Psi(f)=2\pi f t(v) - 2\Phi(v) - \pi/4$, and $\tilde{h}_+(f)$ and $\tilde{h}_\times(f)$ are the Fourier transforms of $h_+(t)$ and $h_\times(t)$ respectively.  Given an energy $E$ and luminosity ${\cal L}$, $\Phi(t)$ and $x(t)$, which determines the two time-domain GW polarizations in Eqs.~\eqref{eq:hoftp} and~\eqref{eq:hoftc}, and $\Psi(f)$, which determines the two frequency-domain GW polarizations in Eqs.~\eqref{eq:hoffp} and~\eqref{eq:hoffc}, can be found from the following ordinary differential equations:
 \begin{eqnarray}
 \label{eq:dPhidt}
 \frac{d\Phi(t)}{dt}&=&\frac{x^{3/2}}{M},\\
 \label{eq:dxdt}
 \frac{d x(t)}{dt}&=&\frac{-{\cal L}}{E^{\prime}},
 \end{eqnarray}
-where $E^{\prime}=dE/dx$ is the analytic derivative of the energy $E$, and the luminosity ${\cal L}$ is related to energy via the energy balance requirement $dE/dt=-{\cal L}$.  Given an energy and luminosity, Eqs.~\eqref{eq:dPhidt} and~\eqref{eq:dxdt} can be solved to find $\Phi(t)$ and $x(t)$, which determines the two time-domain GW polarizations in Eqs.~\eqref{eq:hoftp} and~\eqref{eq:hoftc}.
-
-Integrating Eqs.~\eqref{eq:dPhidt} and~\eqref{eq:dxdt} gives the alternate form:
-\begin{eqnarray}
-\label{eq:int_t}
-t(x)&=&t_{\rm ref}+\int_x^{x_{\rm ref}}\frac{E^\prime(y)}{{\cal L}(y)}dy,\\
-\label{eq:int_Phi}
-\Phi(x)&=&\Phi_{\rm ref}+\int_x^{x_{\rm ref}}\frac{y^{3/2}}{M}\frac{E^\prime(y)}{{\cal L}(y)}dy,
-\end{eqnarray}
-where $t_{\rm ref}=t(x_{\rm ref})$, $\Phi_{\rm ref}=\Phi(x_{\rm ref})$, and $x_{\rm ref}$ is an arbitrary reference value, following \cite{BuonannoIyerOchsner2009}.  Given an energy and luminosity, Eqs.~\eqref{eq:int_t} and~\eqref{eq:int_Phi} can be solved and used to find $\Psi(f)$, which determines the two frequency-domain GW polarizations in Eqs.~\eqref{eq:hoffp} and~\eqref{eq:hoffc}.
+where $E^{\prime}=dE/dx$ is the analytic derivative of the energy $E$, and the luminosity ${\cal L}$ is related to energy via the energy balance requirement $dE/dt=-{\cal L}$.
 
 The energy and luminosity of two inspiralling point-particles can be easily solved for in the Newtonian limit of General Relativity.  However, as the system approaches merger, the orbital speed becomes relativistic, and this quasi-Newtonian limit is not enough to accurately describe its waveform.  We therefore use post-Newtonian (PN) theory, which involves expansions of the equations of motion in orders of orbital speed, to push beyond this limit.  Furthermore, compact binaries containing a neutron star noticeably depart from the point-particle approximation at high frequencies and require an additional correction to the energy and luminosity of the system relative to the point-particle terms.  More specifically, tidal interactions contribute to the phase of the orbit by adding a monopole-quadrupole interaction term to the energy.  This additional quadrupole moment adds to the total quadrupole moment of the system, which also increases the luminosity.
 
@@ -145,39 +121,16 @@ As was done in most previous works~\cite{WadeCreightonOchsner2014, DelPozzoLiAga
 E &= - \frac{1}{2} M \eta x \left[1 + e_\text{PP-PN}(\eta) + e_\text{Tidal}(\eta, \Lambda_1, \Lambda_2)\right], \\
 \mathcal{L} &= \frac{32}{5}\eta^2 x^5 \left[ 1 + l_\text{PP-PN}(\eta) + l_\text{Tidal}(\eta, \Lambda_1, \Lambda_2)\right],
 \end{align}
-where the point-particle PN terms $e_\text{PP-PN}$ and $l_\text{PP-PN}$ are given in Ref.~\cite{Blanchet2014Review}, and the tidal terms are
-\begin{widetext}
-\begin{eqnarray}
-\label{eq:e_tidal}
-e_\text{Tidal} &=& -\frac{9\eta}{2} \left[ (1-3\eta)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}(1-\eta)(\Lambda_1-\Lambda_2) \right]x^5 \\
-\nonumber
-&& - 22\eta \left[ \left(1-4\eta+\frac{19\eta^2}{8}\right)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}\left(1-2\eta+\frac{3\eta^2}{8}\right)(\Lambda_1-\Lambda_2) \right]x^6,\\
-\label{eq:l_tidal}
-l_\text{Tidal}&=&3 \left[ (1-2\eta-4\eta^2)(\Lambda_1+\Lambda_2) + \sqrt{1-4\eta}(1-2\eta^2)(\Lambda_1-\Lambda_2) \right]x^5 \\
-\nonumber
-&& - \frac{22}{7} \left[ \left(1-\frac{15\eta}{176}+\frac{147\eta^2}{88}-\frac{1547\eta^3}{44}\right)(\Lambda_1+\Lambda_2) \right . \\
-\nonumber
-&& \left . + \sqrt{1-4\eta}\left(1+\frac{337\eta}{176}+\frac{15\eta^2}{2}-\frac{1085\eta^3}{88}\right)(\Lambda_1-\Lambda_2) \right]x^6,
-\end{eqnarray}
-\end{widetext}
-where $\Lambda_1=\lambda_1/m_1$ and $\Lambda_2=\lambda_2/m_2$.  In order to write Eqs.~\eqref{eq:e_tidal} and~\eqref{eq:l_tidal} in this form, we have also asserted that $m_1 \ge m_2$ in order to express each correction in terms of dimensionless quantities.
+where the point-particle PN terms $e_\text{PP-PN}$ and $l_\text{PP-PN}$ are given in Ref.~\cite{Blanchet2014Review}, and the tidal terms are given in Ref.~\cite{WadeCreightonOchsner2014}.  In order to write $e_\text{Tidal}$ and $l_\text{Tidal}$ as a function of the dimensionless quantity $\eta$, we have asserted that $m_1 \ge m_2$.
 
-As is described in detail in the Appendix of Ref.~\cite{WadeCreightonOchsner2014}, there are several methods to determine the phase evolution of the system from its energy and luminosity, and we use three of them.  In the TaylorT1 method, one numerically integrates Eqs.~\eqref{eq:dPhidt} and~\eqref{eq:dxdt} to find $\Phi(t)$ and $x(t)$. The TaylorT4 method is a slight variation where one re-expands the ratio $-{\cal L}/E^\prime$ on right hand side of Eq.~\eqref{eq:dxdt} then truncates the series at the highest known PN order (here 3.5PN) before numerically integrating to find $\Phi(t)$ and $x(t)$. The TaylorF2 method uses the stationary phase approximation to estimate the Fourier transformed waveform.  Eqs.~\eqref{eq:int_t} and~\eqref{eq:int_Phi} are used to write $\Psi(f)$ in the following form:
+As is described in detail in the Appendix of Ref.~\cite{WadeCreightonOchsner2014}, there are several methods to determine the phase evolution of the system from its energy and luminosity, and we use three of them.  In the TaylorT1 method, one numerically integrates Eqs.~\eqref{eq:dPhidt} and~\eqref{eq:dxdt} to find $\Phi(t)$ and $x(t)$. The TaylorT4 method is a slight variation where one re-expands the ratio $-{\cal L}/E^\prime$ on right hand side of Eq.~\eqref{eq:dxdt} then truncates the series at the highest known PN order (here 3.5PN) before numerically integrating to find $\Phi(t)$ and $x(t)$. The TaylorF2 method uses the stationary phase approximation to estimate the Fourier transformed waveform.  Eqs.~\eqref{eq:dPhidt} and~\eqref{eq:dxdt} are analytically integrated to write $\Psi(f)$ in the following form:
 \begin{equation}
 \label{eq:psi}
-\Psi(f)=2\pi f t_{\rm ref} - 2\Phi_{\rm ref} -\frac{\pi}{4}+ 2\int_x^{x_{\rm ref}}\frac{x^{3/2} - y^{3/2}}{M}\frac{E^\prime(y)}{{\cal L}(y)}dy.
+\Psi(f)=2\pi f t_{\rm ref} - 2\Phi_{\rm ref} -\frac{\pi}{4}+ 2\int_x^{x_{\rm ref}}\frac{x^{3/2} - y^{3/2}}{M}\frac{E^\prime(y)}{{\cal L}(y)}dy,
 \end{equation}
-The ratio $E^\prime/{\cal L}$ is then re-expanded and truncated at the highest known PN order (here 3.5PN) before the integral in Eq.~\eqref{eq:psi} is analytically computed to find $\Psi(f)$.  The differences in the PN waveform families are due mostly to the way terms beyond 3.5PN order are truncated.  Thus, the differences in results using one waveform family as the injection and another as templates should give a reasonable estimate of systematic errors due to unknown higher order terms.
+where $t_{\rm ref}=t(x_{\rm ref})$, $\Phi_{\rm ref}=\Phi(x_{\rm ref})$, and $x_{\rm ref}$ is an arbitrary reference value, following \cite{BuonannoIyerOchsner2009}.  The ratio $E^\prime/{\cal L}$ is then re-expanded and truncated at the highest known PN order (here 3.5PN) before the integral in Eq.~\eqref{eq:psi} is analytically computed to find $\Psi(f)$.  The differences in the PN waveform families are due mostly to the way terms beyond 3.5PN order are truncated.  Thus, the differences in results using one waveform family as the injection and another as templates should give a reasonable estimate of systematic errors due to unknown higher order terms.
 
-The majority of this work uses the TaylorF2 waveform approximant because its fully analytic frequency-domain form makes it the fastest PN waveform to generate.  The complete TaylorF2 strain can be written more compactly in the following form:
-\begin{equation}
-\tilde{h}(f)=\sqrt{\frac{5}{24}}\frac{{\cal M}^{5/6}}{\pi^{2/3}}\frac{Q(\theta,\phi,\psi,\iota)}{D}f^{-7/6}e^{-i\Psi(f)},
-\end{equation}
-where
-\begin{equation}
-Q(\theta,\phi,\psi,\iota) = F_+(\theta,\phi,\psi)\frac{1+\cos^2\iota}{2} - i F_\times(\theta,\phi,\psi)\cos\iota.
-\end{equation}
-For a single detector, the extrinsic parameters in the amplitude can be grouped together into a single effective distance parameter, which is $D_{\rm eff}=D/|Q(\theta,\phi,\psi,\iota)|$.  The analytic form for the phase $\Psi(f)$ with point-particle terms up to 3.5PN order and leading-order and next-to-leading-order tidal contributions is
+The majority of this work uses the TaylorF2 waveform approximant because its fully analytic frequency-domain form makes it the fastest PN waveform to generate.  The form of the phase $\Psi(f)$ with point-particle terms up to 3.5PN order and leading-order and next-to-leading-order tidal contributions is
 \begin{eqnarray}
 \Psi(f)&=&2\pi f t_{\rm ref} - 2\Phi_{\rm ref} -\frac{\pi}{4}\\
 \nonumber
@@ -189,7 +142,7 @@ where the point-particle PN terms $\psi_\text{PP-PN}(\eta)$ are given in \cite{B
 \label{eq:psi_tidal}
 \psi_\text{Tidal}(\eta,\Lambda_1,\Lambda_2)=\left[-\frac{39}{2}\tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)\right]x^5+ \left[-\frac{3115}{64}\tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)+\frac{6595}{364}\sqrt{1-4\eta}\mbox{ }\delta\tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)\right]x^6,
 \end{equation}
-where
+where $\Lambda_1=\lambda_1/m_1^5$, $\Lambda_2=\lambda_2/m_2^5$, and
 \begin{eqnarray}
 \label{eq:LT}
 \tilde{\Lambda}(\eta,\Lambda_1,\Lambda_2)&=&\frac{8}{13}\left[\left(1+7\eta-31\eta^2\right)\left(\Lambda_1+\Lambda_2\right)+\sqrt{1-4\eta}\left(1+9\eta-11\eta^2\right)\left(\Lambda_1-\Lambda_2\right)\right],\\
