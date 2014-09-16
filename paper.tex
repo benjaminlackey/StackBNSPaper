@@ -8,6 +8,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{epstopdf}
+\usepackage{hyperref}
 
 \newcommand{\red}{\textcolor{red}}
 \newcommand\ben[2]{\textcolor{red}{{#1}\sout{#2}}}
@@ -59,8 +60,6 @@ The BNS inspiral signal is almost exactly characterized by the mass, spin, and t
 
 We organize the paper as follows. We describe the BNS waveform model in Section~\ref{sec:waveform} and the EOS parameterization in Section~\ref{sec:eos}. Our Bayesian method for estimating EOS parameters is derived in Section~\ref{sec:bayes}. We then show our results for a range of observation scenarios in Section~\ref{sec:results} and the impact from waveform uncertainties in Section~\ref{sec:systematic}. Finally, we summarize our results in the discussion.
 
-%\textit{Conventions}: We set $G=c=1$ unless otherwise stated.
-
 \section{The BNS inspiral signal}
 \label{sec:waveform}
 
@@ -91,7 +90,7 @@ The energy and luminosity have the schematic form
 E &= - \frac{1}{2} c^2 M \eta x \left[1 + e_\text{PP-PN}(\eta) + e_\text{Tidal}(\eta, \Lambda_1, \Lambda_2)\right], \\
 \mathcal{L} &= \frac{32}{5} \frac{c^5}{G} \eta^2 x^5 \left[ 1 + l_\text{PP-PN}(\eta) + l_\text{Tidal}(\eta, \Lambda_1, \Lambda_2)\right],
 \end{align}
-where we write the tidal terms as functions of the dimensionless quantities $\Lambda_i = G\lambda_i \left(\frac{c^2}{G m_i}\right)^5$
+where we write the tidal terms as functions of the dimensionless quantities $\Lambda_i = G\lambda_i \left(\frac{c^2}{G m_i}\right)^5$.
 
 The point-particle PN terms for nonspinning systems depend on only $\eta$. The energy $e_\text{PP-PN}$ was recently calculated to 4PN order~\cite{BiniDamour2013, FoffaSturani2014}, and the luminosity $l_\text{PP-PN}$ is known to 3.5PN order~\cite{Blanchet2014Review}. For consistency with previous works~\cite{WadeCreightonOchsner2014, DelPozzoLiAgathos2013, Favata2014, YagiYunes2014}, we keep the point-particle PN corrections to 3.5PN order.
 
@@ -148,7 +147,7 @@ The tidal contribution then takes the simple form
 \end{equation}
 The two terms containing $\tilde\Lambda$ are significantly larger than the term containing $\delta\tilde\Lambda$, and, as was previously found, $\delta\tilde\Lambda$ is not measurable with aLIGO~\cite{WadeCreightonOchsner2014}. This waveform model can therefore be expressed in terms of the 11 parameters $\vec\theta = \{d_L, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda\}$.
 
-For all versions of the PN waveform, we cut off the inspiral at the GW frequency corresponding to the Schwarzschild innermost stable circular orbit (ISCO) $f_{\rm ISCO}=(6^{3/2}\pi G M/c^3)$.  However, for large NS radii corresponding to a stiff EOS, NSs can merge before reaching $f_{\rm ISCO}$. For simplicity, we also choose to examine nonspinning BNS systems, although it has been shown that not including spin parameters can noticeably bias parameter estimation even for systems with relatively small spin magnitudes \cite{Favata2014}. A parallel investigation which studies how the choice of high-frequency cutoffs and spin can affect the estimation of tidal parameters is nearing completion \cite{Nikhef_paper_2} \red{[[Get reference]]}.
+For all versions of the PN waveform, we cut off the inspiral at the GW frequency corresponding to the Schwarzschild innermost stable circular orbit (ISCO) \les{$f_{\rm ISCO}=c^3/(6^{3/2}\pi G M)$ }{$f_{\rm ISCO}=(6^{3/2}\pi G M/c^3)$}.  However, for large NS radii corresponding to a stiff EOS, NSs can merge before reaching $f_{\rm ISCO}$. For simplicity, we also choose to examine nonspinning BNS systems, although it has been shown that not including spin parameters can noticeably bias parameter estimation even for systems with relatively small spin magnitudes \cite{Favata2014}. A parallel investigation which studies how the choice of high-frequency cutoffs and spin can affect the estimation of tidal parameters is nearing completion \cite{Nikhef_paper_2} \red{[[Get reference]]}.
 
 % ******************** start of Les' version ************************
 
@@ -312,7 +311,7 @@ ALF2&34.616&4.070&2.411&1.890&0.043& 0.642&1.50& 2.086&-5.26& 13.188&-3.66\\
 
 \subsection{Derivation}
 
-Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We use Bayes' theorem to write the posterior density function (PDF) for the universal EOS parameters $\vec E = \{\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3\}$ that are common to all NSs \les{(The referee made me provide a citation for this type of statement)}{}\ben{[[What citation did you use?]]}{} and the waveform parameters $\vec\theta = \{d_L, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda\}$ that are unique to each of the $n$ BNS systems as
+Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We use Bayes' theorem to write the posterior density function (PDF) for the universal EOS parameters $\vec E = \{\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3\}$ that are common to all NSs \les{(The referee made me provide a citation for this type of statement)}{}\ben{[[What citation did you use?]]}{} \les{(``Since all cold NSs have the same EOS [29], spherical NSs with the same mass will also have the same value for $\Lambda$'', where [29] was N. K. Glendenning, Compact Stars: Nuclear Physics, Particle Physics, and General Relativity (Springer- Verlag, NewYork, 2000), 2nd ed.)}{} and the waveform parameters $\vec\theta = \{d_L, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda\}$ that are unique to each of the $n$ BNS systems as
 \begin{equation}
 \begin{split}
 p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})
@@ -447,7 +446,7 @@ by the relation $\Sigma_{ij}  = \Gamma^{-1}_{ij}$. In the large SNR limit, $\hat
 \section{Results}
 \label{sec:results}
 
-In this Section we characterize the ability of the aLIGO--aVirgo network to measure the EOS from a population of BNS inspiral events. For the two aLIGO detectors, we use the zero detuned-high laser power (broadband) PSD~\cite{LIGOnoise} which represents the design sensitivity that may be achieved for the aLIGO detectors by 2019~\cite{AasiAbadieAbbott2013}. For aVIRGO, which has higher high-frequency noise, we use the PSD fit from Ref.~\cite{ManzottiDietz2012} that may be achieved by 2021~\cite{AasiAbadieAbbott2013}. \ben{[[Why is the aVirgo PSD a few times higher between 500--1000Hz than the aLIGO one in the reference (Fig. 1)? I've seen noise curves where the high frequency is more comparable. Do you know of a reference that describes the different aVirgo configurations and noise curves?]]}{}
+In this Section we characterize the ability of the aLIGO--aVirgo network to measure the EOS from a population of BNS inspiral events. For the two aLIGO detectors, we use the zero detuned-high laser power (broadband) PSD~\cite{LIGOnoise} which represents the design sensitivity that may be achieved for the aLIGO detectors by 2019~\cite{AasiAbadieAbbott2013}. For aVIRGO, which has higher high-frequency noise, we use the PSD fit from Ref.~\cite{ManzottiDietz2012} that may be achieved by 2021~\cite{AasiAbadieAbbott2013}. \ben{[[Why is the aVirgo PSD a few times higher between 500--1000Hz than the aLIGO one in the reference (Fig. 1)? I've seen noise curves where the high frequency is more comparable. Do you know of a reference that describes the different aVirgo configurations and noise curves?]]}{} \les{(I don't know of a reference for different aVirgo configurations. Here's a link to the PSDs in LAL: \url{https://www.lsc-group.phys.uwm.edu/daswg/projects/lal/nightly/docs/html/_l_a_l_sim_noise_p_s_d_8c.html}. Maybe this is helpful?)}{}
 
 %In this Section we characterize the ability of the aLIGO--aVirgo network to measure the EOS from a population of BNS inspiral events. We use the zero detuned-high laser power (broadband) configuration~\cite{LIGOnoise} which represents the design sensitivity that may be achieved for the aLIGO detectors by 2019~\cite{AasiAbadieAbbott2013}. The design sensitivity of aVirgo has slightly higher noise and may be achieved by 2021~\cite{AasiAbadieAbbott2013}. For the results here we use the same broadband aLIGO configuration for all three detectors and note that the differences have only a minor quantitative impact on the results \les{(This is not what I did.  I used the parameterized Advanced Virgo PSD from Eq. 6 of 1202.4031 for Virgo.  Does that mess up the consistency of any of our results?)}{}.
 
@@ -460,7 +459,7 @@ We start with a BNS population that has a realistic distribution of masses, numb
 
 \item \textit{Events.} Significant uncertainty exists in the BNS inspiral event rate. Ref.~\cite{LIGORate2010} compiled rate estimates from several population-synthesis models and observations (Table 6 of Ref.~\cite{LIGORate2010}), and summarized the results as follows: a lower 95\% confidence bound of 1 event per Milky Way Equivalent Galaxy per Myr (MWEG$^{-1}$ Myr$^{-1}$), a most likely ``realistic'' value of 100~MWEG$^{-1}$ Myr$^{-1}$, and an upper 95\% confidence bound of 1000~MWEG$^{-1}$ Myr$^{-1}$. This corresponds to GW detection rates of 0.4~yr$^{-1}$, 40~yr$^{-1}$, and 400~yr$^{-1}$ respectively for a single aLIGO interferometer, using the broadband PSD with a threshold $\text{SNR} > 8$, averaging over sky location and orientation, with NS masses of $1.4M_\odot$, and a density of 0.0116~MWEG~Mpc$^{-3}$~\cite{LIGORate2010}. 
 
-We simulated a year of GW data using the ``realistic'' event rate above. Specifically, we calculated the event rate in a volume large enough to contain all detectable BNS events. Because inspirals are a Poisson process, we sampled the actual number of events in a year from a Poisson distribution with this rate. We then sampled the locations of these events uniformly in the volume, the orientations uniformly on a unit sphere, and the individual NS masses uniformly in $[1.2M_\odot, 1.4M_\odot]$. Of these systems $\sim$120 had a network SNR $\ge$ 8 and $\sim$30 had a network SNR $\ge$ 12. We performed parameter estimation for the 20 loudest sources with network SNR that ranged from 63.7 down to 13.6, integrating between GW frequencies \ben{$f_{\rm low}=10?30?$~Hz}{} and $f_{\rm ISCO}$.
+We simulated a year of GW data using the ``realistic'' event rate above. Specifically, we calculated the event rate in a volume large enough to contain all detectable BNS events. Because inspirals are a Poisson process, we sampled the actual number of events in a year from a Poisson distribution with this rate. We then sampled the locations of these events uniformly in the volume, the orientations uniformly on a unit sphere, and the individual NS masses uniformly in $[1.2M_\odot, 1.4M_\odot]$. Of these systems $\sim$120 had a network SNR $\ge$ 8 and $\sim$30 had a network SNR $\ge$ 12. We performed parameter estimation for the 20 loudest sources with network SNR that ranged from 63.7 down to 13.6, integrating between GW frequencies \ben{$f_{\rm low}=10?30?$~Hz}{} \les{(30 Hz)}{} and $f_{\rm ISCO}$.
 
 %For the population presented here, \les{we simulated a BNS population equivalent to the ``realistic'' one from \cite{LIGORate2010}.  We populated a spherical volume of $r=819.6$ Mpc\footnote{\les{This is meant to overestimate the distance to which the Advance LIGO/Virgo network can detect a BNS system.  This is the distance that an optimally oriented 1.6M$_\odot$:1.6M$_\odot$ system, chosen because it is the largest NS mass considered in our population, will have an SNR = 8/$\sqrt{3}$ in a single aLIGO detector.}{}} and density of 0.0116 MWEG Mpc$^{-3}$ with BNS events inspiralling at a rate of 100 MWEG$^{-1}$ Myr$^{-1}$.  This resulted in
 %\begin{eqnarray}
