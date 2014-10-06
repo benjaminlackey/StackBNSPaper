@@ -125,9 +125,9 @@ As described in detail in Ref.~\cite{WadeCreightonOchsner2014}, there are severa
 with the stationary phase approximation. The result, to leading order in the amplitude, is
 \begin{align}
 \label{eq:hoffp}
-\tilde{h}_+(f) &= \sqrt{\frac{5}{24}}\frac{G^2}{c^5}\frac{{\cal M}^{5/6}(Gf/c^3)^{-7/6}}{\pi^{2/3}d_L}\left(\frac{1+\cos^2\iota}{2}\right)e^{-i\Psi(f)},\\
+\tilde{h}_+(f) &= \sqrt{\frac{5}{24}}\frac{G^2}{c^5}\frac{{\cal M}^{5/6}(Gf/c^3)^{-7/6}}{\pi^{2/3}\les{d}{}}\left(\frac{1+\cos^2\iota}{2}\right)e^{-i\Psi(f)},\\
 \label{eq:hoffc}
-\tilde{h}_\times(f) &= -i\sqrt{\frac{5}{24}}\frac{G^2}{c^5}\frac{{\cal M}^{5/6}(Gf/c^3)^{-7/6}}{\pi^{2/3}d_L}\cos\iota\mbox{ }e^{-i\Psi(f)}.
+\tilde{h}_\times(f) &= -i\sqrt{\frac{5}{24}}\frac{G^2}{c^5}\frac{{\cal M}^{5/6}(Gf/c^3)^{-7/6}}{\pi^{2/3}\les{d}{}}\cos\iota\mbox{ }e^{-i\Psi(f)}.
 \end{align}
 Here, $\mathcal{M} = (m_1 m_2)^{3/5}/M^{1/5}$ is the chirp mass, and, in the TaylorF2 approach, the phase has the analytic form 
 \begin{equation}
@@ -263,7 +263,7 @@ The data $D = \vec d_1,\dots, \vec d_n$ is composed of the data streams $\vec d_
 \label{eq:margEOS}
 p(\vec E | D,\mathcal{H},\mathcal{I}) = \int d\vec\theta_1 \dots d\vec\theta_n p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I}).
 \end{equation}
-This $11n$-dimensional integral is not easily computed, so we will decompose it into blocks that can be individually computed. First, we decompose the waveform parameters into extrinsic/nuisance parameters $\vec\theta_{\rm ex} = \{d_L, \alpha, \delta, \psi, \iota, t_c, \phi_c, \delta\tilde\Lambda\}$\footnote{$\delta\tilde\Lambda$ is an intrinsic parameter that in principle provides additional EOS information. However, it is unmeasurable with aLIGO~\cite{WadeCreightonOchsner2014}, so we treat it as a nuisance parameter and group it with the extrinsic parameters when we marginalize over them.} that are unrelated to the EOS measurement and intrinsic parameters $\vec\theta_{\rm in} = \{m_1, m_2, \tilde\Lambda\}$ that are relevant for measuring the EOS such that $\vec\theta = \{\vec\theta_{\rm ex}, \vec\theta_{\rm in}\}$.
+This $11n$-dimensional integral is not easily computed, so we will decompose it into blocks that can be individually computed. First, we decompose the waveform parameters into extrinsic/nuisance parameters $\vec\theta_{\rm ex} = \{\les{d}{}, \alpha, \delta, \psi, \iota, t_c, \phi_c, \delta\tilde\Lambda\}$\footnote{$\delta\tilde\Lambda$ is an intrinsic parameter that in principle provides additional EOS information. However, it is unmeasurable with aLIGO~\cite{WadeCreightonOchsner2014}, so we treat it as a nuisance parameter and group it with the extrinsic parameters when we marginalize over them.} that are unrelated to the EOS measurement and intrinsic parameters $\vec\theta_{\rm in} = \{m_1, m_2, \tilde\Lambda\}$ that are relevant for measuring the EOS such that $\vec\theta = \{\vec\theta_{\rm ex}, \vec\theta_{\rm in}\}$.
 
 The prior can be decomposed into EOS-parameter and waveform-parameter parts using the product rule $p(\vec x, \vec y) = p(\vec x) p(\vec y | \vec x) $ as well as the fact that the $n$ sets of waveform parameters $\vec\theta_i$ are independent
 \begin{equation}
