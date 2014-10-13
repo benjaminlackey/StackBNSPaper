@@ -78,7 +78,7 @@ h = F_+ h_+ + F_\times h_\times.
 \end{equation}
 $F_+$ and $F_\times$ depend on the sky position (given by the right ascension $\alpha$ and declination $\delta$) and GW polarization angle $\psi$ of the source.
 
-For a BNS system in a quasicircular inspiral with an inclination angle $\iota$, \les{comoving distance $d$ }{luminosity distance $d_L$}, and component masses $m_1$ and $m_2$, the two polarizations of the GW are
+For a BNS system in a quasicircular inspiral with an inclination angle $\iota$, \les{comoving (transverse) distance $d$ }{luminosity distance $d_L$}, and component masses $m_1$ and $m_2$, the two polarizations of the GW are
 \begin{eqnarray}
 \label{eq:hoftp}
 h_+(t)&=&-\frac{4G\eta M}{c^2 \les{d}{}}\left(\frac{1+\cos^2\iota}{2}\right)x(t)\cos\left[2\Phi(t)\right],\\
@@ -369,9 +369,9 @@ p(\vec d | \vec\theta, \mathcal{H}, \mathcal{I}) = \prod_a p(d^a | \vec\theta, \
 
 The observed signal to noise ratio (SNR) for the data $d^a(t)$ from detector $a$ is a Gaussian random variable given by
 \begin{equation}
-\rho^a = \frac{(d^a, m)}{\sqrt{(m, m)}},
+\rho^a = \frac{(d^a, m)}{\sqrt{(m, m)}}.
 \end{equation}
-and has the expectation value (or characteristic SNR) $\langle \rho^a \rangle = \sqrt{(m, m)}$. The SNR for a network of detectors is then $\rho_{\rm net} = \sqrt{\sum_a(\rho^a)^2}$, which has expectation value $\langle \rho_{\rm net} \rangle = \sqrt{\sum_a\langle \rho^a \rangle^2}$. \les{(Where do you get these expectation values from?  Can you point me to your source please, or did you derive them yourself?  Jolien does not think that they are correct, and I'd like to check.)}{}
+\les{The SNR for a network of detectors is then $\rho_{\rm net} = \sqrt{\sum_a(\rho^a)^2}$.  This is a measure of the relative power a given GW signal produces in a network of detectors.}{ and has the expectation value (or characteristic SNR) $\langle \rho^a \rangle = \sqrt{(m, m)}$. The SNR for a network of detectors is then $\rho_{\rm net} = \sqrt{\sum_a(\rho^a)^2}$, which has expectation value $\langle \rho_{\rm net} \rangle = \sqrt{\sum_a\langle \rho^a \rangle^2}$.}
 
 \subsection{Averaged likelihood}
 \label{sec:averagelike}
