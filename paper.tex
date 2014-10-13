@@ -250,7 +250,15 @@ ALF2&34.616&4.070&2.411&1.890&0.043& 0.642&1.50& 2.086&-5.26& 13.188&-3.66&4.27&
 
 \subsection{Derivation}
 
-Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We use Bayes' theorem to write the posterior density function (PDF) for the universal EOS parameters $\vec E = \{\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3\}$ that are common to all NSs~\cite{Glendenning1996book} and the waveform parameters $\vec\theta = \{\les{d}{}, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda\}$ that are unique to each of the $n$ BNS systems as
+Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We want to find the posterior density function (PDF) $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})$ for the universal EOS parameters $\vec E$ that are common to all NSs~\cite{Glendenning1996book} and the waveform parameters $\vec\theta_i$ that are unique to each of the $n$ BNS inspiral events. The data $D = \vec d_1,\dots, \vec d_n$ is composed of the data streams $\vec d_i(t)$ from the GW detector network for each of the $n$ inspiral events. $\mathcal{H}$ represents the waveform model, chosen here to be the TaylorF2 waveform with parameters $\vec\theta = \{d, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda\}$, as well as the EOS parameterization, chosen to be the 4-parameter piecewise polytrope with parameters $\vec E = \{\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3\}$. $\mathcal{I}$ represents the background information for the waveform and EOS parameters\footnote{The EOS parameters are related to the waveform parameters through the relations $\tilde\Lambda_i = \tilde\Lambda(m_{1i}, m_{2i}, \vec E)$ and $\delta\tilde\Lambda_i = \delta\tilde\Lambda(m_{1i}, m_{2i}, \vec E)$. However, we will find it simpler to treat them as separate parameters until the end of our calculation.}. We then want to integrate over the waveform parameters to obtain a marginalized PDF for just the EOS parameters
+\begin{equation}
+\label{eq:margEOS}
+p(\vec E | D,\mathcal{H},\mathcal{I}) = \int d\vec\theta_1 \dots d\vec\theta_n p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I}).
+\end{equation}
+This $11n$-dimensional integral is not easily computed, so we will decompose it into blocks that can be individually computed using a two step procedure
+  
+
+We begin with Bayes' theorem to write the joint PDF for the EOS parameters $\vec E$ and the waveform parameters $\vec\theta_1,\dots,\vec\theta_n$ for the $n$ BNS inspiral observations
 \begin{equation}
 \begin{split}
 p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})
@@ -258,12 +266,31 @@ p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})
 & \times\frac{ p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I}) }{ p(D | \mathcal{H},\mathcal{I}) }.
 \end{split}
 \end{equation}
-The data $D = \vec d_1,\dots, \vec d_n$ is composed of the data streams $\vec d_i(t)$ from the GW detector network for each of the $n$ inspiral events. $\mathcal{H}$ represents the EOS and waveform models, and $\mathcal{I}$ represents the background information for the parameters. The quantity $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I})$ is the prior probability density for the EOS and waveform parameters, $p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I})$ is the likelihood, and the normalization constant $p(D | \mathcal{H},\mathcal{I})$, which we will not need to calculate here, is the evidence. The marginalized PDF for the EOS parameters is then
+
+The quantity $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I})$ is the prior probability density for the EOS and waveform parameters, $p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I})$ is the likelihood, and the normalization constant $p(D | \mathcal{H},\mathcal{I})$, which we will not need to calculate here, is the evidence. The marginalized PDF for the EOS parameters is then
 \begin{equation}
 \label{eq:margEOS}
 p(\vec E | D,\mathcal{H},\mathcal{I}) = \int d\vec\theta_1 \dots d\vec\theta_n p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I}).
 \end{equation}
-This $11n$-dimensional integral is not easily computed, so we will decompose it into blocks that can be individually computed. First, we decompose the waveform parameters into extrinsic/nuisance parameters $\vec\theta_{\rm ex} = \{\les{d}{}, \alpha, \delta, \psi, \iota, t_c, \phi_c, \delta\tilde\Lambda\}$\footnote{$\delta\tilde\Lambda$ is an intrinsic parameter that in principle provides additional EOS information. However, it is unmeasurable with aLIGO~\cite{WadeCreightonOchsner2014}, so we treat it as a nuisance parameter and group it with the extrinsic parameters when we marginalize over them.} that are unrelated to the EOS measurement and intrinsic parameters $\vec\theta_{\rm in} = \{m_1, m_2, \tilde\Lambda\}$ that are relevant for measuring the EOS such that $\vec\theta = \{\vec\theta_{\rm ex}, \vec\theta_{\rm in}\}$.
+This $11n$-dimensional integral is not easily computed, so we will decompose it into blocks that can be individually computed. First, we decompose the waveform parameters into extrinsic/nuisance parameters $\vec\theta_{\rm ex} = \{d, \alpha, \delta, \psi, \iota, t_c, \phi_c, \delta\tilde\Lambda\}$\footnote{$\delta\tilde\Lambda$ is an intrinsic parameter that in principle provides additional EOS information. However, it is unmeasurable with aLIGO~\cite{WadeCreightonOchsner2014}, so we treat it as a nuisance parameter and group it with the extrinsic parameters when we marginalize over them.} that are unrelated to the EOS measurement and intrinsic parameters $\vec\theta_{\rm in} = \{m_1, m_2, \tilde\Lambda\}$ that are relevant for measuring the EOS such that $\vec\theta = \{\vec\theta_{\rm ex}, \vec\theta_{\rm in}\}$.
+
+%We calculate $p(\vec E | D,\mathcal{H},\mathcal{I})$ in two steps. First, we use an MCMC algorithm to find the posterior $p(\theta_i | \vec d_i, \mathcal{H}, \mathcal{I})$ for the waveform parameters $\theta_i$ of each binary and marginalize over any parameters that the EOS does not depend on. We next employ another MCMC that uses this marginalized likelihood to find the marginalized posterior $p(\theta_i|D,H,I)$ in the parameters $\theta = {m1,m2,log(p1),\gamma1,\gamma2,\gamma3}$.
+
+
+%Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We use Bayes' theorem to write the posterior density function (PDF) for the universal EOS parameters $\vec E = \{\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3\}$ that are common to all NSs~\cite{Glendenning1996book} and the waveform parameters $\vec\theta = \{\les{d}{}, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda\}$ that are unique to each of the $n$ BNS systems as
+%\begin{equation}
+%\begin{split}
+%p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})
+%&= p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I}) \\
+%& \times\frac{ p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I}) }{ p(D | \mathcal{H},\mathcal{I}) }.
+%\end{split}
+%\end{equation}
+%The data $D = \vec d_1,\dots, \vec d_n$ is composed of the data streams $\vec d_i(t)$ from the GW detector network for each of the $n$ inspiral events. $\mathcal{H}$ represents the \ben{EOS parameterization with unknown parameters $E$ and the waveform model, chosen here to be the 4-parameter piecewise polytrope and the TaylorF2 waveform model respectively.}{EOS and waveform models, and} $\mathcal{I}$ represents the background information for the \ben{EOS and waveform}{} parameters. The quantity $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I})$ is the prior probability density for the EOS and waveform parameters, $p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I})$ is the likelihood, and the normalization constant $p(D | \mathcal{H},\mathcal{I})$, which we will not need to calculate here, is the evidence. The marginalized PDF for the EOS parameters is then
+%\begin{equation}
+%\label{eq:margEOS}
+%p(\vec E | D,\mathcal{H},\mathcal{I}) = \int d\vec\theta_1 \dots d\vec\theta_n p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I}).
+%\end{equation}
+%This $11n$-dimensional integral is not easily computed, so we will decompose it into blocks that can be individually computed. First, we decompose the waveform parameters into extrinsic/nuisance parameters $\vec\theta_{\rm ex} = \{\les{d}{}, \alpha, \delta, \psi, \iota, t_c, \phi_c, \delta\tilde\Lambda\}$\footnote{$\delta\tilde\Lambda$ is an intrinsic parameter that in principle provides additional EOS information. However, it is unmeasurable with aLIGO~\cite{WadeCreightonOchsner2014}, so we treat it as a nuisance parameter and group it with the extrinsic parameters when we marginalize over them.} that are unrelated to the EOS measurement and intrinsic parameters $\vec\theta_{\rm in} = \{m_1, m_2, \tilde\Lambda\}$ that are relevant for measuring the EOS such that $\vec\theta = \{\vec\theta_{\rm ex}, \vec\theta_{\rm in}\}$.
 
 The prior can be decomposed into EOS-parameter and waveform-parameter parts using the product rule $p(\vec x, \vec y) = p(\vec x) p(\vec y | \vec x) $ as well as the fact that the $n$ sets of waveform parameters $\vec\theta_i$ are independent
 \begin{equation}
