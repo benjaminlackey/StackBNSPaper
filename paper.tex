@@ -32,7 +32,7 @@ $^2$Department of Physics, University of Wisconsin--Milwaukee, P.O. Box 413, Mil
 }
 
 \begin{abstract}
-Gravitational-wave observations of inspiralling binary neutron star systems can be used to measure the neutron-star equation of state (EOS) through the tidally induced shift in the waveform phase that depends on the tidal deformability parameter $\lambda$. Previous work has shown that $\lambda$, a function of the neutron-star EOS and mass, is marginally \les{(?)}{} measurable by Advanced LIGO for a single event when including tidal information up to the merger frequency. In this work, we describe a method for stacking measurements of $\lambda$ from multiple inspiral events to measure the EOS. We use Markov chain Monte Carlo simulations to estimate the parameters of a 4-parameter piecewise polytrope EOS that matches theoretical EOS models to a few percent. We find that, for ``realistic'' event rates ($\sim 40$ binary neutron star inspiral events per year with signal-to-noise ratio $> 8$ in a single Advanced LIGO detector), combining a year of gravitational-wave data from a three-detector network with the constraints from causality and recent high mass neutron-star measurements, the EOS above nuclear density can be measured to better than a factor of two \les{(in what? pressure?)}{} in most cases. We also find that in the mass range $1M_\odot$--$2M_\odot$, the neutron-star radius can be measured to better than $\pm 1$~km and the tidal deformability can be measured to better than $\pm 1 \times 10^{36}$~g~cm$^2$~s$^2$ \les{(better as a percentage)}{}. The overwhelming majority of this information comes from the loudest $\sim 5$ events. Current uncertainties in the post-Newtonian waveform model, however, lead to systematic errors in the EOS measurement that are as large as the statistical errors, and more accurate waveform models are needed to minimize this error.
+Gravitational-wave observations of inspiralling binary neutron star systems can be used to measure the neutron-star equation of state (EOS) through the tidally induced shift in the waveform phase that depends on the tidal deformability parameter $\lambda$. Previous work has shown that $\lambda$, a function of the neutron-star EOS and mass, is measurable by Advanced LIGO for a single event when including tidal information up to the merger frequency. In this work, we describe a method for stacking measurements of $\lambda$ from multiple inspiral events to measure the EOS. We use Markov chain Monte Carlo simulations to estimate the parameters of a 4-parameter piecewise polytrope EOS that matches theoretical EOS models to a few percent. We find that, for ``realistic'' event rates ($\sim 40$ binary neutron star inspiral events per year with signal-to-noise ratio $> 8$ in a single Advanced LIGO detector), combining a year of gravitational-wave data from a three-detector network with the constraints from causality and recent high mass neutron-star measurements, the EOS above nuclear density can be measured to better than a factor of two in pressure in most cases. We also find that in the mass range $1M_\odot$--$2M_\odot$, the neutron-star radius can be measured to better than $\pm 1$~km and the tidal deformability can be measured to better than $\pm 1 \times 10^{36}$~g~cm$^2$~s$^2$ (10\%--50\% depending on the EOS and mass). The overwhelming majority of this information comes from the loudest $\sim 5$ events. Current uncertainties in the post-Newtonian waveform model, however, lead to systematic errors in the EOS measurement that are as large as the statistical errors, and more accurate waveform models are needed to minimize this error.
 \end{abstract}
 
 \pacs{
@@ -43,11 +43,9 @@ Gravitational-wave observations of inspiralling binary neutron star systems can 
 
 \maketitle
 
-%[[Eq 4 of Guillot et al. refers to Koranda et al. regarding a relation between the maximum radius and maximum mass. Is this the cause for the roughly straight line you get for the high-mass part of the prior?]]
-
 \section{Introduction}
 
-Observations of neutron stars (NSs), consisting of nuclear matter in the ground state \les{with densities up }{from zero} to several times nuclear saturation density ($\rho_{\rm nuc}\sim2.8\times 10^{14}$~g/cm$^3$), in principle provide an ideal way to measure the nuclear equation of state (EOS) that describes the pressure $p$ as a function of density $\rho$. \les{At these densities the }{The} most rigorous EOS constraints from NSs have come from measurements of high mass pulsars in compact binary systems, and it is now clear that the EOS must allow for NS masses $\gtrsim 2 M_\odot$~\cite{DemorestPennucciRansom2010, AntoniadisFreireWex2013}. More precise information can be obtained if the NS mass $M$ and radius $R$ are simultaneously measured, and Lindblom demonstrated explicitly that there is a one-to-one map between the relations $R(M)$ and $p(\rho)$~\cite{Lindblom1992}. 
+Observations of neutron stars (NSs), consisting of nuclear matter in the ground state with densities up to several times nuclear saturation density ($\rho_{\rm nuc}\sim2.8\times 10^{14}$~g/cm$^3$), in principle provide an ideal way to measure the nuclear equation of state (EOS) that describes the pressure $p$ as a function of density $\rho$. At these densities, the most rigorous EOS constraints from NSs have come from measurements of high mass pulsars in compact binary systems, and it is now clear that the EOS must allow for NS masses $\gtrsim 2 M_\odot$~\cite{DemorestPennucciRansom2010, AntoniadisFreireWex2013}. More precise information can be obtained if the NS mass $M$ and radius $R$ are simultaneously measured, and Lindblom demonstrated explicitly that there is a one-to-one map between the relations $R(M)$ and $p(\rho)$~\cite{Lindblom1992}. 
 
 However, various calculations of the mass and radius of NSs from available observations have produced only marginally consistent results. For example, \"Ozel~{\it et al.}\ used observations of thermonuclear bursts from x-ray binaries to measure the NS mass and radius, and found, for the three systems considered, 95\% confidence intervals that were all in the range 9--12~km at $1.4M_\odot$ (from Fig.~1 of Ref.~\cite{OzelBaymGuver2010} before stacking observations). Steiner~{\it et al.}\ also used mass and radius measurements from three x-ray bursters as well as from three quiescent low-mass x-ray binaries and found the NS radius to be 10.7--12.5~km at $1.4M_\odot$ (from the range of 95\% confidence intervals in Tables~7 and~8 of Ref~\cite{SteinerLattimerBrown2010}). Finally, Guillot~{\it et al.}\ measured the mass and radius for five quiescent low-mass x-ray binaries, and found that the NS radius was 7.6--10.4km (90\% confidence) assuming the radius was an approximately constant function of mass~\cite{GuillotServillatWebb2013}.
 
@@ -78,14 +76,14 @@ h = F_+ h_+ + F_\times h_\times.
 \end{equation}
 $F_+$ and $F_\times$ depend on the sky position (given by the right ascension $\alpha$ and declination $\delta$) and GW polarization angle $\psi$ of the source.
 
-For a BNS system in a quasicircular inspiral with an inclination angle $\iota$, \les{comoving (transverse) distance $d$ }{luminosity distance $d_L$}, and component masses $m_1$ and $m_2$, the two polarizations of the GW are
+For a BNS system in a quasicircular inspiral with an inclination angle $\iota$, comoving (transverse) distance $d$, and component masses $m_1$ and $m_2$, the two polarizations of the GW are
 \begin{eqnarray}
 \label{eq:hoftp}
-h_+(t)&=&-\frac{4G\eta M}{c^2 \les{d}{}}\left(\frac{1+\cos^2\iota}{2}\right)x(t)\cos\left[2\Phi(t)\right],\\
+h_+(t)&=&-\frac{4G\eta M}{c^2 d}\left(\frac{1+\cos^2\iota}{2}\right)x(t)\cos\left[2\Phi(t)\right],\\
 \label{eq:hoftc}
-h_\times(t)&=&-\frac{4G\eta M}{c^2 \les{d}{}}\cos\iota\mbox{ }x(t)\sin\left[2\Phi(t)\right],
+h_\times(t)&=&-\frac{4G\eta M}{c^2 d}\cos\iota\mbox{ }x(t)\sin\left[2\Phi(t)\right],
 \end{eqnarray}
-where we have restricted the amplitude to the leading order and only keep the leading harmonic. Here, $M=m_1+m_2$ is the total mass, $\eta=m_1 m_2/M^2$ is the symmetric mass ratio, $\Phi$ is the orbital phase, and $x$ is the standard PN order parameter defined by $x = \left( \frac{GM}{c^3}\frac{d\Phi}{dt} \right)^{2/3} = \left( \frac{\pi GM f}{c^3} \right)^{2/3}$, where $f$ is the \les{source frame}{} GW frequency of the leading harmonic.
+where we have restricted the amplitude to the leading order and only keep the leading harmonic. Here, $M=m_1+m_2$ is the total mass, $\eta=m_1 m_2/M^2$ is the symmetric mass ratio, $\Phi$ is the orbital phase, and $x$ is the standard PN order parameter defined by $x = \left( \frac{GM}{c^3}\frac{d\Phi}{dt} \right)^{2/3} = \left( \frac{\pi GM f}{c^3} \right)^{2/3}$, where $f$ is the source frame GW frequency of the leading harmonic.
 
 The time evolution of $\Phi(t)$ and $x(t)$ are evaluated from the PN expressions for the energy $E$ and luminosity ${\cal L}$ via the energy balance requirement $dE/dt=-{\cal L}$:
 \begin{eqnarray}
@@ -101,7 +99,7 @@ E &= - \frac{1}{2} c^2 M \eta x \left[1 + e_\text{PP-PN}(x; \eta) + e_\text{Tida
 \end{align}
 where we write the tidal terms as functions of the dimensionless quantities $\Lambda_i = G\lambda_i \left(\frac{c^2}{G m_i}\right)^5$.
 
-The point-particle PN terms for nonspinning systems depend only on $\eta$ \les{and $x$}{}. The energy $e_\text{PP-PN}$ was recently calculated to 4PN order~\cite{BiniDamour2013, FoffaSturani2014}, and the luminosity $l_\text{PP-PN}$ is known to 3.5PN order~\cite{Blanchet2014Review}. For consistency with previous works~\cite{WadeCreightonOchsner2014, DelPozzoLiAgathos2013, Favata2014, YagiYunes2014}, we keep the point-particle PN corrections to 3.5PN order.
+The point-particle PN terms for nonspinning systems depend only on $\eta$ and $x$. The energy $e_\text{PP-PN}$ was recently calculated to 4PN order~\cite{BiniDamour2013, FoffaSturani2014}, and the luminosity $l_\text{PP-PN}$ is known to 3.5PN order~\cite{Blanchet2014Review}. For consistency with previous works~\cite{WadeCreightonOchsner2014, DelPozzoLiAgathos2013, Favata2014, YagiYunes2014}, we keep the point-particle PN corrections to 3.5PN order.
 
 The leading tidal terms begin at the same order as 5PN point-particle terms, and although the tidal potential is known to the next-to-next-to-leading-order term~\cite{BiniDamourFaye2012}, we only include the leading and next-to-leading order terms for consistency with previous works~\cite{WadeCreightonOchsner2014, DelPozzoLiAgathos2013, Favata2014, YagiYunes2014}. These terms are~\cite{VinesFlanaganHinderer2011}
 \begin{widetext}
@@ -125,9 +123,9 @@ As described in detail in Ref.~\cite{WadeCreightonOchsner2014}, there are severa
 with the stationary phase approximation. The result, to leading order in the amplitude, is
 \begin{align}
 \label{eq:hoffp}
-\tilde{h}_+(f) &= \sqrt{\frac{5}{24}}\frac{G^2}{c^5}\frac{{\cal M}^{5/6}(Gf/c^3)^{-7/6}}{\pi^{2/3}\les{d}{}}\left(\frac{1+\cos^2\iota}{2}\right)e^{-i\Psi(f)},\\
+\tilde{h}_+(f) &= \sqrt{\frac{5}{24}}\frac{G^2}{c^5}\frac{{\cal M}^{5/6}(Gf/c^3)^{-7/6}}{\pi^{2/3}d}\left(\frac{1+\cos^2\iota}{2}\right)e^{-i\Psi(f)},\\
 \label{eq:hoffc}
-\tilde{h}_\times(f) &= -i\sqrt{\frac{5}{24}}\frac{G^2}{c^5}\frac{{\cal M}^{5/6}(Gf/c^3)^{-7/6}}{\pi^{2/3}\les{d}{}}\cos\iota\mbox{ }e^{-i\Psi(f)}.
+\tilde{h}_\times(f) &= -i\sqrt{\frac{5}{24}}\frac{G^2}{c^5}\frac{{\cal M}^{5/6}(Gf/c^3)^{-7/6}}{\pi^{2/3}d}\cos\iota\mbox{ }e^{-i\Psi(f)}.
 \end{align}
 Here, $\mathcal{M} = (m_1 m_2)^{3/5}/M^{1/5}$ is the chirp mass, and, in the TaylorF2 approach, the phase has the analytic form 
 \begin{equation}
@@ -154,7 +152,7 @@ The tidal contribution then takes the simple form
 \label{eq:psi_tidal}
 \psi_\text{Tidal} = -\frac{39}{2}\tilde{\Lambda} x^5+ \left(-\frac{3115}{64}\tilde{\Lambda}+\frac{6595}{364}\sqrt{1-4\eta}\mbox{ }\delta\tilde{\Lambda}\right) x^6.
 \end{equation}
-The two terms containing $\tilde\Lambda$ are significantly larger than the term containing $\delta\tilde\Lambda$, and, as was previously found, $\delta\tilde\Lambda$ is not measurable with aLIGO~\cite{WadeCreightonOchsner2014}. This waveform model can therefore be expressed in terms of the 11 parameters $\vec\theta = \{\les{d}{}, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda\}$.
+The two terms containing $\tilde\Lambda$ are significantly larger than the term containing $\delta\tilde\Lambda$, and, as was previously found, $\delta\tilde\Lambda$ is not measurable with aLIGO~\cite{WadeCreightonOchsner2014}. This waveform model can therefore be expressed in terms of the 11 parameters $\vec\theta = \{d, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda\}$.
 
 For all versions of the PN waveform, we cut off the inspiral at the GW frequency corresponding to the Schwarzschild innermost stable circular orbit (ISCO) $f_{\rm ISCO} = c^3/(6^{3/2}\pi G M)$.  However, for large NS radii corresponding to a stiff EOS, NSs can merge before reaching $f_{\rm ISCO}$. For simplicity, we also choose to examine nonspinning BNS systems, although it has been shown that not including spin parameters can noticeably bias parameter estimation even for systems with relatively small spin magnitudes \cite{Favata2014}. A parallel investigation which studies how the choice of high-frequency cutoffs and spin can affect the estimation of tidal parameters is nearing completion \cite{Agathos2014}.
 
@@ -250,32 +248,24 @@ ALF2&34.616&4.070&2.411&1.890&0.043& 0.642&1.50& 2.086&-5.26& 13.188&-3.66&4.27&
 
 \subsection{Derivation}
 
-Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We want to find the posterior density function (PDF) $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})$ for the universal EOS parameters $\vec E$ that are common to all NSs~\cite{Glendenning1996book} and the waveform parameters $\vec\theta_i$ that are unique to each of the $n$ BNS inspiral events. The data $D = \vec d_1,\dots, \vec d_n$ is composed of the data streams $\vec d_i(t)$ from the GW detector network for each of the $n$ inspiral events. $\mathcal{H}$ represents the waveform model, chosen here to be the TaylorF2 waveform with parameters $\vec\theta = \{d, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda\}$, as well as the EOS parameterization, chosen to be the 4-parameter piecewise polytrope with parameters $\vec E = \{\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3\}$. $\mathcal{I}$ represents the background information for the waveform and EOS parameters\footnote{The EOS parameters are related to the waveform parameters through the relations $\tilde\Lambda_i = \tilde\Lambda(m_{1i}, m_{2i}, \vec E)$ and $\delta\tilde\Lambda_i = \delta\tilde\Lambda(m_{1i}, m_{2i}, \vec E)$. However, we will find it simpler to treat them as separate parameters until the end of our calculation.}. We then want to integrate over the waveform parameters to obtain a marginalized PDF for just the EOS parameters
+Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We want to find the posterior density function (PDF) $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})$ for the universal EOS parameters $\vec E$ that are common to all NSs~\cite{Glendenning1996book} and the waveform parameters $\vec\theta_i$ that are unique to each of the $n$ BNS inspiral events\footnote{The EOS parameters are related to the waveform parameters through the relations $\tilde\Lambda_i = \tilde\Lambda(m_{1i}, m_{2i}, \vec E)$ and $\delta\tilde\Lambda_i = \delta\tilde\Lambda(m_{1i}, m_{2i}, \vec E)$, and it would be possible to use the EOS parameters instead of $\tilde\Lambda_i$ and $\delta\tilde\Lambda_i$ as part of the waveform parameters. However, it is simpler to not modify existing parameter estimation codes, and treat them as separate parameters until Eq.~\eqref{eq:lambdaeosrelation}.}. The data $D = \vec d_1,\dots, \vec d_n$ is composed of the data streams $\vec d_i(t)$ from the GW detector network for each of the $n$ inspiral events. $\mathcal{H}$ represents the waveform model, chosen here to be the TaylorF2 waveform with parameters $\vec\theta = \{d, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda\}$, as well as the EOS model, chosen to be the four-parameter piecewise polytrope with parameters $\vec E = \{\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3\}$. $\mathcal{I}$ represents the background information for the waveform and EOS parameters. The PDF is given by Bayes' theorem 
 \begin{equation}
-\label{eq:margEOS}
-p(\vec E | D,\mathcal{H},\mathcal{I}) = \int d\vec\theta_1 \dots d\vec\theta_n p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I}).
-\end{equation}
-This $11n$-dimensional integral is not easily computed, so we will decompose it into blocks that can be individually computed using a two step procedure
-  
-
-We begin with Bayes' theorem to write the joint PDF for the EOS parameters $\vec E$ and the waveform parameters $\vec\theta_1,\dots,\vec\theta_n$ for the $n$ BNS inspiral observations
-\begin{equation}
+\label{eq:bayes}
 \begin{split}
 p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})
 &= p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I}) \\
 & \times\frac{ p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I}) }{ p(D | \mathcal{H},\mathcal{I}) }.
 \end{split}
 \end{equation}
-
-The quantity $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I})$ is the prior probability density for the EOS and waveform parameters, $p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I})$ is the likelihood, and the normalization constant $p(D | \mathcal{H},\mathcal{I})$, which we will not need to calculate here, is the evidence. The marginalized PDF for the EOS parameters is then
+The quantity $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I})$ is the prior probability density for the EOS and waveform parameters, $p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I})$ is the likelihood, and the normalization constant $p(D | \mathcal{H},\mathcal{I})$, which we will not need to calculate here, is the evidence. We will then want to integrate over the waveform parameters to obtain a marginalized PDF for just the EOS parameters
 \begin{equation}
 \label{eq:margEOS}
 p(\vec E | D,\mathcal{H},\mathcal{I}) = \int d\vec\theta_1 \dots d\vec\theta_n p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I}).
 \end{equation}
-This $11n$-dimensional integral is not easily computed, so we will decompose it into blocks that can be individually computed. First, we decompose the waveform parameters into extrinsic/nuisance parameters $\vec\theta_{\rm ex} = \{d, \alpha, \delta, \psi, \iota, t_c, \phi_c, \delta\tilde\Lambda\}$\footnote{$\delta\tilde\Lambda$ is an intrinsic parameter that in principle provides additional EOS information. However, it is unmeasurable with aLIGO~\cite{WadeCreightonOchsner2014}, so we treat it as a nuisance parameter and group it with the extrinsic parameters when we marginalize over them.} that are unrelated to the EOS measurement and intrinsic parameters $\vec\theta_{\rm in} = \{m_1, m_2, \tilde\Lambda\}$ that are relevant for measuring the EOS such that $\vec\theta = \{\vec\theta_{\rm ex}, \vec\theta_{\rm in}\}$.
-
-%We calculate $p(\vec E | D,\mathcal{H},\mathcal{I})$ in two steps. First, we use an MCMC algorithm to find the posterior $p(\theta_i | \vec d_i, \mathcal{H}, \mathcal{I})$ for the waveform parameters $\theta_i$ of each binary and marginalize over any parameters that the EOS does not depend on. We next employ another MCMC that uses this marginalized likelihood to find the marginalized posterior $p(\theta_i|D,H,I)$ in the parameters $\theta = {m1,m2,log(p1),\gamma1,\gamma2,\gamma3}$.
-
+  
+This $11n$-dimensional integral is not easily computed, so we will decompose it into blocks and calculate it in a two step procedure. In the first step, we use an existing MCMC algorithm to sample the posterior for the parameters $\vec\theta_i$ of each BNS event, then marginalize over the extrinsic/nuisance parameters $\vec\theta_{\rm ex} = \{d, \alpha, \delta, \psi, \iota, t_c, \phi_c, \delta\tilde\Lambda\}$\footnote{$\delta\tilde\Lambda$ is an intrinsic parameter that in principle provides additional EOS information. However, it is unmeasurable with aLIGO~\cite{WadeCreightonOchsner2014}, so we treat it as a nuisance parameter and group it with the extrinsic parameters when we marginalize over them.} to obtain a quasilikelihood (Eq.~\eqref{eq:quasilike}) for the intrinsic parameters $\vec\theta_{\rm in} = \{m_1, m_2, \tilde\Lambda\}$ that are relevant for measuring the EOS. In the second step, we evaluate Eq.~\eqref{eq:margEOS} by constructing a joint likelihood for the $n$ BNS events from the quasilikelihoods for each event, then re-express $\tilde\Lambda_i$ in terms of the EOS parameters and masses, and marginalize over the masses in Eq.~\eqref{eq:margEOS2} using another MCMC algorithm. We obtain these expressions from Bayes' theorem (Eq.~\eqref{eq:bayes}) as follows.  
+  
+%%%%%%%% Old version %%%%%%%%%
 
 %Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We use Bayes' theorem to write the posterior density function (PDF) for the universal EOS parameters $\vec E = \{\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3\}$ that are common to all NSs~\cite{Glendenning1996book} and the waveform parameters $\vec\theta = \{\les{d}{}, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda\}$ that are unique to each of the $n$ BNS systems as
 %\begin{equation}
@@ -291,6 +281,8 @@ This $11n$-dimensional integral is not easily computed, so we will decompose it 
 %p(\vec E | D,\mathcal{H},\mathcal{I}) = \int d\vec\theta_1 \dots d\vec\theta_n p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I}).
 %\end{equation}
 %This $11n$-dimensional integral is not easily computed, so we will decompose it into blocks that can be individually computed. First, we decompose the waveform parameters into extrinsic/nuisance parameters $\vec\theta_{\rm ex} = \{\les{d}{}, \alpha, \delta, \psi, \iota, t_c, \phi_c, \delta\tilde\Lambda\}$\footnote{$\delta\tilde\Lambda$ is an intrinsic parameter that in principle provides additional EOS information. However, it is unmeasurable with aLIGO~\cite{WadeCreightonOchsner2014}, so we treat it as a nuisance parameter and group it with the extrinsic parameters when we marginalize over them.} that are unrelated to the EOS measurement and intrinsic parameters $\vec\theta_{\rm in} = \{m_1, m_2, \tilde\Lambda\}$ that are relevant for measuring the EOS such that $\vec\theta = \{\vec\theta_{\rm ex}, \vec\theta_{\rm in}\}$.
+
+%%%%%%%%%%%%%%%%%%
 
 The prior can be decomposed into EOS-parameter and waveform-parameter parts using the product rule $p(\vec x, \vec y) = p(\vec x) p(\vec y | \vec x) $ as well as the fact that the $n$ sets of waveform parameters $\vec\theta_i$ are independent
 \begin{equation}
@@ -325,6 +317,7 @@ L(\vec d_i; \vec\theta_{{\rm in,}i}, \mathcal{H}, \mathcal{I}) = \int d\vec\thet
 \end{equation}
 Because $\tilde\Lambda_i$ is a deterministic function of $m_{1i}$, $m_{2i}$ and the EOS parameters,
 \begin{equation}
+\label{eq:lambdaeosrelation}
 p(\tilde\Lambda_i | m_{1i}, m_{2i}, \vec E, \mathcal{H},\mathcal{I}) = \delta(\tilde\Lambda_i - \tilde\Lambda(m_{1i}, m_{2i}, \vec E)).
 \end{equation}
 The marginalized PDF finally becomes
@@ -336,11 +329,11 @@ p(\vec E | D,\mathcal{H},\mathcal{I}) =& \frac{1}{p(D | \mathcal{H},\mathcal{I})
 & \left. \times L(\vec d_i; \vec\theta_{{\rm in,}i}, \mathcal{H}, \mathcal{I})|_{\tilde\Lambda_i = \tilde\Lambda(m_{1i}, m_{2i}, \vec E)} \right].
 \end{split}
 \end{equation}
-The problem has now been reduced to computing the quasilikelihood (Eq.~\eqref{eq:quasilike}) for each GW event, then computing Eq.~\eqref{eq:margEOS2}.
+The problem has now been reduced to computing the quasilikelihood (Eq.~\eqref{eq:quasilike}) for each BNS event, then computing Eq.~\eqref{eq:margEOS2}.
 
 \subsection{Likelihood and signal to noise ratio}
 
-The final ingredient we need to evaluate the marginalized PDF is an expression for the likelihood $p(\vec d_i | \vec\theta_i,\mathcal{H},\mathcal{I})$ for each GW event\footnote{In the following subsections, when we discuss the likelihood for individual GW events, we omit the event index $i$ for \les{brevity }{clarity}.}. In this paper we assume that each detector in the network has stationary, Gaussian noise and that the noise between detectors is uncorrelated. This means that the power spectral density (PSD) $S_n(f)^a$ of the noise $n^a(t)$ in detector $a$ is
+The final ingredient we need to evaluate the marginalized PDF is an expression for the likelihood $p(\vec d_i | \vec\theta_i,\mathcal{H},\mathcal{I})$ for each GW event\footnote{In the following subsections, when we discuss the likelihood for individual GW events, we omit the event index $i$ for brevity.}. In this paper we assume that each detector in the network has stationary, Gaussian noise and that the noise between detectors is uncorrelated. This means that the power spectral density (PSD) $S_n(f)^a$ of the noise $n^a(t)$ in detector $a$ is
 \begin{equation}
 \langle \tilde n^a(f) \tilde n^{a*}(f') \rangle = \frac{1}{2} \delta (f-f') S_n(f)^a,
 \end{equation}
@@ -371,7 +364,7 @@ The observed signal to noise ratio (SNR) for the data $d^a(t)$ from detector $a$
 \begin{equation}
 \rho^a = \frac{(d^a, m)}{\sqrt{(m, m)}}.
 \end{equation}
-\les{The SNR for a network of detectors is then $\rho_{\rm net} = \sqrt{\sum_a(\rho^a)^2}$.  This is a measure of the relative power a given GW signal produces in a network of detectors.}{ and has the expectation value (or characteristic SNR) $\langle \rho^a \rangle = \sqrt{(m, m)}$. The SNR for a network of detectors is then $\rho_{\rm net} = \sqrt{\sum_a(\rho^a)^2}$, which has expectation value $\langle \rho_{\rm net} \rangle = \sqrt{\sum_a\langle \rho^a \rangle^2}$.}
+The SNR for a network of detectors is then $\rho_{\rm net} = \sqrt{\sum_a(\rho^a)^2}$.  This is a measure of the relative power a given GW signal produces in a network of detectors.
 
 \subsection{Averaged likelihood}
 \label{sec:averagelike}
