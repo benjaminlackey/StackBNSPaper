@@ -264,25 +264,6 @@ p(\vec E | D,\mathcal{H},\mathcal{I}) = \int d\vec\theta_1 \dots d\vec\theta_n p
 \end{equation}
   
 This $11n$-dimensional integral is not easily computed, so we will decompose it into blocks and calculate it in a two step procedure. In the first step, we use an existing MCMC algorithm to sample the posterior for the parameters $\vec\theta_i$ of each BNS event, then marginalize over the extrinsic/nuisance parameters $\vec\theta_{\rm ex} = \{d, \alpha, \delta, \psi, \iota, t_c, \phi_c, \delta\tilde\Lambda\}$\footnote{$\delta\tilde\Lambda$ is an intrinsic parameter that in principle provides additional EOS information. However, it is unmeasurable with aLIGO~\cite{WadeCreightonOchsner2014}, so we treat it as a nuisance parameter and group it with the extrinsic parameters when we marginalize over them.} to obtain a quasilikelihood (Eq.~\eqref{eq:quasilike}) for the intrinsic parameters $\vec\theta_{\rm in} = \{m_1, m_2, \tilde\Lambda\}$ that are relevant for measuring the EOS. In the second step, we evaluate Eq.~\eqref{eq:margEOS} by constructing a joint likelihood for the $n$ BNS events from the quasilikelihoods for each event, then re-express $\tilde\Lambda_i$ in terms of the EOS parameters and masses, and marginalize over the masses in Eq.~\eqref{eq:margEOS2} using another MCMC algorithm. We obtain these expressions from Bayes' theorem (Eq.~\eqref{eq:bayes}) as follows.  
-  
-%%%%%%%% Old version %%%%%%%%%
-
-%Given the GW model and EOS fit described in Sections~\ref{sec:waveform} and~\ref{sec:eos}, we will describe here a method for estimating the EOS parameters from a set of GW observations. We use Bayes' theorem to write the posterior density function (PDF) for the universal EOS parameters $\vec E = \{\log(p_1), \Gamma_1, \Gamma_2, \Gamma_3\}$ that are common to all NSs~\cite{Glendenning1996book} and the waveform parameters $\vec\theta = \{\les{d}{}, \alpha, \delta, \psi, \iota, t_c, \phi_c, m_1, m_2, \tilde\Lambda, \delta\tilde\Lambda\}$ that are unique to each of the $n$ BNS systems as
-%\begin{equation}
-%\begin{split}
-%p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I})
-%&= p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I}) \\
-%& \times\frac{ p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I}) }{ p(D | \mathcal{H},\mathcal{I}) }.
-%\end{split}
-%\end{equation}
-%The data $D = \vec d_1,\dots, \vec d_n$ is composed of the data streams $\vec d_i(t)$ from the GW detector network for each of the $n$ inspiral events. $\mathcal{H}$ represents the \ben{EOS parameterization with unknown parameters $E$ and the waveform model, chosen here to be the 4-parameter piecewise polytrope and the TaylorF2 waveform model respectively.}{EOS and waveform models, and} $\mathcal{I}$ represents the background information for the \ben{EOS and waveform}{} parameters. The quantity $p(\vec E,\vec\theta_1,\dots,\vec\theta_n | \mathcal{H},\mathcal{I})$ is the prior probability density for the EOS and waveform parameters, $p(D | \vec E,\vec\theta_1,\dots,\vec\theta_n,\mathcal{H},\mathcal{I})$ is the likelihood, and the normalization constant $p(D | \mathcal{H},\mathcal{I})$, which we will not need to calculate here, is the evidence. The marginalized PDF for the EOS parameters is then
-%\begin{equation}
-%\label{eq:margEOS}
-%p(\vec E | D,\mathcal{H},\mathcal{I}) = \int d\vec\theta_1 \dots d\vec\theta_n p(\vec E,\vec\theta_1,\dots,\vec\theta_n | D,\mathcal{H},\mathcal{I}).
-%\end{equation}
-%This $11n$-dimensional integral is not easily computed, so we will decompose it into blocks that can be individually computed. First, we decompose the waveform parameters into extrinsic/nuisance parameters $\vec\theta_{\rm ex} = \{\les{d}{}, \alpha, \delta, \psi, \iota, t_c, \phi_c, \delta\tilde\Lambda\}$\footnote{$\delta\tilde\Lambda$ is an intrinsic parameter that in principle provides additional EOS information. However, it is unmeasurable with aLIGO~\cite{WadeCreightonOchsner2014}, so we treat it as a nuisance parameter and group it with the extrinsic parameters when we marginalize over them.} that are unrelated to the EOS measurement and intrinsic parameters $\vec\theta_{\rm in} = \{m_1, m_2, \tilde\Lambda\}$ that are relevant for measuring the EOS such that $\vec\theta = \{\vec\theta_{\rm ex}, \vec\theta_{\rm in}\}$.
-
-%%%%%%%%%%%%%%%%%%
 
 The prior can be decomposed into EOS-parameter and waveform-parameter parts using the product rule $p(\vec x, \vec y) = p(\vec x) p(\vec y | \vec x) $ as well as the fact that the $n$ sets of waveform parameters $\vec\theta_i$ are independent
 \begin{equation}
@@ -369,16 +350,28 @@ The SNR for a network of detectors is then $\rho_{\rm net} = \sqrt{\sum_a(\rho^a
 \subsection{Averaged likelihood}
 \label{sec:averagelike}
 
-In order to determine the characteristic ability of GW detectors to measure EOS parameters, we will want to average our results for Eq.~\eqref{eq:margEOS2} over many realizations of the detector noise. In Ref.~\cite{NissankeHolzHughes2010} it was shown that averaging over noise realizations is equivalent to setting the noise $n^a(t)$ used to generate the data $d^a(t)$ equal to zero, but still using the characteristic noise PSD in the expression for the likelihood. Explicitly, one can define the averaged likelihood as the geometric mean of an ensemble of $M$ identical detectors measuring the same GW event
+%In order to determine the characteristic ability of GW detectors to measure EOS parameters, we will want to average our results for Eq.~\eqref{eq:margEOS2} over many realizations of the detector noise. In Ref.~\cite{NissankeHolzHughes2010} it was shown that averaging over noise realizations is equivalent to setting the noise $n^a(t)$ used to generate the data $d^a(t)$ equal to zero, but still using the characteristic noise PSD in the expression for the likelihood. Explicitly, one can define the averaged likelihood as the geometric mean of an ensemble of $M$ identical detectors measuring the same GW event
+%\begin{equation}
+%p_{\rm ave}(d^a | \vec\theta, \mathcal{H}, \mathcal{I}) = \left[\prod_{k=1}^M p(d_k^a | \vec\theta, \mathcal{H}, \mathcal{I})\right]^{1/M}.
+%\end{equation}
+%Taking $M$ to be large, it was shown that
+%\begin{equation}
+%\label{eq:averagedlike}
+%p_{\rm ave}(d^a | \vec\theta, \mathcal{H}, \mathcal{I}) \propto e^{-\frac{1}{2}(m^a(\vec\theta) - h^a(\hat\theta) | m^a(\vec\theta) - h^a(\hat\theta))}.
+%\end{equation}
+%This averaged likelihood will allow us to examine characteristic measurement uncertainties in the EOS parameters independent of the particular noise realization. It will also allow us in Section~VI to separate the effects of systematic errors due to uncertainties in the waveform model from effects due to individual noise realizations.
+
+In order to determine the characteristic ability of GW detectors to measure EOS parameters, we will want to average our results for Eq.~\eqref{eq:margEOS2} over many realizations of the detector noise. Ref.~\cite{NissankeHolzHughes2010} defined the averaged likelihood as the geometric mean of an ensemble of $M$ identical detectors measuring the same GW event
 \begin{equation}
 p_{\rm ave}(d^a | \vec\theta, \mathcal{H}, \mathcal{I}) = \left[\prod_{k=1}^M p(d_k^a | \vec\theta, \mathcal{H}, \mathcal{I})\right]^{1/M}.
 \end{equation}
-Taking $M$ to be large, it was shown that
+Taking $M$ to be large, they found that this is equivalent to setting the noise $n^a(t)$ used to generate the data $d^a(t)$ equal to zero, but still using the characteristic noise PSD in the expression for the likelihood:
 \begin{equation}
 \label{eq:averagedlike}
 p_{\rm ave}(d^a | \vec\theta, \mathcal{H}, \mathcal{I}) \propto e^{-\frac{1}{2}(m^a(\vec\theta) - h^a(\hat\theta) | m^a(\vec\theta) - h^a(\hat\theta))}.
 \end{equation}
-This averaged likelihood will allow us to examine characteristic measurement uncertainties in the EOS parameters independent of the particular noise realization. It will also allow us in Section~VI to separate the effects of systematic errors due to uncertainties in the waveform model from effects due to individual noise realizations.
+This zero-noise likelihood will allow us to examine characteristic measurement uncertainties in the EOS parameters independent of the particular noise realization. It will also allow us in Section~VI to separate the effects of systematic errors due to uncertainties in the waveform model from effects due to individual noise realizations.
+
 
 \subsection{Implementation}
 
@@ -404,8 +397,6 @@ by the relation $\Sigma_{ij}  = \Gamma^{-1}_{ij}$. In the large SNR limit, $\hat
 
 In this Section we characterize the ability of the aLIGO--aVirgo network to measure the EOS from a population of BNS inspiral events. For the two aLIGO detectors, we use the zero detuned-high laser power (broadband) PSD~\cite{LIGOnoise} which represents the design sensitivity that may be achieved for the aLIGO detectors by 2019~\cite{AasiAbadieAbbott2013}. For aVIRGO, which has higher high-frequency noise, we use the PSD fit from Ref.~\cite{ManzottiDietz2012} that may be achieved by 2021~\cite{AasiAbadieAbbott2013}. We also use the TaylorF2 waveform as both the injected GW signal $h(t; \hat\theta)$ and the GW model $m(t; \vec\theta)$ used for parameter estimation.
 
-%\ben{[[Why is the aVirgo PSD a few times higher between 500--1000Hz than the aLIGO one in the reference (Fig. 1)? I've seen noise curves where the high frequency is more comparable. Do you know of a reference that describes the different aVirgo configurations and noise curves?]]}{} \les{(I don't know of a reference for different aVirgo configurations. Here's a link to the PSDs in LAL: \url{https://www.lsc-group.phys.uwm.edu/daswg/projects/lal/nightly/docs/html/_l_a_l_sim_noise_p_s_d_8c.html}. Maybe this is helpful?)}{}
-
 
 \subsection{Baseline BNS population}
 \label{sec:baseline}
@@ -424,13 +415,10 @@ We simulated a year of GW data using the ``realistic'' event rate above. Specifi
 
 Using zero-noise data described in Section~\ref{sec:averagelike}, we show in Fig.~\ref{fig:mpa1fit} the measurability of the EOS, radius, and tidal deformability for the loudest 20 events in our population. The contours represent the 68\% ($1\sigma$), 95\% ($2\sigma$), and 99.7\% ($3\sigma$) credible regions. In the left panel we plot the credible region for $\log(p)$ as well as for $p/p_{\rm true}$, where we call the piecewise-polytrope fit to the MPA1 EOS the ``true'' EOS. We generate these figures as follows: At the density $\rho$, we evaluate $\log[p(\rho, \vec E)]$ for each set of EOS parameters from the MCMC simulation. We then evaluate the credible interval at that density from the sampled $\log(p)$ values. The same is done for $p/p_{\rm true}$. In the top right panel, we generated the credible interval for each mass $M$ from the radii samples that were found by evaluating $R(M, \vec E)$ for each set of EOS parameters in the MCMC simulation. For masses greater than the $1.93M_\odot$ prior, some of the sampled EOS parameters do not allow for a stable NS. For those sampled EOS parameters, an object of that mass would lead to a black hole. In this case, the distribution of radii becomes bimodal, with a delta function at the Schwarzschild radius $2GM/c^2$ and weight proportional to the fraction of samples that do not allow for a stable NS. The credible interval then represents the fraction of MCMC samples that produce a NS in that radius interval \textit{or} a black hole. The bottom right panel shows the confidence intervals for the tidal deformability $\lambda$. For the samples that produce a black hole above $1.93M_\odot$, $\lambda=0$~\cite{BinningtonPoisson2009}.
 
-%\red{[[Above $1.93M_\odot$, we do not expect the true $R(M)$ and $\lambda(M)$ curves to be contained in the credible region. This is because plotting the curve above $1.93M_\odot$ assumes that an object of that mass is a NS, whereas the credible regions allow for the possibility that the object is either a BH or a NS. If we assumed that a NS was a stable configuration above $1.93M_\odot$, this would be changing the prior.]]}
-
 \begin{figure*}[!htb]
 \begin{center}
 \includegraphics[width=3.2in]{LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20p.pdf}
 \includegraphics[width=3.2in]{LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20Radiuslambda.pdf}
-%\includegraphics[width=2.5in]{LALMCMCmpa1FitTaylorF2ZeroNoiseBNS20RadiuslambdaHighMass.pdf}
 \caption{Uncertainty in the recovered EOS, radius, and tidal deformability for the three-detector aLIGO--aVirgo network. Results are shown for the loudest 20 events with network SNR from 63.7 down to 13.6. The red, green, and blue regions represent the 68\% ($1\sigma$), 95\% ($2\sigma$), and 99.7\% ($3\sigma$) credible regions respectively. In the bottom left panel, $p_{\rm true}$ is the pressure of the ``true'' injected EOS, which in this case is the fit to the MPA1 EOS. In the right panels, the vertical line at $1.93M_\odot$ is the minimum mass, set by the prior, where some accepted EOS parameters do not produce a stable NS.}
 \label{fig:mpa1fit}
 \end{center}
@@ -600,8 +588,6 @@ In addition to the systematic errors from the waveform model and EOS fit which c
 
 The tidal interaction discussed so far in this paper assumes the tidal field changes adiabatically. However, if the frequency of the tidal field variation (a multiple of the orbital frequency) approaches the resonant frequency of the various NS oscillation modes, the mode can be driven to large amplitudes. If the mode couples strongly to the tidal potential, this can lead to a phase shift as the binary passes through that resonance during the inspiral. This effect was examined for the g-modes, f-modes, and r-modes of nonspinning and spinning NSs~\cite{Lai1994, HoLai1999}. In general, the g-modes and r-modes will lead to a phase shift less than 0.1~radians, with maximum values for the largest spins and radii. The f-mode that has a small impact on the last few cycles, as discussed above, can lead to an appreciable effect at lower GW frequencies only if the NS is spinning at several hundred Hz. 
 
-%[[Mode coupling. Tidally deformed NSs are unstable to the coupling of high order p-modes and g-modes~\cite{WeinbergArrasBurkart2013}. Accounting for three- and four-mode couplings, this instability cancels~\cite{VenumadhavZimmermanHirata2014}.]]
-
 Finally, detector calibration errors will also impact the recovery of parameters. The uncertainty in the amplitude and phase of the Fourier transformed detector output $\tilde d(f)$ due to calibration errors are frequency dependent, and, for initial LIGO, were $\sim 10\%$ for the amplitude and $\sim 0.05$~radians for the phase of $\tilde d(f)$ over the bandwidth of the detector~\cite{VitaleDelPozzoLi2012}. The intrinsic parameters we are interested in here (masses and tidal parameters) are mostly determined by the phase evolution, and under the assumption that calibration errors will be similar for aLIGO, Vitale {\it et al.} found, using a Bayesian analysis, that the uncertainties in the chirp mass and symmetric mass ratio due to calibration errors would be $\sim 20\%$ as large as the statistical errors from detector noise~\cite{VitaleDelPozzoLi2012}. For the tidal parameter $\tilde\Lambda$ which contributes a few radians to the GW phase, this $\sim 0.05$~radian calibration error is not likely to dominate over the statistical error, but it should be included in future studies.
 
 \section{Discussion}
@@ -615,7 +601,7 @@ Our results indicate that advanced GW detectors can measure the NS radius with s
  
 \acknowledgements
 
-BL sincerely thanks Walter Del Pozzo and Tyson Littenberg for helpful advice and corrections, as well as Will Farr, Tjonnie Li, and Chris Van Den Broeck. BL had several useful discussions at the University of Washington's Institute for Nuclear Theory Program 14-2a. The authors would also like to thank Evan Ochsner and Jolien Creighton for suggestions and help in generating the parameters of the BNS populations used here. This work was supported by NSF Grants PHY-1305682, PHY-0970074, and PHY-0955929. Simulations were run on the Nemo cluster at the University of Wisconsin--Milwaukee supported by the NSF Grant PHY-0923409, and the Orbital cluster at Princeton University.
+We sincerely thank Walter Del Pozzo, Tyson Littenberg, and Jolien Creighton for advice and corrections, as well as Evan Ochsner for help in generating the parameters of the BNS populations used here. BL also benefited from discussions with Will Farr, Tjonnie Li, and Chris Van Den Broeck and from discussions at the University of Washington's Institute for Nuclear Theory Program 14-2a. This work was supported by NSF Grants PHY-1305682, PHY-0970074, PHY-0955929, and AST-1333142. Simulations were run on the Nemo cluster at the University of Wisconsin--Milwaukee, supported by the NSF Grant PHY-0923409, and the Orbital cluster at Princeton University.
 
 \bibliography{paper}
 \end{document}  
